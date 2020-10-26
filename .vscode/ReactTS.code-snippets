@@ -1,0 +1,28 @@
+{
+  "React functional component": {
+    "scope": "typescriptreact",
+    "prefix": "rnfc",
+    "body": [
+      "import React from 'react'",
+      "import { StyleSheet, View } from 'react-native'",
+      "",
+      "interface Props {}",
+      "",
+      "const ${TM_FILENAME_BASE}: React.FC<Props> = props => {",
+      "  return (",
+      "    <View style={styles.container}>",
+      "      ${0}",
+      "    </View>",
+      "  )",
+      "}",
+      "",
+      "const styles = StyleSheet.create({",
+      "  container: {},",
+      "})",
+      "",
+      "export default ${TM_FILENAME_BASE}",
+      ""
+    ],
+    "description": "React functional component"
+  }
+}
