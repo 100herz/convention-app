@@ -1,11 +1,19 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
+import { StackNavigationProp } from '@react-navigation/stack'
 
-const HomeScreen: React.FC = () => {
+import { RootStackParamList } from '@navigations/ArticleNavigator'
+
+interface Props {
+  navigation: StackNavigationProp<RootStackParamList, 'Categories'>
+}
+
+const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text>Here comes the Articles component.</Text>
       <Text style={{ fontFamily: 'open-sans-bold', marginTop: 15, color: 'blue' }}>from HomeScreen.tsx</Text>
+      <Button title="Go to Categories Screen" onPress={() => navigation.navigate('Categories')} />
     </View>
   )
 }

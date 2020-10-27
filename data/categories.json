@@ -1,0 +1,1002 @@
+[
+  {
+    "id": 157,
+    "count": 1,
+    "description": "",
+    "link": "https://www.convention-net.de/advertorial/",
+    "name": "Advertorial",
+    "slug": "advertorial",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/157"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=157"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "count": 133,
+    "description": "",
+    "link": "https://www.convention-net.de/agenturen/",
+    "name": "Agenturen",
+    "slug": "agenturen",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/4"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=4"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 215,
+    "count": 74,
+    "description": "",
+    "link": "https://www.convention-net.de/airlines/",
+    "name": "Airlines",
+    "slug": "airlines",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/215"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=215"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "count": 2256,
+    "description": "",
+    "link": "https://www.convention-net.de/aktuelles/",
+    "name": "Aktuelles",
+    "slug": "aktuelles",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/1"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=1"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "count": 37,
+    "description": "",
+    "link": "https://www.convention-net.de/ausgaben/",
+    "name": "Ausgaben",
+    "slug": "ausgaben",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=16"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 318,
+    "count": 16,
+    "description": "",
+    "link": "https://www.convention-net.de/boe/",
+    "name": "BOE",
+    "slug": "boe",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/318"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=318"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "count": 247,
+    "description": "",
+    "link": "https://www.convention-net.de/destinationen-nov-13/",
+    "name": "Destinationen",
+    "slug": "destinationen-nov-13",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/5"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=5"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 217,
+    "count": 102,
+    "description": "",
+    "link": "https://www.convention-net.de/events/",
+    "name": "Events",
+    "slug": "events",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/217"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=217"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 356,
+    "count": 29,
+    "description": "",
+    "link": "https://www.convention-net.de/gastbeitrag/",
+    "name": "Gastbeitrag",
+    "slug": "gastbeitrag",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/356"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=356"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "count": 558,
+    "description": "",
+    "link": "https://www.convention-net.de/hotels/",
+    "name": "Hotels",
+    "slug": "hotels",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/6"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=6"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 165,
+    "count": 5,
+    "description": "",
+    "link": "https://www.convention-net.de/ibtm-arabia/",
+    "name": "ibtm arabia",
+    "slug": "ibtm-arabia",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/165"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=165"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 156,
+    "count": 43,
+    "description": "",
+    "link": "https://www.convention-net.de/ibtm-world/",
+    "name": "ibtm world",
+    "slug": "ibtm-world",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/156"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=156"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 174,
+    "count": 48,
+    "description": "",
+    "link": "https://www.convention-net.de/imex/",
+    "name": "imex",
+    "slug": "imex",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/174"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=174"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 139,
+    "count": 5,
+    "description": "",
+    "link": "https://www.convention-net.de/imex-2015/",
+    "name": "imex 2015",
+    "slug": "imex-2015",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/139"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=139"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 355,
+    "count": 34,
+    "description": "",
+    "link": "https://www.convention-net.de/insights/",
+    "name": "Insights",
+    "slug": "insights",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/355"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=355"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 328,
+    "count": 26,
+    "description": "",
+    "link": "https://www.convention-net.de/itb/",
+    "name": "ITB",
+    "slug": "itb",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/328"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=328"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 118,
+    "count": 0,
+    "description": "",
+    "link": "https://www.convention-net.de/jobs/",
+    "name": "Jobs",
+    "slug": "jobs",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/118"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=118"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 65,
+    "count": 269,
+    "description": "",
+    "link": "https://www.convention-net.de/messen/",
+    "name": "Messen",
+    "slug": "messen",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/65"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=65"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "count": 404,
+    "description": "",
+    "link": "https://www.convention-net.de/personal/",
+    "name": "Personal",
+    "slug": "personal",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/8"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=8"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 72,
+    "count": 188,
+    "description": "",
+    "link": "https://www.convention-net.de/reportagen/",
+    "name": "Reportagen",
+    "slug": "reportagen",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/72"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=72"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 70,
+    "count": 9,
+    "description": "",
+    "link": "https://www.convention-net.de/sonderausgaben/",
+    "name": "Sonderausgaben",
+    "slug": "sonderausgaben",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/70"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=70"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 170,
+    "count": 26,
+    "description": "",
+    "link": "https://www.convention-net.de/sponsored-content/",
+    "name": "Sponsored content",
+    "slug": "sponsored-content",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/170"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=170"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 186,
+    "count": 52,
+    "description": "",
+    "link": "https://www.convention-net.de/technik/",
+    "name": "Technik",
+    "slug": "technik",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/186"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=186"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "count": 133,
+    "description": "",
+    "link": "https://www.convention-net.de/locations/",
+    "name": "Venues",
+    "slug": "locations",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/7"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=7"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 106,
+    "count": 135,
+    "description": "",
+    "link": "https://www.convention-net.de/verbaende/",
+    "name": "Verbände",
+    "slug": "verbaende",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories/106"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.convention-net.de/wp-json/wp/v2/posts?categories=106"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

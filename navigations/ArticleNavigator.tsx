@@ -1,25 +1,32 @@
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer, RouteProp } from '@react-navigation/native'
 import { StackNavigationOptions, createStackNavigator } from '@react-navigation/stack'
 
 import HomeScreen from '@screens/HomeScreen'
-import { theme } from '@styles/theme'
+import CategoriesScreen from '@screens/CategoriesScreen'
+import { colors } from '@styles/theme'
 
-const ArticleNavigator = createStackNavigator()
+export type RootStackParamList = {
+  Home: undefined
+  Categories: undefined
+}
+
+const RootStackNavigator = createStackNavigator<RootStackParamList>()
 
 const defaultNavigatorOptions: StackNavigationOptions = {
   headerStyle: {
-    backgroundColor: theme.colors.accentColor,
+    backgroundColor: colors.accentColor,
   },
-  headerTintColor: theme.colors.grayLight,
+  headerTintColor: colors.grayLight,
 }
 
 const MainNavigation = () => {
   return (
     <NavigationContainer>
-      <ArticleNavigator.Navigator screenOptions={defaultNavigatorOptions}>
-        <ArticleNavigator.Screen name="Home" component={HomeScreen} />
-      </ArticleNavigator.Navigator>
+      <RootStackNavigator.Navigator initialRouteName="Home" screenOptions={defaultNavigatorOptions}>
+        <RootStackNavigator.Screen name="Home" component={HomeScreen} />
+        <RootStackNavigator.Screen name="Categories" component={CategoriesScreen} />
+      </RootStackNavigator.Navigator>
     </NavigationContainer>
   )
 }
