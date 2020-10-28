@@ -16,7 +16,8 @@
       "@navigations/*": ["./navigations/*"],
       "@screens/*": ["./screens/*"],
       "@stores/*": ["./stores/*"],
-      "@styles/*": ["./styles/*"]
+      "@styles/*": ["./styles/*"],
+      "@utils/*": ["./utils/*"]
     }
   }
 }

@@ -16,6 +16,7 @@ module.exports = function (api) {
             '@screens': ['./screens'],
             '@stores': ['./stores'],
             '@styles': ['./styles'],
+            '@utils': ['./utils'],
           },
         },
       ],

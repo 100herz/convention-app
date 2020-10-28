@@ -2,7 +2,7 @@
   "Inserts data-testid attribute": {
     "scope": "javascriptreact,typescriptreact",
     "prefix": "dtid",
-    "body": ["data-testid=\"$0\""],
+    "body": ["data-testid=\"${0}\""],
     "description": "Inserts data-testid attribute"
   },
   "Inserts useEffect hook": {
@@ -23,10 +23,16 @@
     "body": ["const ${1}Ref = useRef(${2})"],
     "description": "Inserts useRef hook"
   },
-  "Inserts useRouter hook": {
+  "Inserts useNavigation hook": {
     "scope": "javascriptreact,typescriptreact",
-    "prefix": "uroh",
-    "body": ["const router = useRouter()"],
-    "description": "Inserts useRouter hook"
+    "prefix": "unh",
+    "body": ["const navigation = useNavigation<StackNavigationProp<${0}>>()"],
+    "description": "Inserts useNavigation hook"
+  },
+  "Inserts useRoute hook": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": "urh",
+    "body": ["const route = useRoute<RouteProp<${1}, '${2}'>>()"],
+    "description": "Inserts useRoute hook"
   }
 }
