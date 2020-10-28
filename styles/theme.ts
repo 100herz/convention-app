@@ -16,8 +16,9 @@ interface DefaultStyles {
 export const defaultStyles = StyleSheet.create<DefaultStyles>({
   container: {
     flex: 1,
-    marginHorizontal: 20,
-    marginVertical: 30,
+    backgroundColor: 'white',
+    paddingHorizontal: 20,
+    paddingVertical: 30,
   },
   title: {
     fontFamily: 'open-sans-bold',
