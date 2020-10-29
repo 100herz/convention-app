@@ -3,10 +3,10 @@ import { ActivityIndicator, StyleSheet, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
-import LinkList from '@components/LinkList'
+import LinkList from '@components/Lists/LinkList'
 import { RootStackParamList } from '@navigations/ArticleNavigator'
 import { defaultStyles } from '@styles/theme'
-import { Category } from '@models/categories'
+import { Category } from '@models/category'
 import { API_URL_WP } from 'constants/api'
 
 const CategoryScreen: React.FC = () => {
@@ -38,7 +38,10 @@ const CategoryScreen: React.FC = () => {
 }
 
 const styles = StyleSheet.create({
-  ...defaultStyles,
+  container: {
+    ...defaultStyles.container,
+    paddingHorizontal: 25,
+  },
 })
 
 export default CategoryScreen

@@ -7,14 +7,14 @@ import HomeScreen from '@screens/HomeScreen'
 import CategoriesOverviewScreen from '@screens/CategoriesOverviewScreen'
 import ArticlesOverviewScreen from '@screens/ArticlesOverviewScreen'
 import ArticleScreen from '@screens/ArticleScreen'
-import { colors } from '@styles/theme'
 import Logo from '@components/UI/Logo'
+import { colors } from '@styles/theme'
 
 export type RootStackParamList = {
   HomeScreen: undefined
   CategoriesOverviewScreen: undefined
-  ArticlesOverviewScreen: { categoryId: number; categoryName: string }
-  ArticleScreen: undefined
+  ArticlesOverviewScreen: { categoryId?: number; categoryName?: string }
+  ArticleScreen: { postId: number }
 }
 
 const RootStackNavigator = createStackNavigator<RootStackParamList>()
@@ -24,6 +24,12 @@ const defaultNavigatorOptions: StackNavigationOptions = {
 }
 
 const MainNavigation = () => {
+  const HeaderLogo = () => (
+    <View style={{ alignItems: 'center' }}>
+      <Logo height={30} />
+    </View>
+  )
+
   return (
     <NavigationContainer>
       <RootStackNavigator.Navigator initialRouteName="HomeScreen" screenOptions={defaultNavigatorOptions}>
@@ -31,11 +37,7 @@ const MainNavigation = () => {
           name="HomeScreen"
           component={HomeScreen}
           options={{
-            headerTitle: () => (
-              <View style={{ alignItems: 'center' }}>
-                <Logo height={30} />
-              </View>
-            ),
+            headerTitle: HeaderLogo,
             title: 'News',
           }}
         />
@@ -49,7 +51,11 @@ const MainNavigation = () => {
           component={ArticlesOverviewScreen}
           options={({ route }) => ({ title: route.params.categoryName })}
         />
-        <RootStackNavigator.Screen name="ArticleScreen" component={ArticleScreen} options={{ title: 'Messen' }} />
+        <RootStackNavigator.Screen
+          name="ArticleScreen"
+          component={ArticleScreen}
+          options={{ headerTitle: HeaderLogo }}
+        />
       </RootStackNavigator.Navigator>
     </NavigationContainer>
   )
