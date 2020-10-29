@@ -6,9 +6,8 @@ import { StackNavigationProp } from '@react-navigation/stack'
 import Text from '@components/UI/Text'
 import Touchable from '@components/UI/Touchable'
 import { RootStackParamList } from '@navigations/ArticleNavigator'
-import { Category } from '@models/categories'
+import { Category } from '@models/category'
 import { colors } from '@styles/theme'
-import { useNavigation } from '@react-navigation/native'
 
 interface Props {
   data: Category[]
@@ -29,14 +28,25 @@ const LinkList: React.FC<Props> = ({ data, navigation }) => {
     </Touchable>
   )
 
-  return <FlatList<Category> keyExtractor={item => item.id.toString()} data={data} renderItem={Link}></FlatList>
+  return (
+    <FlatList<Category>
+      style={styles.listContainer}
+      keyExtractor={item => item.id.toString()}
+      data={data}
+      renderItem={Link}
+    ></FlatList>
+  )
 }
 
 interface Styles {
+  listContainer: ViewStyle
   linkContainer: ViewStyle
 }
 
 const styles = StyleSheet.create<Styles>({
+  listContainer: {
+    paddingTop: 15,
+  },
   linkContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',

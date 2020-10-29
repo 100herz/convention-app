@@ -7,7 +7,7 @@ export const colors = {
   grayLight: '#dfe3e8',
 }
 
-interface DefaultStyles {
+export interface DefaultStyles {
   container: ViewStyle
   title: TextStyle
   text: TextStyle
@@ -17,8 +17,6 @@ export const defaultStyles = StyleSheet.create<DefaultStyles>({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    paddingHorizontal: 20,
-    paddingVertical: 30,
   },
   title: {
     fontFamily: 'open-sans-bold',
