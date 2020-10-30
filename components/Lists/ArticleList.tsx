@@ -9,7 +9,7 @@ import Button from '@components/UI/Button'
 import { RootStackParamList } from '@navigations/ArticleNavigator'
 import { Article } from '@models/article'
 import { getLocaleLongDate } from '@utils/date-time'
-import { colors } from '@styles/theme'
+import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 import { useNavigation } from '@react-navigation/native'
 
 interface Props {
@@ -26,9 +26,9 @@ const ArticleList: React.FC<Props> = ({ data }) => {
           <Image style={styles.image} source={{ uri: item._embedded['wp:featuredmedia'][0].source_url }} />
         ) : (
           <View style={styles.noImage}>
-            <Text style={{ color: 'black', fontFamily: 'open-sans-bold' }}>NO</Text>
-            <Text style={{ color: 'black', fontFamily: 'open-sans-bold' }}>IMAGE</Text>
-            <Text style={{ color: 'black', fontFamily: 'open-sans-bold' }}>SET</Text>
+            <Text style={styles.noImageText}>NO</Text>
+            <Text style={styles.noImageText}>IMAGE</Text>
+            <Text style={styles.noImageText}>SET</Text>
           </View>
         )}
       </View>
@@ -50,18 +50,17 @@ const ArticleList: React.FC<Props> = ({ data }) => {
   return <FlatList<Article> keyExtractor={item => item.id.toString()} data={data} renderItem={Article}></FlatList>
 }
 
-interface Styles {
+interface Styles extends DefaultStyles {
   articleContainer: ViewStyle
   imageColumn: ViewStyle
   image: ImageStyle
   noImage: ViewStyle
+  noImageText: TextStyle
   textColumn: ViewStyle
-  title: TextStyle
-  dateContainer: ViewStyle
-  date: TextStyle
 }
 
 const styles = StyleSheet.create<Styles>({
+  ...defaultStyles,
   articleContainer: {
     alignItems: 'center',
     flexDirection: 'row',
@@ -84,26 +83,19 @@ const styles = StyleSheet.create<Styles>({
     backgroundColor: colors.grayLight,
     borderRadius: 15,
   },
+  noImageText: {
+    color: 'black',
+    fontFamily: fonts.sansBold,
+  },
   textColumn: {
     width: Dimensions.get('screen').width - 130,
     paddingHorizontal: 15,
     alignItems: 'flex-start',
   },
   title: {
-    fontFamily: 'open-sans',
+    fontFamily: fonts.sans,
     fontSize: 13,
     color: colors.primaryColor,
-  },
-  dateContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingTop: 5,
-    paddingBottom: 10,
-  },
-  date: {
-    color: colors.accentColor,
-    fontSize: 10,
-    marginLeft: 5,
   },
 })
 

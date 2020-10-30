@@ -6,8 +6,9 @@ import MainNavigation from '@navigations/ArticleNavigator'
 
 const fetchFonts = () => {
   return Font.loadAsync({
-    'open-sans': require('@assets/fonts/OpenSans-Regular.ttf'),
-    'open-sans-bold': require('@assets/fonts/OpenSans-Bold.ttf'),
+    sans: require('@assets/fonts/OpenSans-Regular.ttf'),
+    'sans-bold': require('@assets/fonts/OpenSans-Bold.ttf'),
+    'serif-bold': require('@assets/fonts/Vollkorn-Bold.ttf'),
   })
 }
 
