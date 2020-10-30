@@ -3,7 +3,7 @@ import { GestureResponderEvent, StyleSheet, TextStyle, View, ViewStyle } from 'r
 
 import Touchable from '@components/UI/Touchable'
 import Text from '@components/UI/Text'
-import { colors } from '@styles/theme'
+import { colors, fonts } from '@styles/theme'
 
 interface Props {
   onPress: (event: GestureResponderEvent) => void
@@ -37,7 +37,7 @@ const styles = StyleSheet.create<Styles>({
   text: {
     color: 'white',
     textTransform: 'uppercase',
-    fontFamily: 'open-sans-bold',
+    fontFamily: fonts.sansBold,
   },
 })
 

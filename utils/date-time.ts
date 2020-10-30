@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'moment' // see: https://momentjs.com/docs/
 import 'moment/locale/de'
 
 /**

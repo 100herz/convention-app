@@ -41,5 +41,13 @@ export interface Article {
   _links: any
   _embedded: {
     'wp:featuredmedia': [{ source_url: string }]
+    'wp:term': [
+      [
+        {
+          id: number
+          name: string
+        }
+      ]
+    ]
   }
 }

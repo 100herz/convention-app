@@ -7,10 +7,18 @@ export const colors = {
   grayLight: '#dfe3e8',
 }
 
+export const fonts = {
+  sans: 'sans',
+  sansBold: 'sans-bold',
+  serifBold: 'serif-bold',
+}
+
 export interface DefaultStyles {
   container: ViewStyle
   title: TextStyle
   text: TextStyle
+  dateContainer: ViewStyle
+  date: TextStyle
 }
 
 export const defaultStyles = StyleSheet.create<DefaultStyles>({
@@ -19,13 +27,23 @@ export const defaultStyles = StyleSheet.create<DefaultStyles>({
     backgroundColor: 'white',
   },
   title: {
-    fontFamily: 'open-sans-bold',
-    fontSize: 18,
+    fontFamily: fonts.sansBold,
     textTransform: 'uppercase',
     color: colors.accentColor,
   },
   text: {
-    fontFamily: 'open-sans',
+    fontFamily: fonts.sans,
     color: colors.primaryColor,
+  },
+  dateContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: 5,
+    paddingBottom: 10,
+  },
+  date: {
+    color: colors.accentColor,
+    fontSize: 10,
+    marginLeft: 5,
   },
 })

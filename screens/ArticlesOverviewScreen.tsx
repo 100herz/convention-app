@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, StyleSheet, View } from 'react-native'
 import { RouteProp, useRoute } from '@react-navigation/native'
 
-import { defaultStyles } from '@styles/theme'
+import ArticleList from '@components/Lists/ArticleList'
 import { RootStackParamList } from '@navigations/ArticleNavigator'
 import { API_URL_WP } from 'constants/api'
 import { Article } from '@models/article'
-import ArticleList from '@components/Lists/ArticleList'
+import { defaultStyles } from '@styles/theme'
 
 const ArticlesOverviewScreen: React.FC = () => {
   const route = useRoute<RouteProp<RootStackParamList, 'ArticlesOverviewScreen'>>()
