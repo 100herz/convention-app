@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { ActivityIndicator, Dimensions, ScrollView, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
+import {
+  ActivityIndicator,
+  Dimensions,
+  Linking,
+  ScrollView,
+  StyleSheet,
+  TextStyle,
+  View,
+  ViewStyle,
+} from 'react-native'
 import { RouteProp, useRoute } from '@react-navigation/native'
 import HTML from 'react-native-render-html'
 import { Ionicons } from '@expo/vector-icons'
@@ -57,10 +66,11 @@ const ArticleScreen: React.FC<Props> = props => {
           <HTML baseFontStyle={styles.teaser} html={`${article?.excerpt.rendered}`} />
           <HTML
             baseFontStyle={styles.text}
+            tagsStyles={htmlBodyTagStyles}
             html={`${article?.content.rendered}`}
             ignoredStyles={['height', 'width']}
             imagesMaxWidth={Dimensions.get('window').width - 30}
-            // style={{ width: '100%' }}
+            onLinkPress={(evt, href) => Linking.openURL(href)}
           />
         </ScrollView>
       )}
@@ -104,5 +114,15 @@ const styles = StyleSheet.create<Styles>({
     fontSize: 18,
   },
 })
+
+const htmlBodyTagStyles: HTML.StylesDictionary = {
+  a: {
+    color: colors.accentColor,
+    textDecorationLine: 'none',
+  },
+  img: {
+    borderRadius: 15,
+  },
+}
 
 export default ArticleScreen
