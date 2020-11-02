@@ -10,11 +10,12 @@ interface Props {
   title: string
   style?: ViewStyle
   textStyle?: TextStyle
+  testID?: string
 }
 
-const Button: React.FC<Props> = ({ onPress, title, style, textStyle }) => {
+const Button: React.FC<Props> = ({ onPress, title, style, textStyle, testID }) => {
   return (
-    <Touchable onPress={onPress}>
+    <Touchable onPress={onPress} testID={testID}>
       <View style={{ ...styles.container, ...style }}>
         <Text style={{ ...styles.text, ...textStyle }}>{title}</Text>
       </View>

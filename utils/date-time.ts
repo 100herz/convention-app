@@ -1,13 +1,18 @@
 import moment from 'moment' // see: https://momentjs.com/docs/
 import 'moment/locale/de'
 
+export enum Locale {
+  'DE' = 'de',
+  'EN' = 'en-US',
+}
+
 /**
  * Returns a date in the locale long format
  *
  * @param date The date to convert
  * @param locale The locale
  */
-export function getLocaleLongDate(date = new Date(), locale = 'de'): string {
+export const getLocaleLongDate = (date = new Date(), locale = Locale.DE): string => {
   moment.locale(locale)
   return moment(date).format('LL')
 }
@@ -18,7 +23,7 @@ export function getLocaleLongDate(date = new Date(), locale = 'de'): string {
  * @param date The date to convert
  * @param locale The locale
  */
-export function getLocaleShortDate(date = new Date(), locale = 'de'): string {
+export const getLocaleShortDate = (date = new Date(), locale = Locale.DE): string => {
   moment.locale(locale)
   return moment(date).format('L')
 }
@@ -29,7 +34,7 @@ export function getLocaleShortDate(date = new Date(), locale = 'de'): string {
  * @param date The date to convert
  * @param locale The locale
  */
-export function getLocaleShortTime(date = new Date(), locale = 'de'): string {
+export const getLocaleShortTime = (date = new Date(), locale = Locale.DE): string => {
   moment.locale(locale)
   return moment(date).format('LT')
 }

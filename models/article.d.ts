@@ -1,4 +1,4 @@
-export interface Article {
+export declare interface Article {
   id: number
   date: string
   date_gmt: string
@@ -29,9 +29,9 @@ export interface Article {
   sticky: boolean
   template: string
   format: string
-  meta: unknown[]
+  meta: unknown
   categories: number[]
-  tags: unknown[]
+  tags: unknown
   acf: {
     sponsored_by: string
     should_push: boolean
@@ -40,14 +40,16 @@ export interface Article {
   }
   _links: unknown
   _embedded: {
-    'wp:featuredmedia': [{ source_url: string }]
-    'wp:term': [
-      [
-        {
-          id: number
-          name: string
-        }
-      ]
-    ]
+    [key: string]: unknown
+    'wp:featuredmedia'?: {
+      [key: string]: unknown
+      source_url: string
+    }[]
+
+    'wp:term': {
+      [key: string]: unknown
+      id: number
+      name: string
+    }[][]
   }
 }

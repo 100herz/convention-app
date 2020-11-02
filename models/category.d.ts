@@ -1,4 +1,4 @@
-export interface Category {
+export declare interface Category {
   id: number
   count: number
   description: string
@@ -7,6 +7,7 @@ export interface Category {
   slug: string
   taxonomy: string
   parent: number
-  meta: unknown[]
+  meta: unknown
+  acf: unknown
   _links: unknown
 }

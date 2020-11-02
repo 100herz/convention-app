@@ -8,16 +8,19 @@ import Touchable from '@components/UI/Touchable'
 import { RootStackParamList } from '@navigations/ArticleNavigator'
 import { Category } from '@models/category'
 import { colors } from '@styles/theme'
+import { useNavigation } from '@react-navigation/native'
 
 interface Props {
   data: Category[]
-  navigation: StackNavigationProp<RootStackParamList>
 }
 
-const LinkList: React.FC<Props> = ({ data, navigation }) => {
+const LinkList: React.FC<Props> = ({ data }) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
+
   const Link = ({ item }: { item: Category }) => (
     <Touchable
       onPress={() => navigation.navigate('ArticlesOverviewScreen', { categoryId: item.id, categoryName: item.name })}
+      testID="link"
     >
       <View style={styles.linkContainer}>
         <Text>{item.name}</Text>

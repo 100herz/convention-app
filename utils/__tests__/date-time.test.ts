@@ -1,4 +1,4 @@
-import { getLocaleLongDate, getLocaleShortDate, getLocaleShortTime } from '@utils/date-time'
+import { getLocaleLongDate, getLocaleShortDate, getLocaleShortTime, Locale } from '@utils/date-time'
 
 export const dummyDate = new Date('2020-07-02T20:23:00.000Z')
 
@@ -14,7 +14,7 @@ describe('Date utils testings', () => {
   })
 
   it('convert a ISO date string to a locale date in a english (US) long format', () => {
-    const date = getLocaleLongDate(dummyDate, 'en-US')
+    const date = getLocaleLongDate(dummyDate, Locale.EN)
     expect(date).toBe('July 2, 2020')
   })
 
@@ -29,7 +29,7 @@ describe('Date utils testings', () => {
   })
 
   it('convert a ISO date string to a locale date in a english (US) short format', () => {
-    const date = getLocaleShortDate(dummyDate, 'en-US')
+    const date = getLocaleShortDate(dummyDate, Locale.EN)
     expect(date).toBe('07/02/2020')
   })
 
@@ -44,7 +44,7 @@ describe('Date utils testings', () => {
   })
 
   it('convert a ISO date string to a locale  time in a english (US) short format', () => {
-    const date = getLocaleShortTime(dummyDate, 'en-US')
+    const date = getLocaleShortTime(dummyDate, Locale.EN)
     expect(date).toBe('8:23 PM')
   })
 })

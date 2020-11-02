@@ -1,6 +1,7 @@
 import React from 'react'
 import { Dimensions, FlatList, Image, ImageStyle, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
 import HTML from 'react-native-render-html'
+import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { Ionicons } from '@expo/vector-icons'
 
@@ -10,7 +11,6 @@ import { RootStackParamList } from '@navigations/ArticleNavigator'
 import { Article } from '@models/article'
 import { getLocaleLongDate } from '@utils/date-time'
 import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
-import { useNavigation } from '@react-navigation/native'
 
 interface Props {
   data: Article[]
@@ -25,7 +25,7 @@ const ArticleList: React.FC<Props> = ({ data }) => {
         {item._embedded['wp:featuredmedia'] ? (
           <Image style={styles.image} source={{ uri: item._embedded['wp:featuredmedia'][0].source_url }} />
         ) : (
-          <View style={styles.noImage}>
+          <View style={styles.noImage} testID="no-image">
             <Text style={styles.noImageText}>NO</Text>
             <Text style={styles.noImageText}>IMAGE</Text>
             <Text style={styles.noImageText}>SET</Text>
@@ -42,6 +42,7 @@ const ArticleList: React.FC<Props> = ({ data }) => {
           textStyle={{ fontSize: 12 }}
           title="Details"
           onPress={() => navigation.navigate('ArticleScreen', { postId: item.id })}
+          testID="button"
         />
       </View>
     </View>
