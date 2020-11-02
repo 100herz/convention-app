@@ -7,6 +7,6 @@ export interface Category {
   slug: string
   taxonomy: string
   parent: number
-  meta: any[]
-  _links: any
+  meta: unknown[]
+  _links: unknown
 }

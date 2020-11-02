@@ -7,7 +7,7 @@ import 'moment/locale/de'
  * @param date The date to convert
  * @param locale The locale
  */
-export function getLocaleLongDate(date = new Date(), locale = 'de') {
+export function getLocaleLongDate(date = new Date(), locale = 'de'): string {
   moment.locale(locale)
   return moment(date).format('LL')
 }
@@ -18,7 +18,7 @@ export function getLocaleLongDate(date = new Date(), locale = 'de') {
  * @param date The date to convert
  * @param locale The locale
  */
-export function getLocaleShortDate(date = new Date(), locale = 'de') {
+export function getLocaleShortDate(date = new Date(), locale = 'de'): string {
   moment.locale(locale)
   return moment(date).format('L')
 }
@@ -29,7 +29,7 @@ export function getLocaleShortDate(date = new Date(), locale = 'de') {
  * @param date The date to convert
  * @param locale The locale
  */
-export function getLocaleShortTime(date = new Date(), locale = 'de') {
+export function getLocaleShortTime(date = new Date(), locale = 'de'): string {
   moment.locale(locale)
   return moment(date).format('LT')
 }

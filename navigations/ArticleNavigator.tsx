@@ -23,7 +23,7 @@ const defaultNavigatorOptions: StackNavigationOptions = {
   headerTintColor: colors.accentColor,
 }
 
-const MainNavigation = () => {
+const MainNavigation: React.FC = () => {
   const HeaderLogo = () => (
     <View style={{ alignItems: 'center' }}>
       <Logo height={30} />

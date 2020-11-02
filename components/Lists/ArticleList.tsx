@@ -19,7 +19,7 @@ interface Props {
 const ArticleList: React.FC<Props> = ({ data }) => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
 
-  const Article = ({ item }: { item: Article }) => (
+  const ArticleComponent = ({ item }: { item: Article }) => (
     <View style={styles.articleContainer}>
       <View style={styles.imageColumn}>
         {item._embedded['wp:featuredmedia'] ? (
@@ -47,7 +47,9 @@ const ArticleList: React.FC<Props> = ({ data }) => {
     </View>
   )
 
-  return <FlatList<Article> keyExtractor={item => item.id.toString()} data={data} renderItem={Article}></FlatList>
+  return (
+    <FlatList<Article> keyExtractor={item => item.id.toString()} data={data} renderItem={ArticleComponent}></FlatList>
+  )
 }
 
 interface Styles extends DefaultStyles {

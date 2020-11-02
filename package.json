@@ -6,12 +6,35 @@
     "dev": "expo start",
     "eject": "expo eject",
     "ios": "expo start --ios",
+    "lint": "yarn run eslint '**/*.{js,ts,tsx}' --quiet --fix",
+    "semantic-release": "semantic-release",
     "start": "expo start",
     "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:watch": "jest --watch -u",
     "web": "expo start --web"
   },
-  "jest": {
-    "preset": "react-native"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx}": [
+      "yarn lint",
+      "yarn test:cov --passWithNoTests"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
@@ -36,16 +59,33 @@
   },
   "devDependencies": {
     "@babel/core": "~7.12.3",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/jest": "^26.0.15",
     "@types/react": "~16.9.35",
     "@types/react-dom": "~16.9.8",
     "@types/react-native": "~0.63.2",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
     "babel-plugin-module-resolver": "^4.0.0",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
+    "husky": "^4.3.0",
+    "jest-expo": "^39.0.0",
+    "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
+    "react-test-renderer": "^17.0.1",
     "typescript": "~3.9.2"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "release": {
+    "extends": "./.release.config.json"
   }
 }

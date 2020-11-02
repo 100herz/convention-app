@@ -14,8 +14,6 @@ interface Props {
   navigation: StackNavigationProp<RootStackParamList>
 }
 
-interface Props {}
-
 const LinkList: React.FC<Props> = ({ data, navigation }) => {
   const Link = ({ item }: { item: Category }) => (
     <Touchable

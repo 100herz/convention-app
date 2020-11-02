@@ -20,9 +20,7 @@ import { API_URL_WP } from 'constants/api'
 import { Article } from '@models/article'
 import { colors, DefaultStyles, defaultStyles, fonts } from '@styles/theme'
 
-interface Props {}
-
-const ArticleScreen: React.FC<Props> = props => {
+const ArticleScreen: React.FC = () => {
   const route = useRoute<RouteProp<RootStackParamList, 'ArticleScreen'>>()
 
   const [isLoading, setLoading] = useState(true)

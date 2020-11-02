@@ -29,16 +29,16 @@ export interface Article {
   sticky: boolean
   template: string
   format: string
-  meta: any[]
+  meta: unknown[]
   categories: number[]
-  tags: any[]
+  tags: unknown[]
   acf: {
     sponsored_by: string
     should_push: boolean
     featured_slider: boolean
     news_slider: boolean
   }
-  _links: any
+  _links: unknown
   _embedded: {
     'wp:featuredmedia': [{ source_url: string }]
     'wp:term': [
