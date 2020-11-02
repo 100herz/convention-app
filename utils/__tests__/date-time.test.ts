@@ -40,11 +40,11 @@ describe('Date utils testings', () => {
 
   it('convert a ISO date string to a locale  time in a german short format', () => {
     const date = getLocaleShortTime(dummyDate)
-    expect(date).toBe('22:23')
+    expect(date).toBe('20:23')
   })
 
   it('convert a ISO date string to a locale  time in a english (US) short format', () => {
     const date = getLocaleShortTime(dummyDate, 'en-US')
-    expect(date).toBe('10:23 PM')
+    expect(date).toBe('8:23 PM')
   })
 })
