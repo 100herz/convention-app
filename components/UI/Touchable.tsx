@@ -15,7 +15,7 @@ interface Props {
 
 const Touchable: React.FC<Props> = ({ children, onPress, testID }) => {
   const TouchableComponent: ComponentType<TouchableOpacityProps | TouchableNativeFeedbackProps> =
-    Platform.OS === 'android' && Platform.Version > 20 ? TouchableNativeFeedback : TouchableOpacity
+    Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity
 
   return (
     <TouchableComponent onPress={onPress} testID={testID}>

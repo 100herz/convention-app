@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, StyleSheet, View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-import { StackNavigationProp } from '@react-navigation/stack'
 
 import LinkList from '@components/Lists/LinkList'
-import { RootStackParamList } from '@navigations/ArticleNavigator'
 import { defaultStyles } from '@styles/theme'
 import { Category } from '@models/category'
 import { API_URL_WP } from 'constants/api'
 
 const CategoryScreen: React.FC = () => {
-  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
-
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState<Category[]>([])
 
@@ -30,11 +25,7 @@ const CategoryScreen: React.FC = () => {
     getCategoriesAsync()
   }, [])
 
-  return (
-    <View style={styles.container}>
-      {isLoading ? <ActivityIndicator /> : <LinkList data={data} navigation={navigation} />}
-    </View>
-  )
+  return <View style={styles.container}>{isLoading ? <ActivityIndicator /> : <LinkList data={data} />}</View>
 }
 
 const styles = StyleSheet.create({

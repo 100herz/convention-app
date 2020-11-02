@@ -5,10 +5,15 @@ import { defaultStyles } from '@styles/theme'
 
 interface Props {
   style?: TextStyle
+  testID?: string
 }
 
-const Text: React.FC<Props> = ({ children, style }) => {
-  return <DefaultText style={{ ...styles.text, ...style }}>{children}</DefaultText>
+const Text: React.FC<Props> = ({ children, style, testID }) => {
+  return (
+    <DefaultText style={{ ...styles.text, ...style }} testID={testID}>
+      {children}
+    </DefaultText>
+  )
 }
 
 const styles = StyleSheet.create({

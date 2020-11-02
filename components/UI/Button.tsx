@@ -17,7 +17,9 @@ const Button: React.FC<Props> = ({ onPress, title, style, textStyle, testID }) =
   return (
     <Touchable onPress={onPress} testID={testID}>
       <View style={{ ...styles.container, ...style }}>
-        <Text style={{ ...styles.text, ...textStyle }}>{title}</Text>
+        <Text style={{ ...styles.text, ...textStyle }} testID="text-output">
+          {title}
+        </Text>
       </View>
     </Touchable>
   )
