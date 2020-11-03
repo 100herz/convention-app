@@ -8,9 +8,11 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strict": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
+      "@__mocks__/*": ["./__mocks__/*"],
       "@assets/*": ["./assets/*"],
+      "@constants/*": ["./constants/*"],
       "@components/*": ["./components/*"],
       "@models/*": ["./models/*"],
       "@navigations/*": ["./navigations/*"],
@@ -18,6 +20,7 @@
       "@stores/*": ["./stores/*"],
       "@styles/*": ["./styles/*"],
       "@utils/*": ["./utils/*"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types/", "./@types"]
   }
 }
