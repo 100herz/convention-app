@@ -6,7 +6,7 @@ import { StackNavigationProp } from '@react-navigation/stack'
 import Text from '@components/UI/Text'
 import Touchable from '@components/UI/Touchable'
 import { RootStackParamList } from '@navigations/ArticleNavigator'
-import { Category } from '@models/category'
+import { Category } from '@__mocks__/node_modules/@models/category'
 import { colors } from '@styles/theme'
 import { useNavigation } from '@react-navigation/native'
 

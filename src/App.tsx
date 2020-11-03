@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import * as Font from 'expo-font'
-import { AppLoading } from 'expo'
+import { AppLoading, registerRootComponent } from 'expo'
 
 import MainNavigation from '@navigations/ArticleNavigator'
 
@@ -22,4 +22,4 @@ const App: React.FC = () => {
   return <MainNavigation />
 }
 
-export default App
+export default registerRootComponent(App)

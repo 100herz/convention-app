@@ -5,7 +5,7 @@ import { RouteProp, useRoute } from '@react-navigation/native'
 import ArticleList from '@components/Lists/ArticleList'
 import { RootStackParamList } from '@navigations/ArticleNavigator'
 import { API_URL_WP } from 'constants/api'
-import { Article } from '@models/article'
+import { Article } from '@__mocks__/node_modules/@models/article'
 import { defaultStyles } from '@styles/theme'
 
 const ArticlesOverviewScreen: React.FC = () => {

@@ -1,23 +1,23 @@
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import HomeScreen from '../HomeScreen'
+import CategoriesOverviewScreen from '../CategoriesOverviewScreen'
 
 export const mockedNavigate = jest.fn()
 jest.mock('@react-navigation/native', () => {
   const actualNav = jest.requireActual('@react-navigation/native')
   return {
     ...actualNav,
-    useRoute: () => ({
-      params: { postId: 1 },
+    useNavigation: () => ({
+      navigate: mockedNavigate,
     }),
+    useNavigationParam: jest.fn(jest.requireActual('@react-navigation/native').useNavigationParam),
   }
 })
 
 describe('<Button />', () => {
-  // TODO: Add the tests
   it('renders correctly', () => {
-    //   const { toJSON } = render(<HomeScreen />)
-    //   expect(toJSON()).toMatchSnapshot()
+    // const { toJSON } = render(<CategoriesOverviewScreen />)
+    // expect(toJSON()).toMatchSnapshot()
   })
 })

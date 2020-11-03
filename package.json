@@ -37,6 +37,10 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "prettier": "./config/.prettierrc.json",
+  "eslintConfig": {
+    "extends": "./config/.eslintrc.json"
+  },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^5.8.1",
@@ -81,6 +85,7 @@
     "eslint-plugin-react": "^7.21.5",
     "husky": "^4.3.0",
     "jest-expo": "^39.0.0",
+    "jest-fetch-mock": "^3.0.3",
     "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
     "react-test-renderer": "^17.0.1",
@@ -90,6 +95,6 @@
     "access": "restricted"
   },
   "release": {
-    "extends": "./.release.config.json"
+    "extends": "./config/release.config.js"
   }
 }

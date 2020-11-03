@@ -12,7 +12,11 @@ const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={{ fontFamily: fonts.sansBold, marginVertical: 15, color: 'blue' }}>from HomeScreen.tsx</Text>
-      <Button title="Go to Categories Screen" onPress={() => navigation.navigate('CategoriesOverviewScreen')} />
+      <Button
+        title="Go to Categories Screen"
+        onPress={() => navigation.navigate('CategoriesOverviewScreen')}
+        testID="button"
+      />
     </View>
   )
 }

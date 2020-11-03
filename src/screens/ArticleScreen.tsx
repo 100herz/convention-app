@@ -16,7 +16,7 @@ import { Ionicons } from '@expo/vector-icons'
 import Text from '@components/UI/Text'
 import { RootStackParamList } from '@navigations/ArticleNavigator'
 import { getLocaleLongDate } from '@utils/date-time'
-import { API_URL_WP } from 'constants/api'
+import { API_URL_WP } from '@constants/api'
 import { Article } from '@models/article'
 import { colors, DefaultStyles, defaultStyles, fonts } from '@styles/theme'
 
@@ -47,6 +47,7 @@ const ArticleScreen: React.FC = () => {
         <ActivityIndicator />
       ) : (
         <ScrollView style={styles.container}>
+          {/* TODO: Simplify the categories output with using of JOIN */}
           <View style={styles.categoriesContainer}>
             {article?._embedded['wp:term'][0].map(category => (
               <Text key={category.id} style={styles.category}>
