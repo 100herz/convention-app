@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import * as Font from 'expo-font'
 import { AppLoading, registerRootComponent } from 'expo'
 
-import MainNavigation from '@navigations/ArticleNavigator'
+import RootNavigator from '@navigations/RootNavigator'
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -19,7 +19,7 @@ const App: React.FC = () => {
     return <AppLoading startAsync={fetchFonts} onFinish={() => setFontLoaded(true)} />
   }
 
-  return <MainNavigation />
+  return <RootNavigator />
 }
 
 export default registerRootComponent(App)

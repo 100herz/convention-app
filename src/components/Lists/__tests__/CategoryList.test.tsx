@@ -1,7 +1,8 @@
 import React from 'react'
 import { act, fireEvent, render } from '@testing-library/react-native'
 
-import HomeScreen from '../HomeScreen'
+import CategoryList from '../CategoryList'
+import { category } from '@__mocks__/category'
 
 export const mockedNavigate = jest.fn()
 jest.mock('@react-navigation/native', () => {
@@ -15,29 +16,19 @@ jest.mock('@react-navigation/native', () => {
   }
 })
 
-describe('<HomeScreen />', () => {
+describe('<LinkList />', () => {
   it('renders correctly', () => {
-    const { toJSON } = render(<HomeScreen />)
+    const { toJSON } = render(<CategoryList data={[category]} />)
     expect(toJSON()).toMatchSnapshot()
   })
 
   it('should call the navigate function once', () => {
-    const { getByTestId } = render(<HomeScreen />)
+    const { getByTestId } = render(<CategoryList data={[category]} />)
 
     act(() => {
-      fireEvent.press(getByTestId('button-1'))
+      fireEvent.press(getByTestId('link'))
     })
 
     expect(mockedNavigate).toHaveBeenCalledTimes(1)
-  })
-
-  it('should call the navigate function once', () => {
-    const { getByTestId } = render(<HomeScreen />)
-
-    act(() => {
-      fireEvent.press(getByTestId('button-2'))
-    })
-
-    expect(mockedNavigate).toHaveBeenCalledTimes(2)
   })
 })

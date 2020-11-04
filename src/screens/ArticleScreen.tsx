@@ -1,24 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import {
-  ActivityIndicator,
-  Dimensions,
-  Linking,
-  ScrollView,
-  StyleSheet,
-  TextStyle,
-  View,
-  ViewStyle,
-} from 'react-native'
+import { Dimensions, Linking, ScrollView, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
 import { RouteProp, useRoute } from '@react-navigation/native'
 import HTML from 'react-native-render-html'
 import { Ionicons } from '@expo/vector-icons'
 
+import LoadingSpinner from '@components/UI/LoadingSpinner'
 import Text from '@components/UI/Text'
-import { RootStackParamList } from '@navigations/ArticleNavigator'
+import { RootStackParamList } from '@navigations/HomeNavigator'
 import { getLocaleLongDate } from '@utils/date-time'
 import { API_URL_WP } from '@constants/api'
 import { Article } from '@models/article'
-import { colors, DefaultStyles, defaultStyles, fonts } from '@styles/theme'
+import { colors, DefaultStyles, defaultStyles, fonts, htmlBodyTagStyles } from '@styles/theme'
 
 const ArticleScreen: React.FC = () => {
   const route = useRoute<RouteProp<RootStackParamList, 'ArticleScreen'>>()
@@ -44,7 +36,7 @@ const ArticleScreen: React.FC = () => {
   return (
     <React.Fragment>
       {isLoading ? (
-        <ActivityIndicator />
+        <LoadingSpinner />
       ) : (
         <ScrollView style={styles.container}>
           {/* TODO: Simplify the categories output with using of JOIN */}
@@ -69,7 +61,7 @@ const ArticleScreen: React.FC = () => {
             html={`${article?.content.rendered}`}
             ignoredStyles={['height', 'width']}
             imagesMaxWidth={Dimensions.get('window').width - 30}
-            onLinkPress={(evt, href) => Linking.openURL(href)}
+            onLinkPress={(_, href) => Linking.openURL(href)}
           />
         </ScrollView>
       )}
@@ -113,15 +105,5 @@ const styles = StyleSheet.create<Styles>({
     fontSize: 18,
   },
 })
-
-const htmlBodyTagStyles: HTML.StylesDictionary = {
-  a: {
-    color: colors.accentColor,
-    textDecorationLine: 'none',
-  },
-  img: {
-    borderRadius: 15,
-  },
-}
 
 export default ArticleScreen

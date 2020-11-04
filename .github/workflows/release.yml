@@ -1,4 +1,4 @@
-name: Release Frontend
+name: Release
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Release Frontend
+      - name: Release
         env:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

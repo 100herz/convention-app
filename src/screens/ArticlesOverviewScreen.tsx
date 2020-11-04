@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { ActivityIndicator, StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { RouteProp, useRoute } from '@react-navigation/native'
 
 import ArticleList from '@components/Lists/ArticleList'
-import { RootStackParamList } from '@navigations/ArticleNavigator'
+import LoadingSpinner from '@components/UI/LoadingSpinner'
+import { RootStackParamList } from '@navigations/HomeNavigator'
 import { API_URL_WP } from 'constants/api'
-import { Article } from '@__mocks__/node_modules/@models/article'
+import { Article } from '@models/article'
 import { defaultStyles } from '@styles/theme'
 
 const ArticlesOverviewScreen: React.FC = () => {
@@ -29,7 +30,7 @@ const ArticlesOverviewScreen: React.FC = () => {
     getCategoriesAsync()
   }, [])
 
-  return <View style={styles.container}>{isLoading ? <ActivityIndicator /> : <ArticleList data={data} />}</View>
+  return <View style={styles.container}>{isLoading ? <LoadingSpinner /> : <ArticleList data={data} />}</View>
 }
 
 const styles = StyleSheet.create({

@@ -10,9 +10,9 @@
     "lint": "yarn run eslint '**/*.{js,ts,tsx}' --quiet --fix",
     "semantic-release": "semantic-release",
     "start": "expo start",
-    "test": "jest",
-    "test:cov": "jest --coverage",
-    "test:watch": "jest --watch -u",
+    "test": "jest --detectOpenHandles --forceExit",
+    "test:cov": "jest --coverage --detectOpenHandles --forceExit",
+    "test:watch": "jest -u --watch --detectOpenHandles --forceExit",
     "web": "expo start --web"
   },
   "husky": {
@@ -29,7 +29,7 @@
   "lint-staged": {
     "**/*.{js,ts,jsx,tsx}": [
       "yarn lint",
-      "yarn test:cov --passWithNoTests"
+      "yarn test --passWithNoTests --detectOpenHandles --forceExit"
     ]
   },
   "config": {
@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/bottom-tabs": "^5.10.4",
     "@react-navigation/native": "^5.8.1",
     "@react-navigation/stack": "^5.11.0",
     "expo": "~39.0.3",

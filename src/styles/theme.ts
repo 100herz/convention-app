@@ -1,4 +1,5 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Platform, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import HTML from 'react-native-render-html'
 
 export const colors = {
   primaryColor: '#333333',
@@ -13,12 +14,25 @@ export const fonts = {
   serifBold: 'serif-bold',
 }
 
+export const htmlBodyTagStyles: HTML.StylesDictionary = {
+  a: {
+    color: colors.accentColor,
+    textDecorationLine: 'none',
+  },
+  img: {
+    borderRadius: 15,
+  },
+}
+
 export interface DefaultStyles {
   container: ViewStyle
   title: TextStyle
   text: TextStyle
   dateContainer: ViewStyle
   date: TextStyle
+  listContainer: ViewStyle
+  listItemContainer: ViewStyle
+  switch: ViewStyle
 }
 
 export const defaultStyles = StyleSheet.create<DefaultStyles>({
@@ -45,5 +59,19 @@ export const defaultStyles = StyleSheet.create<DefaultStyles>({
     color: colors.accentColor,
     fontSize: 10,
     marginLeft: 5,
+  },
+  listContainer: {
+    paddingTop: 15,
+  },
+  listItemContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderBottomColor: colors.grayLight,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+  },
+  switch: {
+    transform: Platform.OS === 'ios' ? [{ scaleX: 0.7 }, { scaleY: 0.7 }] : [],
   },
 })

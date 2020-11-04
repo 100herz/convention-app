@@ -1,8 +1,8 @@
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@testing-library/react-native'
 
-import LinkList from '../LinkList'
-import { category } from '@__mocks__/category'
+import LegalList from '../LegalList'
+import { legalArray } from '@__mocks__/legal'
 
 export const mockedNavigate = jest.fn()
 jest.mock('@react-navigation/native', () => {
@@ -16,15 +16,19 @@ jest.mock('@react-navigation/native', () => {
   }
 })
 
-describe('<LinkList />', () => {
+describe('<LegalList />', () => {
   it('renders correctly', () => {
-    const { toJSON } = render(<LinkList data={[category]} />)
+    const { toJSON } = render(<LegalList data={legalArray} />)
     expect(toJSON()).toMatchSnapshot()
   })
 
   it('should call the navigate function once', () => {
-    const { getByTestId } = render(<LinkList data={[category]} />)
-    fireEvent.press(getByTestId('link'))
+    const { getByTestId } = render(<LegalList data={legalArray} />)
+
+    act(() => {
+      fireEvent.press(getByTestId('link-1'))
+    })
+
     expect(mockedNavigate).toHaveBeenCalledTimes(1)
   })
 })

@@ -15,6 +15,7 @@
       "@constants/*": ["./constants/*"],
       "@components/*": ["./components/*"],
       "@models/*": ["./models/*"],
+      "@data/*": ["./data/*"],
       "@navigations/*": ["./navigations/*"],
       "@screens/*": ["./screens/*"],
       "@stores/*": ["./stores/*"],
