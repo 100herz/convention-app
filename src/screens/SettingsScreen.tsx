@@ -12,8 +12,8 @@ import { defaultStyles, DefaultStyles } from '@styles/theme'
 export const settingArray: Setting[] = [{ id: 1, name: 'Push Mitteilungen' }]
 
 const legalScreens: Legal[] = [
-  { id: 1, name: 'Impressum' },
-  { id: 2, name: 'Datenschutz' },
+  { id: 79, name: 'Impressum' },
+  { id: 1105, name: 'Datenschutz' },
 ]
 
 const SettingsScreen: React.FC = () => {

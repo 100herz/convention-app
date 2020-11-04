@@ -1,4 +1,5 @@
 import { Platform, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import HTML from 'react-native-render-html'
 
 export const colors = {
   primaryColor: '#333333',
@@ -11,6 +12,16 @@ export const fonts = {
   sans: 'sans',
   sansBold: 'sans-bold',
   serifBold: 'serif-bold',
+}
+
+export const htmlBodyTagStyles: HTML.StylesDictionary = {
+  a: {
+    color: colors.accentColor,
+    textDecorationLine: 'none',
+  },
+  img: {
+    borderRadius: 15,
+  },
 }
 
 export interface DefaultStyles {

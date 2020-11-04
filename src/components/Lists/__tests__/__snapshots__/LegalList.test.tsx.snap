@@ -23,7 +23,7 @@ exports[`<LegalList /> renders correctly 1`] = `
         "opacity": 1,
       }
     }
-    testID="link"
+    testID="link-1"
   >
     <View
       style={
@@ -65,7 +65,7 @@ exports[`<LegalList /> renders correctly 1`] = `
         "opacity": 1,
       }
     }
-    testID="link"
+    testID="link-2"
   >
     <View
       style={

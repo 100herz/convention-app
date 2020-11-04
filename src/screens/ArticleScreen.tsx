@@ -10,7 +10,7 @@ import { RootStackParamList } from '@navigations/HomeNavigator'
 import { getLocaleLongDate } from '@utils/date-time'
 import { API_URL_WP } from '@constants/api'
 import { Article } from '@models/article'
-import { colors, DefaultStyles, defaultStyles, fonts } from '@styles/theme'
+import { colors, DefaultStyles, defaultStyles, fonts, htmlBodyTagStyles } from '@styles/theme'
 
 const ArticleScreen: React.FC = () => {
   const route = useRoute<RouteProp<RootStackParamList, 'ArticleScreen'>>()
@@ -61,7 +61,7 @@ const ArticleScreen: React.FC = () => {
             html={`${article?.content.rendered}`}
             ignoredStyles={['height', 'width']}
             imagesMaxWidth={Dimensions.get('window').width - 30}
-            onLinkPress={(evt, href) => Linking.openURL(href)}
+            onLinkPress={(_, href) => Linking.openURL(href)}
           />
         </ScrollView>
       )}
@@ -105,15 +105,5 @@ const styles = StyleSheet.create<Styles>({
     fontSize: 18,
   },
 })
-
-const htmlBodyTagStyles: HTML.StylesDictionary = {
-  a: {
-    color: colors.accentColor,
-    textDecorationLine: 'none',
-  },
-  img: {
-    borderRadius: 15,
-  },
-}
 
 export default ArticleScreen
