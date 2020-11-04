@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import {
-  ActivityIndicator,
-  Dimensions,
-  Linking,
-  ScrollView,
-  StyleSheet,
-  TextStyle,
-  View,
-  ViewStyle,
-} from 'react-native'
+import { Dimensions, Linking, ScrollView, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
 import { RouteProp, useRoute } from '@react-navigation/native'
 import HTML from 'react-native-render-html'
 import { Ionicons } from '@expo/vector-icons'
 
+import LoadingSpinner from '@components/UI/LoadingSpinner'
 import Text from '@components/UI/Text'
 import { RootStackParamList } from '@navigations/ArticleNavigator'
 import { getLocaleLongDate } from '@utils/date-time'
@@ -44,7 +36,7 @@ const ArticleScreen: React.FC = () => {
   return (
     <React.Fragment>
       {isLoading ? (
-        <ActivityIndicator />
+        <LoadingSpinner />
       ) : (
         <ScrollView style={styles.container}>
           {/* TODO: Simplify the categories output with using of JOIN */}
