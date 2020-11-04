@@ -1,5 +1,5 @@
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@testing-library/react-native'
 
 import HomeScreen from '../HomeScreen'
 
@@ -23,7 +23,21 @@ describe('<HomeScreen />', () => {
 
   it('should call the navigate function once', () => {
     const { getByTestId } = render(<HomeScreen />)
-    fireEvent.press(getByTestId('button'))
+
+    act(() => {
+      fireEvent.press(getByTestId('button-1'))
+    })
+
     expect(mockedNavigate).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call the navigate function once', () => {
+    const { getByTestId } = render(<HomeScreen />)
+
+    act(() => {
+      fireEvent.press(getByTestId('button-2'))
+    })
+
+    expect(mockedNavigate).toHaveBeenCalledTimes(2)
   })
 })

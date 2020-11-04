@@ -3,7 +3,7 @@ import { Button, StyleSheet, Text, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
-import { RootStackParamList } from '@navigations/ArticleNavigator'
+import { RootStackParamList } from '@navigations/HomeNavigator'
 import { fonts } from '@styles/theme'
 
 const HomeScreen: React.FC = () => {
@@ -15,7 +15,12 @@ const HomeScreen: React.FC = () => {
       <Button
         title="Go to Categories Screen"
         onPress={() => navigation.navigate('CategoriesOverviewScreen')}
-        testID="button"
+        testID="button-1"
+      />
+      <Button
+        title="Go to Settings Screen"
+        onPress={() => navigation.navigate('CategoriesOverviewScreen')}
+        testID="button-2"
       />
     </View>
   )

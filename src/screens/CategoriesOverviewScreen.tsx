@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import LinkList from '@components/Lists/LinkList'
+import CategoryList from '@components/Lists/CategoryList'
 import LoadingSpinner from '@components/UI/LoadingSpinner'
-import { defaultStyles } from '@styles/theme'
+import { DefaultStyles, defaultStyles } from '@styles/theme'
 import { Category } from '@models/category'
 import { API_URL_WP } from 'constants/api'
 
@@ -26,10 +26,13 @@ const CategoryScreen: React.FC = () => {
     getCategoriesAsync()
   }, [])
 
-  return <View style={styles.container}>{isLoading ? <LoadingSpinner /> : <LinkList data={data} />}</View>
+  return <View style={styles.container}>{isLoading ? <LoadingSpinner /> : <CategoryList data={data} />}</View>
 }
 
-const styles = StyleSheet.create({
+type Styles = DefaultStyles
+
+const styles = StyleSheet.create<Styles>({
+  ...defaultStyles,
   container: {
     ...defaultStyles.container,
     paddingHorizontal: 25,

@@ -7,8 +7,8 @@ import { Ionicons } from '@expo/vector-icons'
 
 import Text from '@components/UI/Text'
 import Button from '@components/UI/Button'
-import { RootStackParamList } from '@navigations/ArticleNavigator'
-import { Article } from '@__mocks__/article'
+import { RootStackParamList } from '@navigations/HomeNavigator'
+import { Article } from '@models/article'
 import { getLocaleLongDate } from '@utils/date-time'
 import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 

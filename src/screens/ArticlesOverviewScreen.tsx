@@ -4,7 +4,7 @@ import { RouteProp, useRoute } from '@react-navigation/native'
 
 import ArticleList from '@components/Lists/ArticleList'
 import LoadingSpinner from '@components/UI/LoadingSpinner'
-import { RootStackParamList } from '@navigations/ArticleNavigator'
+import { RootStackParamList } from '@navigations/HomeNavigator'
 import { API_URL_WP } from 'constants/api'
 import { Article } from '@models/article'
 import { defaultStyles } from '@styles/theme'

@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 
 import LoadingSpinner from '@components/UI/LoadingSpinner'
 import Text from '@components/UI/Text'
-import { RootStackParamList } from '@navigations/ArticleNavigator'
+import { RootStackParamList } from '@navigations/HomeNavigator'
 import { getLocaleLongDate } from '@utils/date-time'
 import { API_URL_WP } from '@constants/api'
 import { Article } from '@models/article'

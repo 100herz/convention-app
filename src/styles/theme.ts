@@ -1,4 +1,4 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { Platform, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 export const colors = {
   primaryColor: '#333333',
@@ -19,6 +19,9 @@ export interface DefaultStyles {
   text: TextStyle
   dateContainer: ViewStyle
   date: TextStyle
+  listContainer: ViewStyle
+  listItemContainer: ViewStyle
+  switch: ViewStyle
 }
 
 export const defaultStyles = StyleSheet.create<DefaultStyles>({
@@ -45,5 +48,19 @@ export const defaultStyles = StyleSheet.create<DefaultStyles>({
     color: colors.accentColor,
     fontSize: 10,
     marginLeft: 5,
+  },
+  listContainer: {
+    paddingTop: 15,
+  },
+  listItemContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderBottomColor: colors.grayLight,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+  },
+  switch: {
+    transform: Platform.OS === 'ios' ? [{ scaleX: 0.7 }, { scaleY: 0.7 }] : [],
   },
 })

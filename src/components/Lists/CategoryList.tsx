@@ -1,20 +1,20 @@
 import React from 'react'
-import { FlatList, StyleSheet, View, ViewStyle } from 'react-native'
+import { FlatList, StyleSheet, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
 import Text from '@components/UI/Text'
 import Touchable from '@components/UI/Touchable'
-import { RootStackParamList } from '@navigations/ArticleNavigator'
-import { Category } from '@__mocks__/node_modules/@models/category'
-import { colors } from '@styles/theme'
-import { useNavigation } from '@react-navigation/native'
+import { RootStackParamList } from '@navigations/HomeNavigator'
+import { Category } from '@models/category'
+import { colors, defaultStyles, DefaultStyles } from '@styles/theme'
 
 interface Props {
   data: Category[]
 }
 
-const LinkList: React.FC<Props> = ({ data }) => {
+const CategoryList: React.FC<Props> = ({ data }) => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
 
   const Link = ({ item }: { item: Category }) => (
@@ -22,7 +22,7 @@ const LinkList: React.FC<Props> = ({ data }) => {
       onPress={() => navigation.navigate('ArticlesOverviewScreen', { categoryId: item.id, categoryName: item.name })}
       testID="link"
     >
-      <View style={styles.linkContainer}>
+      <View style={styles.listItemContainer}>
         <Text>{item.name}</Text>
         <Ionicons name="ios-arrow-round-forward" size={20} color={colors.primaryColor} />
       </View>
@@ -39,23 +39,8 @@ const LinkList: React.FC<Props> = ({ data }) => {
   )
 }
 
-interface Styles {
-  listContainer: ViewStyle
-  linkContainer: ViewStyle
-}
-
-const styles = StyleSheet.create<Styles>({
-  listContainer: {
-    paddingTop: 15,
-  },
-  linkContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderBottomWidth: 1,
-    borderBottomColor: colors.grayLight,
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-  },
+const styles = StyleSheet.create<DefaultStyles>({
+  ...defaultStyles,
 })
 
-export default LinkList
+export default CategoryList
