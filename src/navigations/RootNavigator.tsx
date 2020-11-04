@@ -18,10 +18,10 @@ export type RootTabParamList = {
 const RootTab = createBottomTabNavigator<RootTabParamList>()
 
 const defaultTabBarOptions: BottomTabBarOptions = {
-  activeTintColor: colors.grayLight,
-  inactiveTintColor: colors.gray,
+  activeTintColor: Platform.OS === 'ios' ? colors.grayLight : colors.grayLight,
+  inactiveTintColor: Platform.OS === 'ios' ? colors.gray : colors.gray,
   style: {
-    backgroundColor: colors.primaryColor,
+    backgroundColor: Platform.OS === 'ios' ? colors.primaryColor : colors.accentColor,
   },
   showLabel: false,
 }

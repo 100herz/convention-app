@@ -26,6 +26,7 @@ module.exports = function (api) {
             '@assets': ['./src/assets'],
             '@constants': ['./src/constants'],
             '@components': ['./src/components'],
+            '@data': ['./src/data'],
             '@models': ['./src/models'],
             '@navigations': ['./src/navigations'],
             '@screens': ['./src/screens'],

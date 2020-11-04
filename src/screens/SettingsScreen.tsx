@@ -3,9 +3,11 @@ import { ScrollView, StyleSheet, View } from 'react-native'
 
 import SettingsList from '@components/Lists/SettingsList'
 import LegalList from '@components/Lists/LegalList'
-import { defaultStyles, DefaultStyles } from '@styles/theme'
-import { Legal } from '@models/legal'
+import SocialList from '@components/Lists/SocialList'
+import { socialMediaChannels } from '@data/social'
 import { Setting } from '@models/setting'
+import { Legal } from '@models/legal'
+import { defaultStyles, DefaultStyles } from '@styles/theme'
 
 export const settingArray: Setting[] = [{ id: 1, name: 'Push Mitteilungen' }]
 
@@ -20,6 +22,7 @@ const SettingsScreen: React.FC = () => {
       <ScrollView>
         <SettingsList data={settingArray} />
         <LegalList data={legalScreens} />
+        <SocialList data={socialMediaChannels} />
       </ScrollView>
     </View>
   )
