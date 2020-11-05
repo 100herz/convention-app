@@ -1,4 +1,5 @@
 import React from 'react'
+import { Platform } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { BottomTabBarOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons'
@@ -7,7 +8,6 @@ import HomeNavigator from '@navigations/HomeNavigator'
 import CategoriesNavigator from '@navigations/CategoriesNavigator'
 import SettingsNavigator from '@navigations/SettingsNavigator'
 import { colors } from '@styles/theme'
-import { Platform } from 'react-native'
 
 export type RootTabParamList = {
   HomeNavigator: undefined
@@ -18,8 +18,8 @@ export type RootTabParamList = {
 const RootTab = createBottomTabNavigator<RootTabParamList>()
 
 const defaultTabBarOptions: BottomTabBarOptions = {
-  activeTintColor: Platform.OS === 'ios' ? colors.grayLight : colors.grayLight,
-  inactiveTintColor: Platform.OS === 'ios' ? colors.gray : colors.gray,
+  activeTintColor: Platform.OS === 'ios' ? colors.grayLight : colors.gray,
+  inactiveTintColor: Platform.OS === 'ios' ? colors.gray : colors.grayLight,
   style: {
     backgroundColor: Platform.OS === 'ios' ? colors.primaryColor : colors.accentColor,
   },
@@ -27,7 +27,9 @@ const defaultTabBarOptions: BottomTabBarOptions = {
 }
 
 const RootNavigator: React.FC = () => {
-  const os = Platform.OS === 'ios' ? 'ios' : 'md'
+  const icon = (name: string, size?: number, color?: string) => {
+    return <Ionicons name={`${Platform.OS === 'ios' ? 'ios' : 'md'}-${name}`} size={size} color={color} />
+  }
 
   return (
     <NavigationContainer>
@@ -37,21 +39,21 @@ const RootNavigator: React.FC = () => {
           component={HomeNavigator}
           options={{
             tabBarLabel: undefined,
-            tabBarIcon: ({ size, color }) => <Ionicons name={`${os}-home`} size={size} color={color} />,
+            tabBarIcon: ({ size, color }) => icon('home', size, color),
           }}
         />
         <RootTab.Screen
           name="CategoriesNavigator"
           component={CategoriesNavigator}
           options={{
-            tabBarIcon: ({ size, color }) => <Ionicons name={`${os}-images`} size={size} color={color} />,
+            tabBarIcon: ({ size, color }) => icon('images', size, color),
           }}
         />
         <RootTab.Screen
           name="SettingsNavigator"
           component={SettingsNavigator}
           options={{
-            tabBarIcon: ({ size, color }) => <Ionicons name={`${os}-more`} size={size} color={color} />,
+            tabBarIcon: ({ size, color }) => icon('more', size, color),
           }}
         />
       </RootTab.Navigator>

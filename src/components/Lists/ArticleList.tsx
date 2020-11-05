@@ -7,7 +7,8 @@ import { Ionicons } from '@expo/vector-icons'
 
 import Text from '@components/UI/Text'
 import Button from '@components/UI/Button'
-import { RootStackParamList } from '@navigations/HomeNavigator'
+import { HomeStackParamList } from '@navigations/HomeNavigator'
+import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
 import { Article } from '@models/article'
 import { getLocaleLongDate } from '@utils/date-time'
 import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
@@ -17,7 +18,7 @@ interface Props {
 }
 
 const ArticleList: React.FC<Props> = ({ data }) => {
-  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
+  const navigation = useNavigation<StackNavigationProp<HomeStackParamList | CategoriesStackParamList>>()
 
   const ArticleComponent = ({ item }: { item: Article }) => (
     <View style={styles.articleContainer}>

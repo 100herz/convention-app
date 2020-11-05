@@ -6,14 +6,15 @@ import { Ionicons } from '@expo/vector-icons'
 
 import LoadingSpinner from '@components/UI/LoadingSpinner'
 import Text from '@components/UI/Text'
-import { RootStackParamList } from '@navigations/HomeNavigator'
+import { HomeStackParamList } from '@navigations/HomeNavigator'
+import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
 import { getLocaleLongDate } from '@utils/date-time'
 import { API_URL_WP } from '@constants/api'
 import { Article } from '@models/article'
 import { colors, DefaultStyles, defaultStyles, fonts, htmlBodyTagStyles } from '@styles/theme'
 
 const ArticleScreen: React.FC = () => {
-  const route = useRoute<RouteProp<RootStackParamList, 'ArticleScreen'>>()
+  const route = useRoute<RouteProp<HomeStackParamList | CategoriesStackParamList, 'ArticleScreen'>>()
 
   const [isLoading, setLoading] = useState(true)
   const [article, setArticle] = useState<Article | undefined>(undefined)

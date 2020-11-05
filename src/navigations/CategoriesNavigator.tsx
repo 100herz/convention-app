@@ -2,20 +2,19 @@ import React from 'react'
 import { View } from 'react-native'
 import { StackNavigationOptions, createStackNavigator } from '@react-navigation/stack'
 
+import Logo from '@components/UI/Logo'
 import CategoriesOverviewScreen from '@screens/CategoriesOverviewScreen'
 import ArticlesOverviewScreen from '@screens/ArticlesOverviewScreen'
 import ArticleScreen from '@screens/ArticleScreen'
-import Logo from '@components/UI/Logo'
 import { colors } from '@styles/theme'
 
-export type RootStackParamList = {
-  HomeScreen: undefined
+export type CategoriesStackParamList = {
   CategoriesOverviewScreen: undefined
   ArticlesOverviewScreen: { categoryId?: number; categoryName?: string }
   ArticleScreen: { postId: number }
 }
 
-const CategoriesStack = createStackNavigator<RootStackParamList>()
+const CategoriesStack = createStackNavigator<CategoriesStackParamList>()
 
 const defaultNavigatorOptions: StackNavigationOptions = {
   headerTintColor: colors.accentColor,
