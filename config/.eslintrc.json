@@ -9,6 +9,10 @@
       "jsx": true
     }
   },
+  "globals": {
+    "module": "readonly",
+    "process": "readonly"
+  },
   "settings": {
     "react": {
       "version": "detect"
@@ -16,6 +20,8 @@
   },
   "plugins": ["@typescript-eslint", "react", "prettier"],
   "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "prettier/react",
