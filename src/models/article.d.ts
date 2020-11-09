@@ -10,10 +10,10 @@ export declare interface Article {
   }
   categories: number[]
   acf: {
-    sponsored_by: string
-    should_push: boolean
-    featured_slider: boolean
-    news_slider: boolean
+    sponsored_by: string | null
+    should_push: boolean | null
+    featured_slider: boolean | null
+    news_slider: boolean | null
   }
   _links: unknown
   _embedded: {

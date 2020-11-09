@@ -4,137 +4,99 @@ exports[`<ArticleList /> renders correctly 1`] = `
 <View
   style={
     Object {
-      "alignItems": "center",
-      "flexDirection": "row",
-      "padding": 15,
+      "borderRadius": 10,
+      "height": 740,
+      "padding": 10,
     }
   }
 >
   <View
+    accessibilityIgnoresInvertColors={true}
     style={
       Object {
-        "borderRadius": 15,
-        "height": 100,
-        "justifyContent": "center",
-        "width": 100,
+        "flex": 1,
+        "justifyContent": "space-between",
+        "resizeMode": "cover",
       }
     }
   >
     <Image
       source={
         Object {
-          "uri": "https://www.convention-net.de/wp-content/uploads/2020/10/Trendanalyse-Restart2020_21-w800-h600-1.jpg",
+          "uri": undefined,
         }
       }
       style={
-        Object {
-          "borderRadius": 15,
-          "flex": 1,
-        }
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          Object {
+            "borderRadius": 15,
+          },
+        ]
       }
     />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "flex-start",
-        "paddingHorizontal": 15,
-        "width": 620,
-      }
-    }
-  >
-    <View
-      style={Object {}}
-    >
-      <Text
-        allowFontScaling={true}
-        selectable={false}
-        style={
-          Array [
-            Object {},
-            Object {},
-          ]
-        }
-      >
-        <Text
-          allowFontScaling={true}
-          style={
-            Object {
-              "color": "#333333",
-              "fontFamily": "sans",
-              "fontSize": 13,
-            }
-          }
-        >
-          Neue degefest-TrendAnalyse: Restart aus der Corona-Krise
-        </Text>
-      </Text>
-    </View>
-    <View
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "paddingBottom": 10,
-          "paddingTop": 5,
+          "alignItems": "flex-end",
+          "backgroundColor": "rgba(223, 227, 232, 0.7)",
+          "borderTopLeftRadius": 15,
+          "borderTopRightRadius": 15,
+          "color": "#333333",
+          "fontFamily": "sans",
+          "fontSize": 14,
+          "paddingHorizontal": 30,
+          "paddingVertical": 10,
+          "textAlign": "right",
+          "width": "auto",
         }
       }
     >
-      <Text />
+      Sponsored by 
       <Text
         style={
           Object {
-            "color": "#872232",
+            "color": "#333333",
+            "fontFamily": "sans-bold",
+          }
+        }
+      >
+        100Herz
+      </Text>
+    </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(223, 227, 232, 0.7)",
+          "borderBottomLeftRadius": 15,
+          "borderBottomRightRadius": 15,
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 30,
+          "paddingVertical": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#333333",
             "fontFamily": "sans",
-            "fontSize": 10,
-            "marginLeft": 5,
+            "fontSize": 18,
           }
         }
       >
-        30. Oktober 2020
+        Neue degefest-TrendAnalyse: Restart aus der Corona-Krise
       </Text>
-    </View>
-    <View
-      accessible={true}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
-      testID="button"
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#872232",
-            "borderRadius": 4,
-            "paddingHorizontal": 15,
-            "paddingVertical": 2,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "white",
-              "fontFamily": "sans-bold",
-              "fontSize": 12,
-              "textTransform": "uppercase",
-            }
-          }
-          testID="text-output"
-        >
-          Details
-        </Text>
-      </View>
     </View>
   </View>
 </View>

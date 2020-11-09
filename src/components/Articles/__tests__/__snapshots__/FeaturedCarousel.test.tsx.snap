@@ -671,7 +671,7 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "rgba(223, 227, 232, 0.8)",
+                    "backgroundColor": "rgba(223, 227, 232, 0.7)",
                     "justifyContent": "flex-end",
                     "paddingHorizontal": 30,
                     "paddingVertical": 10,
@@ -771,7 +771,7 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
                 style={
                   Object {
                     "alignItems": "flex-end",
-                    "backgroundColor": "rgba(223, 227, 232, 0.8)",
+                    "backgroundColor": "rgba(223, 227, 232, 0.7)",
                     "color": "#333333",
                     "fontFamily": "sans",
                     "fontSize": 14,
@@ -797,7 +797,7 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "rgba(223, 227, 232, 0.8)",
+                    "backgroundColor": "rgba(223, 227, 232, 0.7)",
                     "justifyContent": "flex-end",
                     "paddingHorizontal": 30,
                     "paddingVertical": 10,

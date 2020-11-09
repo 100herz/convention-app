@@ -16,13 +16,18 @@ const HomeScreen: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([])
   const [featuredArticles, setFeaturedArticles] = useState<Article[]>([])
   const [newsArticles, setNewsArticles] = useState<Article[]>([])
+  const [lastSponsoredArticle, setLastSponsoredArticle] = useState<Article>()
 
   useEffect(() => {
     const getArticlesAsync = async () => {
       try {
         // TODO: Lazyload all posts instead of hardcoded 25 like now
         const response = await fetch(`${API_URL_WP}${API_WP_ARTICLE}&per_page=25&categories=1`)
-        setArticles(await response.json())
+        const lastArticles: Article[] = await response.json()
+        if (lastArticles[0].acf.sponsored_by !== null && lastArticles[0].acf.sponsored_by.length > 0) {
+          lastArticles.shift()
+        }
+        setArticles(lastArticles)
       } catch (error) {
         console.error(error)
       } finally {
@@ -62,14 +67,29 @@ const HomeScreen: React.FC = () => {
     getNewsArticlesAsync()
   }, [])
 
+  useEffect(() => {
+    const getLastSponsoredArticleAsync = async () => {
+      try {
+        const response = await fetch(API_URL_WP + API_WP_ARTICLE)
+        const lastArticles: Article[] = await response.json()
+        setLastSponsoredArticle(
+          lastArticles.find(article => article.acf.sponsored_by !== null && article.acf.sponsored_by.length > 0)
+        )
+      } catch (error) {
+        console.error(error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    getLastSponsoredArticleAsync()
+  }, [])
+
   const SectionHeader = () => (
     <View style={styles.sectionHeaderContainer}>
       <FeaturedCarousel articles={featuredArticles} />
       <Text style={styles.title}>News</Text>
       <NewsCarousel articles={newsArticles} />
-      {/*
-      // TODO: Add the last sponsored post here.
-      */}
+      {lastSponsoredArticle && <ArticlePreview article={lastSponsoredArticle} />}
     </View>
   )
 

@@ -23,10 +23,11 @@ const FeaturedCarousel: React.FC<Props> = ({ articles }) => {
         <View
           style={{
             ...styles.slideContainer,
-            justifyContent: item.acf.sponsored_by !== '' ? 'space-between' : 'flex-end',
+            justifyContent:
+              item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0 ? 'space-between' : 'flex-end',
           }}
         >
-          {item.acf.sponsored_by !== '' && (
+          {item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0 && (
             <Text style={styles.sponsored}>
               Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{item.acf.sponsored_by}</Text>
             </Text>
@@ -52,8 +53,8 @@ const FeaturedCarousel: React.FC<Props> = ({ articles }) => {
 
 interface Styles extends DefaultStyles {
   slideContainer: ViewStyle
-  titleContainer: ViewStyle
   sponsored: TextStyle
+  titleContainer: ViewStyle
 }
 
 const styles = StyleSheet.create<Styles>({
@@ -67,7 +68,7 @@ const styles = StyleSheet.create<Styles>({
   sponsored: {
     width: 'auto',
     alignItems: 'flex-end',
-    backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.8)`,
+    backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.7)`,
     paddingHorizontal: 30,
     paddingVertical: 10,
     fontSize: 14,
@@ -75,7 +76,7 @@ const styles = StyleSheet.create<Styles>({
   },
   titleContainer: {
     justifyContent: 'flex-end',
-    backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.8)`,
+    backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.7)`,
     paddingHorizontal: 30,
     paddingVertical: 10,
   },

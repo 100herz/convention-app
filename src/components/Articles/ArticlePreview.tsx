@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dimensions, Image, ImageStyle, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
+import { Dimensions, Image, ImageBackground, ImageStyle, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
 import HTML from 'react-native-render-html'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
@@ -12,16 +12,18 @@ import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
 import { Article } from '@models/article'
 import { getLocaleLongDate } from '@utils/date-time'
 import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
+import { hexToRgb } from '@utils/styling'
 
 interface Props {
   article: Article
   hasImage?: boolean
+  ignoreSponsored?: boolean
 }
 
-const ArticlePreview: React.FC<Props> = ({ article, hasImage = true }) => {
+const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSponsored = false }) => {
   const navigation = useNavigation<StackNavigationProp<HomeStackParamList | CategoriesStackParamList>>()
 
-  return (
+  const defaultArticle = (
     <View style={styles.articleContainer}>
       {hasImage && (
         <View style={styles.imageColumn}>
@@ -51,6 +53,27 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true }) => {
       </View>
     </View>
   )
+
+  const sponsoredArticle = (
+    <View style={styles.sponsoredArticleContainer}>
+      <ImageBackground
+        source={{ uri: article._embedded['wp:featuredmedia'] && article._embedded['wp:featuredmedia'][0].source_url }}
+        style={styles.backgroundImage}
+        imageStyle={{ borderRadius: 15 }}
+      >
+        <Text style={styles.sponsoredText}>
+          Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf.sponsored_by}</Text>
+        </Text>
+        <View style={styles.sponsoredTitleContainer}>
+          <Text style={styles.sponsoredTitle}>{article.title.rendered}</Text>
+        </View>
+      </ImageBackground>
+    </View>
+  )
+
+  return ignoreSponsored || !article.acf.sponsored_by || article.acf.sponsored_by === ''
+    ? defaultArticle
+    : sponsoredArticle
 }
 
 interface Styles extends DefaultStyles {
@@ -60,10 +83,18 @@ interface Styles extends DefaultStyles {
   noImage: ViewStyle
   noImageText: TextStyle
   textColumn: ViewStyle
+  sponsoredArticleContainer: ViewStyle
+  sponsoredText: TextStyle
+  sponsoredTitleContainer: ViewStyle
+  sponsoredTitle: TextStyle
 }
 
 const styles = StyleSheet.create<Styles>({
   ...defaultStyles,
+  backgroundImage: {
+    ...defaultStyles.backgroundImage,
+    justifyContent: 'space-between',
+  },
   articleContainer: {
     alignItems: 'center',
     flexDirection: 'row',
@@ -99,6 +130,33 @@ const styles = StyleSheet.create<Styles>({
     fontFamily: fonts.sans,
     fontSize: 13,
     color: colors.primaryColor,
+  },
+  sponsoredArticleContainer: {
+    padding: 10,
+    height: Dimensions.get('screen').width - 10,
+    borderRadius: 10,
+  },
+  sponsoredText: {
+    width: 'auto',
+    alignItems: 'flex-end',
+    backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.7)`,
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    fontSize: 14,
+    textAlign: 'right',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+  },
+  sponsoredTitleContainer: {
+    justifyContent: 'flex-end',
+    backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.7)`,
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
+  },
+  sponsoredTitle: {
+    fontSize: 18,
   },
 })
 

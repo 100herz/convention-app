@@ -12,7 +12,7 @@ interface Props {
 const NewsCarousel: React.FC<Props> = ({ articles }) => {
   const screenWidth = Dimensions.get('screen').width
 
-  const slideItem = ({ item }: { item: Article }) => <ArticlePreview article={item} hasImage={false} />
+  const slideItem = ({ item }: { item: Article }) => <ArticlePreview article={item} hasImage={false} ignoreSponsored />
 
   return (
     <Carousel
