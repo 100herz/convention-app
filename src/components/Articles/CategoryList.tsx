@@ -36,7 +36,7 @@ const CategoryList: React.FC<Props> = ({ data }) => {
       keyExtractor={item => item.id.toString()}
       data={data}
       renderItem={Link}
-    ></FlatList>
+    />
   )
 }
 

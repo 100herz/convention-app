@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dimensions, FlatList, Image, ImageStyle, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
+import { Dimensions, Image, ImageStyle, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
 import HTML from 'react-native-render-html'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
@@ -14,17 +14,17 @@ import { getLocaleLongDate } from '@utils/date-time'
 import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 
 interface Props {
-  data: Article[]
+  article: Article
 }
 
-const ArticleList: React.FC<Props> = ({ data }) => {
+const ArticlePreview: React.FC<Props> = ({ article }) => {
   const navigation = useNavigation<StackNavigationProp<HomeStackParamList | CategoriesStackParamList>>()
 
-  const ArticleComponent = ({ item }: { item: Article }) => (
+  return (
     <View style={styles.articleContainer}>
       <View style={styles.imageColumn}>
-        {item._embedded['wp:featuredmedia'] ? (
-          <Image style={styles.image} source={{ uri: item._embedded['wp:featuredmedia'][0].source_url }} />
+        {article._embedded['wp:featuredmedia'] ? (
+          <Image style={styles.image} source={{ uri: article._embedded['wp:featuredmedia'][0].source_url }} />
         ) : (
           <View style={styles.noImage} testID="no-image">
             <Text style={styles.noImageText}>NO</Text>
@@ -34,23 +34,19 @@ const ArticleList: React.FC<Props> = ({ data }) => {
         )}
       </View>
       <View style={styles.textColumn}>
-        <HTML baseFontStyle={styles.title} html={`${item.title.rendered}`} />
+        <HTML baseFontStyle={styles.title} html={`${article.title.rendered}`} />
         <View style={styles.dateContainer}>
           <Ionicons name="ios-clock" size={12} color={colors.accentColor} />
-          <Text style={styles.date}>{getLocaleLongDate(new Date(item.date_gmt))}</Text>
+          <Text style={styles.date}>{getLocaleLongDate(new Date(article.date_gmt))}</Text>
         </View>
         <Button
           textStyle={{ fontSize: 12 }}
           title="Details"
-          onPress={() => navigation.navigate('ArticleScreen', { postId: item.id })}
+          onPress={() => navigation.navigate('ArticleScreen', { postId: article.id })}
           testID="button"
         />
       </View>
     </View>
-  )
-
-  return (
-    <FlatList<Article> keyExtractor={item => item.id.toString()} data={data} renderItem={ArticleComponent}></FlatList>
   )
 }
 
@@ -103,4 +99,4 @@ const styles = StyleSheet.create<Styles>({
   },
 })
 
-export default ArticleList
+export default ArticlePreview
