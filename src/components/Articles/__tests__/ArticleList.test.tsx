@@ -1,7 +1,8 @@
 import React from 'react'
-import { act, fireEvent, render } from '@testing-library/react-native'
+import { render } from '@testing-library/react-native'
 
-import HomeScreen from '../HomeScreen'
+import ArticleList from '../ArticleList'
+import { article } from '@__mocks__/article'
 
 export const mockedNavigate = jest.fn()
 jest.mock('@react-navigation/native', () => {
@@ -15,9 +16,9 @@ jest.mock('@react-navigation/native', () => {
   }
 })
 
-describe('<HomeScreen />', () => {
+describe('<ArticleList />', () => {
   it('renders correctly', () => {
-    // const { toJSON } = render(<HomeScreen />)
-    // expect(toJSON()).toMatchSnapshot()
+    const { toJSON } = render(<ArticleList data={[article]} />)
+    expect(toJSON()).toMatchSnapshot()
   })
 })

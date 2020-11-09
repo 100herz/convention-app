@@ -285,12 +285,10 @@ exports[`<ArticleList /> renders correctly 1`] = `
           "should_push": false,
           "sponsored_by": "",
         },
-        "author": 4,
         "categories": Array [
           358,
           1,
         ],
-        "comment_status": "closed",
         "content": Object {
           "protected": false,
           "rendered": "<p>Der Veranstaltungsmarkt erlebt seit ca. 30 Jahren einen Boom. Dann kam „Corona“: Die Covid19-Pandemie hat das gesamte Leben weltweit auf den Kopf gestellt. Eine der ganz besonders betroffenen Branchen ist die Veranstaltungswirtschaft. Zu den Auswirkungen der Pandemie hat der <a href=\\"http://www.degefest.de\\">degefest</a> Verband der Kongress- und Seminarwirtschaft e.V. eine aktuelle Studie initiiert und Mitglieder aus den eigenen Reihen, die Veranstaltungshäuser leiten, befragt. Erstellt wurde die Studie „degefest TrendAnalyse – Restart 2020/21: Via Best Practice aus der Krise“ durch Prof. Dr. Jerzy Jaworski von der Fakultät für International Business an der Hochschule Heilbronn.</p>
@@ -309,33 +307,11 @@ exports[`<ArticleList /> renders correctly 1`] = `
 <p>Die Studie steht degefest-Mitgliedern kostenlos zur Verfügung und wird durch die Geschäftsstelle verschickt. Weitere Interessierte können die Studie per Mail unter <a href=\\"mailto:info@degefest.de\\">info@degefest.de </a>anfragen.</p>
 ",
         },
-        "date": "2020-10-30T14:53:24",
         "date_gmt": "2020-10-30T12:53:24",
-        "excerpt": Object {
-          "protected": false,
-          "rendered": "<p>Der Veranstaltungsmarkt erlebt seit ca. 30 Jahren einen Boom. Dann kam „Corona“: Die Covid19-Pandemie hat das gesamte Leben weltweit auf den Kopf gestellt.</p>
-",
-        },
-        "featured_media": 18325,
-        "format": "standard",
-        "guid": Object {
-          "rendered": "https://www.convention-net.de/?p=18323",
-        },
         "id": 18323,
-        "link": "https://www.convention-net.de/neue-degefest-trendanalyse-restart-aus-der-corona-krise/",
-        "meta": Array [],
-        "modified": "2020-10-30T14:53:24",
-        "modified_gmt": "2020-10-30T12:53:24",
-        "ping_status": "closed",
-        "slug": "neue-degefest-trendanalyse-restart-aus-der-corona-krise",
-        "status": "publish",
-        "sticky": false,
-        "tags": Array [],
-        "template": "",
         "title": Object {
           "rendered": "Neue degefest-TrendAnalyse: Restart aus der Corona-Krise",
         },
-        "type": "post",
       },
     ]
   }

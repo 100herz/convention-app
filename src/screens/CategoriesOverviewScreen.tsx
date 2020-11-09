@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import CategoryList from '@components/Lists/CategoryList'
+import CategoryList from '@components/Articles/CategoryList'
 import LoadingSpinner from '@components/UI/LoadingSpinner'
 import { DefaultStyles, defaultStyles } from '@styles/theme'
 import { Category } from '@models/category'

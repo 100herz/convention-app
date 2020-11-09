@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { RouteProp, useRoute } from '@react-navigation/native'
 
-import ArticleList from '@components/Lists/ArticleList'
+import ArticleList from '@components/Articles/ArticleList'
 import LoadingSpinner from '@components/UI/LoadingSpinner'
-import { RootStackParamList } from '@navigations/HomeNavigator'
+import { HomeStackParamList } from '@navigations/HomeNavigator'
+import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
 import { API_URL_WP } from 'constants/api'
 import { Article } from '@models/article'
-import { defaultStyles } from '@styles/theme'
+import { DefaultStyles, defaultStyles } from '@styles/theme'
 
 const ArticlesOverviewScreen: React.FC = () => {
-  const route = useRoute<RouteProp<RootStackParamList, 'ArticlesOverviewScreen'>>()
+  const route = useRoute<RouteProp<HomeStackParamList | CategoriesStackParamList, 'ArticlesOverviewScreen'>>()
 
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState<Article[]>([])
@@ -33,7 +34,9 @@ const ArticlesOverviewScreen: React.FC = () => {
   return <View style={styles.container}>{isLoading ? <LoadingSpinner /> : <ArticleList data={data} />}</View>
 }
 
-const styles = StyleSheet.create({
+type Style = DefaultStyles
+
+const styles = StyleSheet.create<Style>({
   ...defaultStyles,
 })
 

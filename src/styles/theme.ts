@@ -33,6 +33,7 @@ export interface DefaultStyles {
   listContainer: ViewStyle
   listItemContainer: ViewStyle
   switch: ViewStyle
+  backgroundImage: ViewStyle
 }
 
 export const defaultStyles = StyleSheet.create<DefaultStyles>({
@@ -73,5 +74,9 @@ export const defaultStyles = StyleSheet.create<DefaultStyles>({
   },
   switch: {
     transform: Platform.OS === 'ios' ? [{ scaleX: 0.7 }, { scaleY: 0.7 }] : [],
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
   },
 })

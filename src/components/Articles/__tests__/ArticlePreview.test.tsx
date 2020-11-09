@@ -1,8 +1,8 @@
 import React from 'react'
 import { act, fireEvent, render } from '@testing-library/react-native'
 
-import ArticleList from '../ArticleList'
-import { article, articleWithoutEmbedded } from '@__mocks__/article'
+import ArticlePreview from '../ArticlePreview'
+import { article, articleWithoutEmbedded, articleWithoutSponsored } from '@__mocks__/article'
 
 export const mockedNavigate = jest.fn()
 jest.mock('@react-navigation/native', () => {
@@ -18,17 +18,17 @@ jest.mock('@react-navigation/native', () => {
 
 describe('<ArticleList />', () => {
   it('renders correctly', () => {
-    const { toJSON } = render(<ArticleList data={[article]} />)
+    const { toJSON } = render(<ArticlePreview article={articleWithoutEmbedded} />)
     expect(toJSON()).toMatchSnapshot()
   })
 
   it('has no image and renders a View with three texts instead', () => {
-    const { getByTestId } = render(<ArticleList data={[articleWithoutEmbedded]} />)
+    const { getByTestId } = render(<ArticlePreview article={articleWithoutSponsored} />)
     expect(getByTestId('no-image').children).toHaveLength(3)
   })
 
   it('should call the navigate function once', () => {
-    const { getByTestId } = render(<ArticleList data={[article]} />)
+    const { getByTestId } = render(<ArticlePreview article={article} />)
 
     act(() => {
       fireEvent.press(getByTestId('button'))

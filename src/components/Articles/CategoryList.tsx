@@ -6,7 +6,8 @@ import { StackNavigationProp } from '@react-navigation/stack'
 
 import Text from '@components/UI/Text'
 import Touchable from '@components/UI/Touchable'
-import { RootStackParamList } from '@navigations/HomeNavigator'
+import { HomeStackParamList } from '@navigations/HomeNavigator'
+import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
 import { Category } from '@models/category'
 import { colors, defaultStyles, DefaultStyles } from '@styles/theme'
 
@@ -15,7 +16,7 @@ interface Props {
 }
 
 const CategoryList: React.FC<Props> = ({ data }) => {
-  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
+  const navigation = useNavigation<StackNavigationProp<HomeStackParamList | CategoriesStackParamList>>()
 
   const Link = ({ item }: { item: Category }) => (
     <Touchable
@@ -35,7 +36,7 @@ const CategoryList: React.FC<Props> = ({ data }) => {
       keyExtractor={item => item.id.toString()}
       data={data}
       renderItem={Link}
-    ></FlatList>
+    />
   )
 }
 
