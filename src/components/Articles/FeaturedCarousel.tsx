@@ -3,9 +3,9 @@ import { Dimensions, ImageBackground, StyleSheet, TextStyle, View, ViewStyle } f
 import Carousel from 'react-native-snap-carousel'
 
 import Text from '@components/UI/Text'
-import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
-import { Article } from '@models/article'
 import { hexToRgb } from '@utils/styling'
+import { Article } from '@models/article'
+import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 
 interface Props {
   articles: Article[]

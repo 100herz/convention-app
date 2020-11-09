@@ -9,10 +9,10 @@ import Text from '@components/UI/Text'
 import Button from '@components/UI/Button'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
-import { Article } from '@models/article'
 import { getLocaleLongDate } from '@utils/date-time'
-import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 import { hexToRgb } from '@utils/styling'
+import { Article } from '@models/article'
+import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 
 interface Props {
   article: Article

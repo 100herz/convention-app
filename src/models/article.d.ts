@@ -8,6 +8,10 @@ export declare interface Article {
     rendered: string
     protected: boolean
   }
+  excerpt: {
+    rendered: string
+    protected: boolean
+  }
   categories: number[]
   acf: {
     sponsored_by: string | null
