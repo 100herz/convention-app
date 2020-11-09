@@ -15,24 +15,27 @@ import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 
 interface Props {
   article: Article
+  hasImage?: boolean
 }
 
-const ArticlePreview: React.FC<Props> = ({ article }) => {
+const ArticlePreview: React.FC<Props> = ({ article, hasImage = true }) => {
   const navigation = useNavigation<StackNavigationProp<HomeStackParamList | CategoriesStackParamList>>()
 
   return (
     <View style={styles.articleContainer}>
-      <View style={styles.imageColumn}>
-        {article._embedded['wp:featuredmedia'] ? (
-          <Image style={styles.image} source={{ uri: article._embedded['wp:featuredmedia'][0].source_url }} />
-        ) : (
-          <View style={styles.noImage} testID="no-image">
-            <Text style={styles.noImageText}>NO</Text>
-            <Text style={styles.noImageText}>IMAGE</Text>
-            <Text style={styles.noImageText}>SET</Text>
-          </View>
-        )}
-      </View>
+      {hasImage && (
+        <View style={styles.imageColumn}>
+          {article._embedded['wp:featuredmedia'] ? (
+            <Image style={styles.image} source={{ uri: article._embedded['wp:featuredmedia'][0].source_url }} />
+          ) : (
+            <View style={styles.noImage} testID="no-image">
+              <Text style={styles.noImageText}>NO</Text>
+              <Text style={styles.noImageText}>IMAGE</Text>
+              <Text style={styles.noImageText}>SET</Text>
+            </View>
+          )}
+        </View>
+      )}
       <View style={styles.textColumn}>
         <HTML baseFontStyle={styles.title} html={`${article.title.rendered}`} />
         <View style={styles.dateContainer}>

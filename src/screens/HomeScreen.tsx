@@ -1,36 +1,109 @@
-import React from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-import { StackNavigationProp } from '@react-navigation/stack'
+import React, { useEffect, useState } from 'react'
+import { SectionList, StyleSheet, View, ViewStyle } from 'react-native'
 
-import { RootStackParamList } from '@navigations/HomeNavigator'
-import { fonts } from '@styles/theme'
+import FeaturedCarousel from '@components/Articles/FeaturedCarousel'
+import NewsCarousel from '@components/Articles/NewsCarousel'
+import ArticleList from '@components/Articles/ArticleList'
+import ArticlePreview from '@components/Articles/ArticlePreview'
+import LoadingSpinner from '@components/UI/LoadingSpinner'
+import Text from '@components/UI/Text'
+import { API_WP_ARTICLE, API_URL_WP } from 'constants/api'
+import { Article } from '@models/article'
+import { DefaultStyles, defaultStyles } from '@styles/theme'
 
 const HomeScreen: React.FC = () => {
-  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
+  const [isLoading, setLoading] = useState(true)
+  const [articles, setArticles] = useState<Article[]>([])
+  const [featuredArticles, setFeaturedArticles] = useState<Article[]>([])
+  const [newsArticles, setNewsArticles] = useState<Article[]>([])
+
+  useEffect(() => {
+    const getArticlesAsync = async () => {
+      try {
+        // TODO: Lazyload all posts instead of hardcoded 25 like now
+        const response = await fetch(`${API_URL_WP}${API_WP_ARTICLE}&per_page=25&categories=1`)
+        setArticles(await response.json())
+      } catch (error) {
+        console.error(error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    getArticlesAsync()
+  }, [])
+
+  useEffect(() => {
+    const getFeaturedArticlesAsync = async () => {
+      try {
+        const response = await fetch(API_URL_WP + API_WP_ARTICLE)
+        const lastArticles: Article[] = await response.json()
+        setFeaturedArticles(lastArticles.filter(article => article.acf.featured_slider))
+      } catch (error) {
+        console.error(error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    getFeaturedArticlesAsync()
+  }, [])
+
+  useEffect(() => {
+    const getNewsArticlesAsync = async () => {
+      try {
+        const response = await fetch(API_URL_WP + API_WP_ARTICLE)
+        const lastArticles: Article[] = await response.json()
+        setNewsArticles(lastArticles.filter(article => article.acf.news_slider))
+      } catch (error) {
+        console.error(error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    getNewsArticlesAsync()
+  }, [])
+
+  const SectionHeader = () => (
+    <View style={styles.sectionHeaderContainer}>
+      <FeaturedCarousel articles={featuredArticles} />
+      <Text style={styles.title}>News</Text>
+      <NewsCarousel articles={newsArticles} />
+      {/*
+      // TODO: Add the last sponsored post here.
+      */}
+    </View>
+  )
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontFamily: fonts.sansBold, marginVertical: 15, color: 'blue' }}>from HomeScreen.tsx</Text>
-      <Button
-        title="Go to Categories Screen"
-        onPress={() => navigation.navigate('CategoriesOverviewScreen')}
-        testID="button-1"
-      />
-      <Button
-        title="Go to Settings Screen"
-        onPress={() => navigation.navigate('CategoriesOverviewScreen')}
-        testID="button-2"
-      />
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <SectionList
+          keyExtractor={item => item.id.toString()}
+          stickySectionHeadersEnabled={false}
+          sections={[{ data: articles }]}
+          renderItem={({ item }: { item: Article }) => <ArticlePreview article={item} />}
+          renderSectionHeader={() => <SectionHeader />}
+        >
+          <ArticleList data={articles} />
+        </SectionList>
+      )}
     </View>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+interface Style extends DefaultStyles {
+  sectionHeaderContainer: ViewStyle
+}
+
+const styles = StyleSheet.create<Style>({
+  ...defaultStyles,
+  sectionHeaderContainer: {},
+  title: {
+    ...defaultStyles.title,
+    paddingHorizontal: 15,
+    paddingTop: 25,
+    paddingBottom: 15,
   },
 })
 
