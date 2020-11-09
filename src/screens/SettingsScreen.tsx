@@ -1,9 +1,9 @@
 import React from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
 
-import SettingsList from '@components/Lists/SettingsList'
-import LegalList from '@components/Lists/LegalList'
-import SocialList from '@components/Lists/SocialList'
+import SettingsList from '@components/Settings/SettingsList'
+import LegalList from '@components/Settings/LegalList'
+import SocialList from '@components/Settings/SocialList'
 import { socialMediaChannels } from '@data/social'
 import { Setting } from '@models/setting'
 import { Legal } from '@models/legal'
