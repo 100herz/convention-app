@@ -45,35 +45,40 @@ exports[`<ArticleList /> renders correctly 1`] = `
         ]
       }
     />
-    <Text
+    <View
       style={
         Object {
           "alignItems": "flex-end",
           "backgroundColor": "rgba(223, 227, 232, 0.7)",
           "borderTopLeftRadius": 15,
           "borderTopRightRadius": 15,
-          "color": "#333333",
-          "fontFamily": "sans",
-          "fontSize": 14,
           "paddingHorizontal": 30,
           "paddingVertical": 10,
-          "textAlign": "right",
-          "width": "auto",
         }
       }
     >
-      Sponsored by 
       <Text
         style={
           Object {
             "color": "#333333",
-            "fontFamily": "sans-bold",
+            "fontFamily": "sans",
+            "fontSize": 14,
           }
         }
       >
-        100Herz
+        Sponsored by 
+        <Text
+          style={
+            Object {
+              "color": "#333333",
+              "fontFamily": "sans-bold",
+            }
+          }
+        >
+          100Herz
+        </Text>
       </Text>
-    </Text>
+    </View>
     <View
       style={
         Object {

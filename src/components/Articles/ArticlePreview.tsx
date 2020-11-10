@@ -61,9 +61,11 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
         style={styles.backgroundImage}
         imageStyle={{ borderRadius: 15 }}
       >
-        <Text style={styles.sponsoredText}>
-          Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf.sponsored_by}</Text>
-        </Text>
+        <View style={styles.sponsoredTextContainer}>
+          <Text style={styles.sponsoredText}>
+            Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf.sponsored_by}</Text>
+          </Text>
+        </View>
         <View style={styles.sponsoredTitleContainer}>
           <Text style={styles.sponsoredTitle}>{article.title.rendered}</Text>
         </View>
@@ -84,6 +86,7 @@ interface Styles extends DefaultStyles {
   noImageText: TextStyle
   textColumn: ViewStyle
   sponsoredArticleContainer: ViewStyle
+  sponsoredTextContainer: ViewStyle
   sponsoredText: TextStyle
   sponsoredTitleContainer: ViewStyle
   sponsoredTitle: TextStyle
@@ -136,16 +139,16 @@ const styles = StyleSheet.create<Styles>({
     height: Dimensions.get('screen').width - 10,
     borderRadius: 10,
   },
-  sponsoredText: {
-    width: 'auto',
+  sponsoredTextContainer: {
     alignItems: 'flex-end',
     backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.7)`,
     paddingHorizontal: 30,
     paddingVertical: 10,
-    fontSize: 14,
-    textAlign: 'right',
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
+  },
+  sponsoredText: {
+    fontSize: 14,
   },
   sponsoredTitleContainer: {
     justifyContent: 'flex-end',
