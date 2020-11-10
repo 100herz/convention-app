@@ -1,6 +1,7 @@
-import { colors } from '@styles/theme'
 import React from 'react'
 import { Path, Polygon, Svg } from 'react-native-svg'
+
+import { colors } from '@styles/theme'
 
 interface Props {
   height?: number
