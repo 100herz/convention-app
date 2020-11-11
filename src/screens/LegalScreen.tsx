@@ -5,7 +5,7 @@ import { RouteProp, useRoute } from '@react-navigation/native'
 
 import LoadingSpinner from '@components/UI/LoadingSpinner'
 import { SettingsStackParamList } from '@navigations/SettingsNavigator'
-import { fetchPage } from '@utils/api'
+import { fetchPageAsync } from '@utils/api'
 import { Legal } from '@models/Legal'
 import { defaultStyles, DefaultStyles, htmlBodyTagStyles } from '@styles/theme'
 
@@ -18,7 +18,7 @@ const LegalScreen: React.FC = () => {
   useEffect(() => {
     const getArticlesAsync = async () => {
       try {
-        const articleResponse = await fetchPage(route.params.pageId)
+        const articleResponse = await fetchPageAsync(route.params.pageId)
         setLegalPage(await articleResponse.json())
       } catch (error) {
         console.error(error)

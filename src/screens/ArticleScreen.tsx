@@ -8,7 +8,7 @@ import LoadingSpinner from '@components/UI/LoadingSpinner'
 import Text from '@components/UI/Text'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
-import { fetchPost } from '@utils/api'
+import { fetchPostAsync } from '@utils/api'
 import { getLocaleLongDate } from '@utils/date-time'
 import { Article } from '@models/article'
 import { colors, DefaultStyles, defaultStyles, fonts, htmlBodyTagStyles } from '@styles/theme'
@@ -22,7 +22,7 @@ const ArticleScreen: React.FC = () => {
   useEffect(() => {
     const getArticlesAsync = async () => {
       try {
-        const articleResponse = await fetchPost(route.params.postId)
+        const articleResponse = await fetchPostAsync(route.params.postId)
         setArticle(await articleResponse.json())
       } catch (error) {
         console.error(error)

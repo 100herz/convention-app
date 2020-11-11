@@ -1,4 +1,4 @@
-import { getLocaleLongDate, getLocaleShortDate, getLocaleShortTime, Locale } from '@utils/date-time'
+import { getLocaleLongDate, getLocaleShortDate, getLocaleShortTime, Locale } from '../date-time'
 
 export const dummyDate = new Date('2020-07-02T20:23:00.000Z')
 
