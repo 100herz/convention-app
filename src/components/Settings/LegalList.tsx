@@ -3,8 +3,8 @@ import { StyleSheet, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
+import HTML from 'react-native-render-html'
 
-import Text from '@components/UI/Text'
 import Touchable from '@components/UI/Touchable'
 import { SettingsStackParamList } from '@navigations/SettingsNavigator'
 import { Legal } from '@models/Legal'
@@ -26,7 +26,7 @@ const LegalList: React.FC<Props> = ({ data }) => {
           testID={`link-${item.id}`}
         >
           <View style={styles.listItemContainer}>
-            <Text>{item.title.rendered}</Text>
+            <HTML baseFontStyle={styles.text} html={item.title.rendered} />
             <Ionicons name="ios-arrow-round-forward" size={20} color={colors.primaryColor} />
           </View>
         </Touchable>

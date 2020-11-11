@@ -7,7 +7,7 @@ import ArticleList from '@components/Articles/ArticleList'
 import ArticlePreview from '@components/Articles/ArticlePreview'
 import LoadingSpinner from '@components/UI/LoadingSpinner'
 import Text from '@components/UI/Text'
-import { fetchPosts } from '@utils/api'
+import { fetchPostsAsync } from '@utils/api'
 import { Article } from '@models/article'
 import { DefaultStyles, defaultStyles } from '@styles/theme'
 
@@ -21,7 +21,7 @@ const HomeScreen: React.FC = () => {
   useEffect(() => {
     const getArticlesAsync = async () => {
       try {
-        const response = await fetchPosts()
+        const response = await fetchPostsAsync()
         const articles: Article[] = await response.json()
 
         const filteredNewsArticle = articles.filter(article => article.categories.includes(1))

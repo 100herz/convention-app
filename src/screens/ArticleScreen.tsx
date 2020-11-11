@@ -8,7 +8,7 @@ import LoadingSpinner from '@components/UI/LoadingSpinner'
 import Text from '@components/UI/Text'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
-import { fetchPost } from '@utils/api'
+import { fetchPostAsync } from '@utils/api'
 import { getLocaleLongDate } from '@utils/date-time'
 import { Article } from '@models/article'
 import { colors, DefaultStyles, defaultStyles, fonts, htmlBodyTagStyles } from '@styles/theme'
@@ -22,7 +22,7 @@ const ArticleScreen: React.FC = () => {
   useEffect(() => {
     const getArticlesAsync = async () => {
       try {
-        const articleResponse = await fetchPost(route.params.postId)
+        const articleResponse = await fetchPostAsync(route.params.postId)
         setArticle(await articleResponse.json())
       } catch (error) {
         console.error(error)
@@ -38,31 +38,33 @@ const ArticleScreen: React.FC = () => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <ScrollView style={styles.container}>
-          <View style={styles.categoriesContainer}>
-            {article?.categories_names.map(category => (
-              <Text key={category} style={styles.category}>
-                {category}
-              </Text>
-            ))}
-          </View>
-          <View style={styles.titleContainer}>
-            <HTML baseFontStyle={styles.title} html={`${article?.title.rendered}`} />
-          </View>
-          <View style={styles.dateContainer}>
-            <Ionicons name="ios-clock" size={12} color={colors.accentColor} />
-            <Text style={styles.date}>{getLocaleLongDate(new Date(article?.date_gmt || Date.now.toString()))}</Text>
-          </View>
-          <HTML baseFontStyle={styles.teaser} html={`${article?.excerpt.rendered}`} />
-          <HTML
-            baseFontStyle={styles.text}
-            tagsStyles={htmlBodyTagStyles}
-            html={`${article?.content.rendered}`}
-            ignoredStyles={['height', 'width']}
-            imagesMaxWidth={Dimensions.get('window').width - 30}
-            onLinkPress={(_, href) => Linking.openURL(href)}
-          />
-        </ScrollView>
+        article && (
+          <ScrollView style={styles.container}>
+            <View style={styles.categoriesContainer}>
+              {article.categories_names.map(category => (
+                <Text key={category} style={styles.category}>
+                  {category}
+                </Text>
+              ))}
+            </View>
+            <View style={styles.titleContainer}>
+              <HTML baseFontStyle={styles.title} html={article.title.rendered} />
+            </View>
+            <View style={styles.dateContainer}>
+              <Ionicons name="ios-clock" size={12} color={colors.accentColor} />
+              <Text style={styles.date}>{getLocaleLongDate(new Date(article.date_gmt || Date.now.toString()))}</Text>
+            </View>
+            <HTML baseFontStyle={styles.teaser} html={article.excerpt.rendered} />
+            <HTML
+              baseFontStyle={styles.text}
+              tagsStyles={htmlBodyTagStyles}
+              html={article.content.rendered}
+              ignoredStyles={['height', 'width']}
+              imagesMaxWidth={Dimensions.get('window').width - 30}
+              onLinkPress={(_, href) => Linking.openURL(href)}
+            />
+          </ScrollView>
+        )
       )}
     </React.Fragment>
   )

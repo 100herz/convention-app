@@ -5,7 +5,7 @@ import { RouteProp, useRoute } from '@react-navigation/native'
 
 import LoadingSpinner from '@components/UI/LoadingSpinner'
 import { SettingsStackParamList } from '@navigations/SettingsNavigator'
-import { fetchPage } from '@utils/api'
+import { fetchPageAsync } from '@utils/api'
 import { Legal } from '@models/Legal'
 import { defaultStyles, DefaultStyles, htmlBodyTagStyles } from '@styles/theme'
 
@@ -13,12 +13,12 @@ const LegalScreen: React.FC = () => {
   const route = useRoute<RouteProp<SettingsStackParamList, 'LegalScreen'>>()
 
   const [isLoading, setLoading] = useState(true)
-  const [legalPage, setLegalPage] = useState<Legal>({ id: 0, title: { rendered: '' }, content: { rendered: '' } })
+  const [legalPage, setLegalPage] = useState<Legal | undefined>(undefined)
 
   useEffect(() => {
     const getArticlesAsync = async () => {
       try {
-        const articleResponse = await fetchPage(route.params.pageId)
+        const articleResponse = await fetchPageAsync(route.params.pageId)
         setLegalPage(await articleResponse.json())
       } catch (error) {
         console.error(error)
@@ -34,16 +34,18 @@ const LegalScreen: React.FC = () => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <ScrollView style={styles.container}>
-          <HTML
-            baseFontStyle={styles.text}
-            tagsStyles={htmlBodyTagStyles}
-            html={`${legalPage.content.rendered}`}
-            ignoredStyles={['height', 'width']}
-            imagesMaxWidth={Dimensions.get('window').width - 30}
-            onLinkPress={(_, href) => Linking.openURL(href)}
-          />
-        </ScrollView>
+        legalPage && (
+          <ScrollView style={styles.container}>
+            <HTML
+              baseFontStyle={styles.text}
+              tagsStyles={htmlBodyTagStyles}
+              html={legalPage.content.rendered}
+              ignoredStyles={['height', 'width']}
+              imagesMaxWidth={Dimensions.get('window').width - 30}
+              onLinkPress={(_, href) => Linking.openURL(href)}
+            />
+          </ScrollView>
+        )
       )}
     </React.Fragment>
   )

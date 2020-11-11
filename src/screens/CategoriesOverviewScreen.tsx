@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native'
 
 import CategoryList from '@components/Articles/CategoryList'
 import LoadingSpinner from '@components/UI/LoadingSpinner'
-import { fetchCategories } from '@utils/api'
+import { fetchCategoriesAsync } from '@utils/api'
 import { Category } from '@models/category'
 import { DefaultStyles, defaultStyles } from '@styles/theme'
 
@@ -14,7 +14,7 @@ const CategoryScreen: React.FC = () => {
   useEffect(() => {
     const getCategoriesAsync = async () => {
       try {
-        const response = await fetchCategories()
+        const response = await fetchCategoriesAsync()
         const categories: Category[] = await response.json()
         setData(categories.filter(category => category.description !== ''))
       } catch (error) {
