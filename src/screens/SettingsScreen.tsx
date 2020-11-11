@@ -12,8 +12,8 @@ import { defaultStyles, DefaultStyles } from '@styles/theme'
 export const settingArray: Setting[] = [{ id: 1, name: 'Push Mitteilungen' }]
 
 const legalScreens: Legal[] = [
-  { id: 79, name: 'Impressum' },
-  { id: 1105, name: 'Datenschutz' },
+  { id: 79, title: { rendered: 'Impressum' }, content: { rendered: '' } },
+  { id: 1105, title: { rendered: 'Datenschutz' }, content: { rendered: '' } },
 ]
 
 const SettingsScreen: React.FC = () => {
@@ -32,10 +32,6 @@ type Styles = DefaultStyles
 
 const styles = StyleSheet.create<Styles>({
   ...defaultStyles,
-  container: {
-    ...defaultStyles.container,
-    paddingHorizontal: 25,
-  },
 })
 
 export default SettingsScreen

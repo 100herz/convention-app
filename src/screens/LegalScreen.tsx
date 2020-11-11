@@ -5,7 +5,7 @@ import { RouteProp, useRoute } from '@react-navigation/native'
 
 import LoadingSpinner from '@components/UI/LoadingSpinner'
 import { SettingsStackParamList } from '@navigations/SettingsNavigator'
-import { API_URL_WP } from '@constants/api'
+import { fetchPage } from '@utils/api'
 import { Legal } from '@models/Legal'
 import { defaultStyles, DefaultStyles, htmlBodyTagStyles } from '@styles/theme'
 
@@ -13,14 +13,13 @@ const LegalScreen: React.FC = () => {
   const route = useRoute<RouteProp<SettingsStackParamList, 'LegalScreen'>>()
 
   const [isLoading, setLoading] = useState(true)
-  const [legalPage, setLegalPage] = useState<Legal | undefined>(undefined)
+  const [legalPage, setLegalPage] = useState<Legal>({ id: 0, title: { rendered: '' }, content: { rendered: '' } })
 
   useEffect(() => {
     const getArticlesAsync = async () => {
       try {
-        const articleResponse = await fetch(`${API_URL_WP}pages/${route.params.pageId}`)
-        const legalPageData: Legal = await articleResponse.json()
-        setLegalPage(legalPageData)
+        const articleResponse = await fetchPage(route.params.pageId)
+        setLegalPage(await articleResponse.json())
       } catch (error) {
         console.error(error)
       } finally {
@@ -39,7 +38,7 @@ const LegalScreen: React.FC = () => {
           <HTML
             baseFontStyle={styles.text}
             tagsStyles={htmlBodyTagStyles}
-            html={`${legalPage?.content?.rendered}`}
+            html={`${legalPage.content.rendered}`}
             ignoredStyles={['height', 'width']}
             imagesMaxWidth={Dimensions.get('window').width - 30}
             onLinkPress={(_, href) => Linking.openURL(href)}

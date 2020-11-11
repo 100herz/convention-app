@@ -2,10 +2,10 @@ import React from 'react'
 import { View } from 'react-native'
 import { StackNavigationOptions, createStackNavigator } from '@react-navigation/stack'
 
-import Logo from '@components/UI/Logo'
 import HomeScreen from '@screens/HomeScreen'
 import ArticlesOverviewScreen from '@screens/ArticlesOverviewScreen'
 import ArticleScreen from '@screens/ArticleScreen'
+import Logo from '@components/UI/Logo'
 import { colors } from '@styles/theme'
 
 export type HomeStackParamList = {

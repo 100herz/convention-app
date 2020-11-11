@@ -3,9 +3,9 @@ import { StyleSheet, View } from 'react-native'
 
 import CategoryList from '@components/Articles/CategoryList'
 import LoadingSpinner from '@components/UI/LoadingSpinner'
-import { DefaultStyles, defaultStyles } from '@styles/theme'
+import { fetchCategories } from '@utils/api'
 import { Category } from '@models/category'
-import { API_URL_WP } from 'constants/api'
+import { DefaultStyles, defaultStyles } from '@styles/theme'
 
 const CategoryScreen: React.FC = () => {
   const [isLoading, setLoading] = useState(true)
@@ -14,7 +14,7 @@ const CategoryScreen: React.FC = () => {
   useEffect(() => {
     const getCategoriesAsync = async () => {
       try {
-        const response = await fetch(`${API_URL_WP}categories?per_page=99&orderby=description`)
+        const response = await fetchCategories()
         const categories: Category[] = await response.json()
         setData(categories.filter(category => category.description !== ''))
       } catch (error) {
@@ -33,10 +33,6 @@ type Styles = DefaultStyles
 
 const styles = StyleSheet.create<Styles>({
   ...defaultStyles,
-  container: {
-    ...defaultStyles.container,
-    paddingHorizontal: 25,
-  },
 })
 
 export default CategoryScreen

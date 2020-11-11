@@ -62,7 +62,9 @@ export const defaultStyles = StyleSheet.create<DefaultStyles>({
     marginLeft: 5,
   },
   listContainer: {
-    paddingTop: 15,
+    flex: 1,
+    paddingHorizontal: 25,
+    marginVertical: 10,
   },
   listItemContainer: {
     flexDirection: 'row',

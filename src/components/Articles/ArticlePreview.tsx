@@ -10,10 +10,10 @@ import Text from '@components/UI/Text'
 import Button from '@components/UI/Button'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
-import { Article } from '@models/article'
 import { getLocaleLongDate } from '@utils/date-time'
-import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 import { hexToRgb } from '@utils/styling'
+import { Article } from '@models/article'
+import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 
 interface Props {
   article: Article
@@ -28,8 +28,8 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
     <View style={styles.articleContainer}>
       {hasImage && (
         <View style={styles.imageColumn}>
-          {article._embedded['wp:featuredmedia'] ? (
-            <Image style={styles.image} source={{ uri: article._embedded['wp:featuredmedia'][0].source_url }} />
+          {article.featured_media ? (
+            <Image style={styles.image} source={{ uri: article.featured_image_thumb }} />
           ) : (
             <View style={styles.noImage} testID="no-image">
               <LogoRound />
@@ -56,13 +56,15 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
   const sponsoredArticle = (
     <View style={styles.sponsoredArticleContainer}>
       <ImageBackground
-        source={{ uri: article._embedded['wp:featuredmedia'] && article._embedded['wp:featuredmedia'][0].source_url }}
+        source={{ uri: article.featured_image_thumb }}
         style={styles.backgroundImage}
         imageStyle={{ borderRadius: 15 }}
       >
-        <Text style={styles.sponsoredText}>
-          Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf.sponsored_by}</Text>
-        </Text>
+        <View style={styles.sponsoredTextContainer}>
+          <Text style={styles.sponsoredText}>
+            Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf.sponsored_by}</Text>
+          </Text>
+        </View>
         <View style={styles.sponsoredTitleContainer}>
           <Text style={styles.sponsoredTitle}>{article.title.rendered}</Text>
         </View>
@@ -82,6 +84,7 @@ interface Styles extends DefaultStyles {
   noImage: ViewStyle
   textColumn: ViewStyle
   sponsoredArticleContainer: ViewStyle
+  sponsoredTextContainer: ViewStyle
   sponsoredText: TextStyle
   sponsoredTitleContainer: ViewStyle
   sponsoredTitle: TextStyle
@@ -127,16 +130,16 @@ const styles = StyleSheet.create<Styles>({
     height: Dimensions.get('screen').width - 10,
     borderRadius: 10,
   },
-  sponsoredText: {
-    width: 'auto',
+  sponsoredTextContainer: {
     alignItems: 'flex-end',
     backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.7)`,
     paddingHorizontal: 30,
     paddingVertical: 10,
-    fontSize: 14,
-    textAlign: 'right',
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
+  },
+  sponsoredText: {
+    fontSize: 14,
   },
   sponsoredTitleContainer: {
     justifyContent: 'flex-end',

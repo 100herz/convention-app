@@ -5,7 +5,7 @@ exports[`<SocialList /> renders correctly 1`] = `
   style={
     Object {
       "flexDirection": "row",
-      "marginLeft": 6,
+      "marginLeft": 30,
       "marginTop": 25,
     }
   }

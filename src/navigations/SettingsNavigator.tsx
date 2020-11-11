@@ -7,7 +7,7 @@ import { colors } from '@styles/theme'
 
 export type SettingsStackParamList = {
   SettingsScreen: undefined
-  LegalScreen: { pageId?: number; screenTitle?: string }
+  LegalScreen: { pageId: number; screenTitle: string }
 }
 
 const SettingsStack = createStackNavigator<SettingsStackParamList>()

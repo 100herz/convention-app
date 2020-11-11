@@ -67,7 +67,9 @@ exports[`<LinkList /> renders correctly 1`] = `
   stickyHeaderIndices={Array []}
   style={
     Object {
-      "paddingTop": 15,
+      "flex": 1,
+      "marginVertical": 10,
+      "paddingHorizontal": 25,
     }
   }
   updateCellsBatchingPeriod={50}

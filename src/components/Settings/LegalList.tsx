@@ -22,11 +22,11 @@ const LegalList: React.FC<Props> = ({ data }) => {
       {data.map(item => (
         <Touchable
           key={item.id}
-          onPress={() => navigation.navigate('LegalScreen', { pageId: item.id, screenTitle: item.name })}
+          onPress={() => navigation.navigate('LegalScreen', { pageId: item.id, screenTitle: item.title.rendered })}
           testID={`link-${item.id}`}
         >
           <View style={styles.listItemContainer}>
-            <Text>{item.name}</Text>
+            <Text>{item.title.rendered}</Text>
             <Ionicons name="ios-arrow-round-forward" size={20} color={colors.primaryColor} />
           </View>
         </Touchable>
