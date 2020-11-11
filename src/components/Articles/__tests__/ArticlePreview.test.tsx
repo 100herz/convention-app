@@ -24,7 +24,7 @@ describe('<ArticleList />', () => {
 
   it('has no image and renders a View with three texts instead', () => {
     const { getByTestId } = render(<ArticlePreview article={articleWithoutSponsored} />)
-    expect(getByTestId('no-image').children).toHaveLength(3)
+    expect(getByTestId('no-image').children).toHaveLength(1)
   })
 
   it('should call the navigate function once', () => {
