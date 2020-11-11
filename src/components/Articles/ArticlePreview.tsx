@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { Ionicons } from '@expo/vector-icons'
 
+import LogoRound from '@components/UI/LogoRound'
 import Text from '@components/UI/Text'
 import Button from '@components/UI/Button'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
@@ -31,9 +32,7 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
             <Image style={styles.image} source={{ uri: article.featured_image_thumb }} />
           ) : (
             <View style={styles.noImage} testID="no-image">
-              <Text style={styles.noImageText}>NO</Text>
-              <Text style={styles.noImageText}>IMAGE</Text>
-              <Text style={styles.noImageText}>SET</Text>
+              <LogoRound />
             </View>
           )}
         </View>
@@ -83,7 +82,6 @@ interface Styles extends DefaultStyles {
   imageColumn: ViewStyle
   image: ImageStyle
   noImage: ViewStyle
-  noImageText: TextStyle
   textColumn: ViewStyle
   sponsoredArticleContainer: ViewStyle
   sponsoredTextContainer: ViewStyle
@@ -115,14 +113,7 @@ const styles = StyleSheet.create<Styles>({
   },
   noImage: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: colors.grayLight,
     borderRadius: 15,
-  },
-  noImageText: {
-    color: 'black',
-    fontFamily: fonts.sansBold,
   },
   textColumn: {
     width: Dimensions.get('screen').width - 130,
