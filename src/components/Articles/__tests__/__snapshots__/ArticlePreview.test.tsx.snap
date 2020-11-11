@@ -2,106 +2,123 @@
 
 exports[`<ArticleList /> renders correctly 1`] = `
 <View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "borderRadius": 10,
-      "height": 740,
-      "padding": 10,
+      "opacity": 1,
     }
   }
 >
   <View
-    accessibilityIgnoresInvertColors={true}
     style={
       Object {
-        "flex": 1,
-        "justifyContent": "space-between",
-        "resizeMode": "cover",
+        "borderRadius": 10,
+        "height": 740,
+        "padding": 10,
       }
     }
   >
-    <Image
-      source={
-        Object {
-          "uri": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-300x300.jpg",
-        }
-      }
-      style={
-        Array [
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "height": undefined,
-            "width": undefined,
-          },
-          Object {
-            "borderRadius": 15,
-          },
-        ]
-      }
-    />
     <View
+      accessibilityIgnoresInvertColors={true}
       style={
         Object {
-          "alignItems": "flex-end",
-          "backgroundColor": "rgba(223, 227, 232, 0.7)",
-          "borderTopLeftRadius": 15,
-          "borderTopRightRadius": 15,
-          "paddingHorizontal": 30,
-          "paddingVertical": 10,
+          "flex": 1,
+          "justifyContent": "space-between",
+          "resizeMode": "cover",
         }
       }
     >
-      <Text
+      <Image
+        source={
+          Object {
+            "uri": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-300x300.jpg",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            Object {
+              "borderRadius": 15,
+            },
+          ]
+        }
+      />
+      <View
         style={
           Object {
-            "color": "#333333",
-            "fontFamily": "sans",
-            "fontSize": 14,
+            "alignItems": "flex-end",
+            "backgroundColor": "rgba(223, 227, 232, 0.7)",
+            "borderTopLeftRadius": 15,
+            "borderTopRightRadius": 15,
+            "paddingHorizontal": 30,
+            "paddingVertical": 10,
           }
         }
       >
-        Sponsored by 
         <Text
           style={
             Object {
               "color": "#333333",
-              "fontFamily": "sans-bold",
+              "fontFamily": "sans",
+              "fontSize": 14,
             }
           }
         >
-          XYZ
+          Sponsored by 
+          <Text
+            style={
+              Object {
+                "color": "#333333",
+                "fontFamily": "sans-bold",
+              }
+            }
+          >
+            XYZ
+          </Text>
         </Text>
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(223, 227, 232, 0.7)",
-          "borderBottomLeftRadius": 15,
-          "borderBottomRightRadius": 15,
-          "justifyContent": "flex-end",
-          "paddingHorizontal": 30,
-          "paddingVertical": 10,
-        }
-      }
-    >
-      <Text
+      </View>
+      <View
         style={
           Object {
-            "color": "#333333",
-            "fontFamily": "sans",
-            "fontSize": 18,
+            "backgroundColor": "rgba(223, 227, 232, 0.7)",
+            "borderBottomLeftRadius": 15,
+            "borderBottomRightRadius": 15,
+            "justifyContent": "flex-end",
+            "paddingHorizontal": 30,
+            "paddingVertical": 10,
           }
         }
       >
-        „New Normal“ bei Leonardo Hotels &#8211; mit neuen MICE-Formaten und Konzepten
-      </Text>
+        <Text
+          style={
+            Object {
+              "color": "#333333",
+              "fontFamily": "sans",
+              "fontSize": 18,
+            }
+          }
+        >
+          „New Normal“ bei Leonardo Hotels &#8211; mit neuen MICE-Formaten und Konzepten
+        </Text>
+      </View>
     </View>
   </View>
 </View>

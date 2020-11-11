@@ -1,8 +1,12 @@
 import React from 'react'
 import { Dimensions, ImageBackground, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
 import Carousel from 'react-native-snap-carousel'
 
+import Touchable from '@components/UI/Touchable'
 import Text from '@components/UI/Text'
+import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { hexToRgb } from '@utils/styling'
 import { Article } from '@models/article'
 import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
@@ -12,31 +16,37 @@ interface Props {
 }
 
 const FeaturedCarousel: React.FC<Props> = ({ articles }) => {
+  const navigation = useNavigation<StackNavigationProp<HomeStackParamList>>()
+
   const screenWidth = Dimensions.get('screen').width
 
   const slideItem = ({ item }: { item: Article }) => (
-    <View style={styles.container}>
-      <ImageBackground source={{ uri: item.featured_image_thumb }} style={styles.backgroundImage}>
-        <View
-          style={{
-            ...styles.slideContainer,
-            justifyContent:
-              item.acf.sponsored_by !== undefined && item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0
-                ? 'space-between'
-                : 'flex-end',
-          }}
-        >
-          {item.acf.sponsored_by !== undefined && item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0 && (
-            <Text style={styles.sponsored}>
-              Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{item.acf.sponsored_by}</Text>
-            </Text>
-          )}
-          <View style={styles.titleContainer}>
-            <Text style={styles.title}>{item.title.rendered}</Text>
+    <Touchable onPress={() => navigation.navigate('ArticleScreen', { postId: item.id })}>
+      <View style={styles.container}>
+        <ImageBackground source={{ uri: item.featured_image_thumb }} style={styles.backgroundImage}>
+          <View
+            style={{
+              ...styles.slideContainer,
+              justifyContent:
+                item.acf.sponsored_by !== undefined &&
+                item.acf.sponsored_by !== null &&
+                item.acf.sponsored_by.length > 0
+                  ? 'space-between'
+                  : 'flex-end',
+            }}
+          >
+            {item.acf.sponsored_by !== undefined && item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0 && (
+              <Text style={styles.sponsored}>
+                Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{item.acf.sponsored_by}</Text>
+              </Text>
+            )}
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>{item.title.rendered}</Text>
+            </View>
           </View>
-        </View>
-      </ImageBackground>
-    </View>
+        </ImageBackground>
+      </View>
+    </Touchable>
   )
   return (
     <Carousel

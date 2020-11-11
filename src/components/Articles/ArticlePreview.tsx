@@ -8,6 +8,7 @@ import { Ionicons } from '@expo/vector-icons'
 import LogoRound from '@components/UI/LogoRound'
 import Text from '@components/UI/Text'
 import Button from '@components/UI/Button'
+import Touchable from '@components/UI/Touchable'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
 import { getLocaleLongDate } from '@utils/date-time'
@@ -54,22 +55,24 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
   )
 
   const sponsoredArticle = (
-    <View style={styles.sponsoredArticleContainer}>
-      <ImageBackground
-        source={{ uri: article.featured_image_thumb }}
-        style={styles.backgroundImage}
-        imageStyle={{ borderRadius: 15 }}
-      >
-        <View style={styles.sponsoredTextContainer}>
-          <Text style={styles.sponsoredText}>
-            Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf.sponsored_by}</Text>
-          </Text>
-        </View>
-        <View style={styles.sponsoredTitleContainer}>
-          <Text style={styles.sponsoredTitle}>{article.title.rendered}</Text>
-        </View>
-      </ImageBackground>
-    </View>
+    <Touchable onPress={() => navigation.navigate('ArticleScreen', { postId: article.id })}>
+      <View style={styles.sponsoredArticleContainer}>
+        <ImageBackground
+          source={{ uri: article.featured_image_thumb }}
+          style={styles.backgroundImage}
+          imageStyle={{ borderRadius: 15 }}
+        >
+          <View style={styles.sponsoredTextContainer}>
+            <Text style={styles.sponsoredText}>
+              Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf.sponsored_by}</Text>
+            </Text>
+          </View>
+          <View style={styles.sponsoredTitleContainer}>
+            <Text style={styles.sponsoredTitle}>{article.title.rendered}</Text>
+          </View>
+        </ImageBackground>
+      </View>
+    </Touchable>
   )
 
   return ignoreSponsored || !article.acf.sponsored_by || article.acf.sponsored_by === ''

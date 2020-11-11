@@ -189,100 +189,117 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
         }
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "height": 400.2,
+              "opacity": 1,
             }
           }
         >
           <View
-            accessibilityIgnoresInvertColors={true}
             style={
               Object {
-                "flex": 1,
-                "resizeMode": "cover",
+                "height": 400.2,
               }
             }
           >
-            <Image
-              source={
-                Object {
-                  "uri": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-300x300.jpg",
-                }
-              }
-              style={
-                Array [
-                  Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "height": undefined,
-                    "width": undefined,
-                  },
-                  undefined,
-                ]
-              }
-            />
             <View
+              accessibilityIgnoresInvertColors={true}
               style={
                 Object {
                   "flex": 1,
-                  "justifyContent": "space-between",
+                  "resizeMode": "cover",
                 }
               }
             >
-              <Text
-                style={
+              <Image
+                source={
                   Object {
-                    "alignItems": "flex-end",
-                    "backgroundColor": "rgba(223, 227, 232, 0.7)",
-                    "color": "#333333",
-                    "fontFamily": "sans",
-                    "fontSize": 14,
-                    "paddingHorizontal": 30,
-                    "paddingVertical": 10,
-                    "textAlign": "right",
-                    "width": "auto",
+                    "uri": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-300x300.jpg",
                   }
                 }
-              >
-                Sponsored by 
-                <Text
-                  style={
+                style={
+                  Array [
                     Object {
-                      "color": "#333333",
-                      "fontFamily": "sans-bold",
-                    }
-                  }
-                >
-                  XYZ
-                </Text>
-              </Text>
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "height": undefined,
+                      "width": undefined,
+                    },
+                    undefined,
+                  ]
+                }
+              />
               <View
                 style={
                   Object {
-                    "backgroundColor": "rgba(223, 227, 232, 0.7)",
-                    "justifyContent": "flex-end",
-                    "paddingHorizontal": 30,
-                    "paddingVertical": 10,
+                    "flex": 1,
+                    "justifyContent": "space-between",
                   }
                 }
               >
                 <Text
                   style={
                     Object {
+                      "alignItems": "flex-end",
+                      "backgroundColor": "rgba(223, 227, 232, 0.7)",
                       "color": "#333333",
                       "fontFamily": "sans",
-                      "fontSize": 18,
+                      "fontSize": 14,
+                      "paddingHorizontal": 30,
+                      "paddingVertical": 10,
+                      "textAlign": "right",
+                      "width": "auto",
                     }
                   }
                 >
-                  „New Normal“ bei Leonardo Hotels &#8211; mit neuen MICE-Formaten und Konzepten
+                  Sponsored by 
+                  <Text
+                    style={
+                      Object {
+                        "color": "#333333",
+                        "fontFamily": "sans-bold",
+                      }
+                    }
+                  >
+                    XYZ
+                  </Text>
                 </Text>
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "rgba(223, 227, 232, 0.7)",
+                      "justifyContent": "flex-end",
+                      "paddingHorizontal": 30,
+                      "paddingVertical": 10,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "#333333",
+                        "fontFamily": "sans",
+                        "fontSize": 18,
+                      }
+                    }
+                  >
+                    „New Normal“ bei Leonardo Hotels &#8211; mit neuen MICE-Formaten und Konzepten
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
@@ -315,73 +332,90 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
         }
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "height": 400.2,
+              "opacity": 1,
             }
           }
         >
           <View
-            accessibilityIgnoresInvertColors={true}
             style={
               Object {
-                "flex": 1,
-                "resizeMode": "cover",
+                "height": 400.2,
               }
             }
           >
-            <Image
-              source={
-                Object {
-                  "uri": "",
-                }
-              }
-              style={
-                Array [
-                  Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "height": undefined,
-                    "width": undefined,
-                  },
-                  undefined,
-                ]
-              }
-            />
             <View
+              accessibilityIgnoresInvertColors={true}
               style={
                 Object {
                   "flex": 1,
-                  "justifyContent": "flex-end",
+                  "resizeMode": "cover",
                 }
               }
             >
+              <Image
+                source={
+                  Object {
+                    "uri": "",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "height": undefined,
+                      "width": undefined,
+                    },
+                    undefined,
+                  ]
+                }
+              />
               <View
                 style={
                   Object {
-                    "backgroundColor": "rgba(223, 227, 232, 0.7)",
+                    "flex": 1,
                     "justifyContent": "flex-end",
-                    "paddingHorizontal": 30,
-                    "paddingVertical": 10,
                   }
                 }
               >
-                <Text
+                <View
                   style={
                     Object {
-                      "color": "#333333",
-                      "fontFamily": "sans",
-                      "fontSize": 18,
+                      "backgroundColor": "rgba(223, 227, 232, 0.7)",
+                      "justifyContent": "flex-end",
+                      "paddingHorizontal": 30,
+                      "paddingVertical": 10,
                     }
                   }
                 >
-                  Events and Hospitality Industries Urged to Harness the Power of Digital Transformation to Thrive in 2021 and Beyond
-                </Text>
+                  <Text
+                    style={
+                      Object {
+                        "color": "#333333",
+                        "fontFamily": "sans",
+                        "fontSize": 18,
+                      }
+                    }
+                  >
+                    Events and Hospitality Industries Urged to Harness the Power of Digital Transformation to Thrive in 2021 and Beyond
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
