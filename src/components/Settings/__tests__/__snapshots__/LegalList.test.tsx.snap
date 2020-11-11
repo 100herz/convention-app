@@ -4,7 +4,9 @@ exports[`<LegalList /> renders correctly 1`] = `
 <View
   style={
     Object {
-      "paddingTop": 15,
+      "flex": 1,
+      "marginVertical": 10,
+      "paddingHorizontal": 25,
     }
   }
 >

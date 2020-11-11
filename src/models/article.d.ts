@@ -12,25 +12,17 @@ export declare interface Article {
     rendered: string
     protected: boolean
   }
+  featured_media: number | null
   categories: number[]
   acf: {
-    sponsored_by: string | null
-    should_push: boolean | null
-    featured_slider: boolean | null
-    news_slider: boolean | null
+    sponsored_by?: string | null
+    should_push?: boolean | null
+    pinned?: boolean | null
+    featured_slider?: boolean | null
+    news_slider?: boolean | null
   }
-  _links: unknown
-  _embedded: {
-    [key: string]: unknown
-    'wp:featuredmedia'?: {
-      [key: string]: unknown
-      source_url: string
-    }[]
-
-    'wp:term': {
-      [key: string]: unknown
-      id: number
-      name: string
-    }[][]
-  }
+  featured_image_thumb: string
+  featured_image_medium: string
+  categories_names: string[]
+  _links?: unknown
 }

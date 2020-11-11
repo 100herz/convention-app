@@ -7,27 +7,37 @@ import ArticleList from '@components/Articles/ArticleList'
 import ArticlePreview from '@components/Articles/ArticlePreview'
 import LoadingSpinner from '@components/UI/LoadingSpinner'
 import Text from '@components/UI/Text'
-import { API_WP_ARTICLE, API_URL_WP } from 'constants/api'
+import { fetchPosts } from '@utils/api'
 import { Article } from '@models/article'
 import { DefaultStyles, defaultStyles } from '@styles/theme'
 
 const HomeScreen: React.FC = () => {
   const [isLoading, setLoading] = useState(true)
-  const [articles, setArticles] = useState<Article[]>([])
-  const [featuredArticles, setFeaturedArticles] = useState<Article[]>([])
   const [newsArticles, setNewsArticles] = useState<Article[]>([])
+  const [featuredSliderArticles, setFeaturedSliderArticles] = useState<Article[]>([])
+  const [newsSliderArticles, setNewsSliderArticles] = useState<Article[]>([])
   const [lastSponsoredArticle, setLastSponsoredArticle] = useState<Article>()
 
   useEffect(() => {
     const getArticlesAsync = async () => {
       try {
-        // TODO: Lazyload all posts instead of hardcoded 25 like now
-        const response = await fetch(`${API_URL_WP}${API_WP_ARTICLE}&per_page=25&categories=1`)
-        const lastArticles: Article[] = await response.json()
-        if (lastArticles[0].acf.sponsored_by !== null && lastArticles[0].acf.sponsored_by.length > 0) {
-          lastArticles.shift()
+        const response = await fetchPosts()
+        const articles: Article[] = await response.json()
+
+        const filteredNewsArticle = articles.filter(article => article.categories.includes(1))
+        if (
+          filteredNewsArticle[0].acf.sponsored_by !== undefined &&
+          filteredNewsArticle[0].acf.sponsored_by !== null &&
+          filteredNewsArticle[0].acf.sponsored_by.length > 0
+        ) {
+          filteredNewsArticle.shift()
         }
-        setArticles(lastArticles)
+        setNewsArticles(filteredNewsArticle)
+        setFeaturedSliderArticles(articles.filter(article => article.acf.featured_slider).slice(0, 5))
+        setNewsSliderArticles(articles.filter(article => article.acf.news_slider).slice(0, 10))
+        setLastSponsoredArticle(
+          articles.find(article => typeof article.acf.sponsored_by === 'string' && article.acf.sponsored_by.length > 0)
+        )
       } catch (error) {
         console.error(error)
       } finally {
@@ -37,58 +47,11 @@ const HomeScreen: React.FC = () => {
     getArticlesAsync()
   }, [])
 
-  useEffect(() => {
-    const getFeaturedArticlesAsync = async () => {
-      try {
-        const response = await fetch(API_URL_WP + API_WP_ARTICLE)
-        const lastArticles: Article[] = await response.json()
-        setFeaturedArticles(lastArticles.filter(article => article.acf.featured_slider))
-      } catch (error) {
-        console.error(error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    getFeaturedArticlesAsync()
-  }, [])
-
-  useEffect(() => {
-    const getNewsArticlesAsync = async () => {
-      try {
-        const response = await fetch(API_URL_WP + API_WP_ARTICLE)
-        const lastArticles: Article[] = await response.json()
-        setNewsArticles(lastArticles.filter(article => article.acf.news_slider))
-      } catch (error) {
-        console.error(error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    getNewsArticlesAsync()
-  }, [])
-
-  useEffect(() => {
-    const getLastSponsoredArticleAsync = async () => {
-      try {
-        const response = await fetch(API_URL_WP + API_WP_ARTICLE)
-        const lastArticles: Article[] = await response.json()
-        setLastSponsoredArticle(
-          lastArticles.find(article => article.acf.sponsored_by !== null && article.acf.sponsored_by.length > 0)
-        )
-      } catch (error) {
-        console.error(error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    getLastSponsoredArticleAsync()
-  }, [])
-
   const SectionHeader = () => (
     <View style={styles.sectionHeaderContainer}>
-      <FeaturedCarousel articles={featuredArticles} />
+      <FeaturedCarousel articles={featuredSliderArticles} />
       <Text style={styles.title}>News</Text>
-      <NewsCarousel articles={newsArticles} />
+      <NewsCarousel articles={newsSliderArticles} />
       {lastSponsoredArticle && <ArticlePreview article={lastSponsoredArticle} />}
     </View>
   )
@@ -101,11 +64,11 @@ const HomeScreen: React.FC = () => {
         <SectionList
           keyExtractor={item => item.id.toString()}
           stickySectionHeadersEnabled={false}
-          sections={[{ data: articles }]}
+          sections={[{ data: newsArticles }]}
           renderItem={({ item }: { item: Article }) => <ArticlePreview article={item} />}
           renderSectionHeader={() => <SectionHeader />}
         >
-          <ArticleList data={articles} />
+          <ArticleList data={newsArticles} />
         </SectionList>
       )}
     </View>

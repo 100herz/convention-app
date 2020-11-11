@@ -16,9 +16,10 @@ const NewsCarousel: React.FC<Props> = ({ articles }) => {
 
   return (
     <Carousel
+      containerCustomStyle={{ marginLeft: -10 }}
+      slideStyle={{ flex: 1, marginHorizontal: 10 }}
       data={articles}
       renderItem={slideItem}
-      sliderHeight={150}
       sliderWidth={screenWidth}
       itemWidth={screenWidth / 1.7}
       enableSnap={false}

@@ -8,8 +8,8 @@ import LoadingSpinner from '@components/UI/LoadingSpinner'
 import Text from '@components/UI/Text'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
+import { fetchPost } from '@utils/api'
 import { getLocaleLongDate } from '@utils/date-time'
-import { API_URL_WP } from '@constants/api'
 import { Article } from '@models/article'
 import { colors, DefaultStyles, defaultStyles, fonts, htmlBodyTagStyles } from '@styles/theme'
 
@@ -22,9 +22,8 @@ const ArticleScreen: React.FC = () => {
   useEffect(() => {
     const getArticlesAsync = async () => {
       try {
-        const articleResponse = await fetch(`${API_URL_WP}posts/${route.params.postId}?_embed`)
-        const articleData: Article = await articleResponse.json()
-        setArticle(articleData)
+        const articleResponse = await fetchPost(route.params.postId)
+        setArticle(await articleResponse.json())
       } catch (error) {
         console.error(error)
       } finally {
@@ -40,11 +39,10 @@ const ArticleScreen: React.FC = () => {
         <LoadingSpinner />
       ) : (
         <ScrollView style={styles.container}>
-          {/* TODO: Simplify the categories output with using of JOIN */}
           <View style={styles.categoriesContainer}>
-            {article?._embedded['wp:term'][0].map(category => (
-              <Text key={category.id} style={styles.category}>
-                {category.name}
+            {article?.categories_names.map(category => (
+              <Text key={category} style={styles.category}>
+                {category}
               </Text>
             ))}
           </View>

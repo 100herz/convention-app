@@ -16,18 +16,17 @@ const FeaturedCarousel: React.FC<Props> = ({ articles }) => {
 
   const slideItem = ({ item }: { item: Article }) => (
     <View style={styles.container}>
-      <ImageBackground
-        source={{ uri: item._embedded['wp:featuredmedia'] && item._embedded['wp:featuredmedia'][0].source_url }}
-        style={styles.backgroundImage}
-      >
+      <ImageBackground source={{ uri: item.featured_image_thumb }} style={styles.backgroundImage}>
         <View
           style={{
             ...styles.slideContainer,
             justifyContent:
-              item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0 ? 'space-between' : 'flex-end',
+              item.acf.sponsored_by !== undefined && item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0
+                ? 'space-between'
+                : 'flex-end',
           }}
         >
-          {item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0 && (
+          {item.acf.sponsored_by !== undefined && item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0 && (
             <Text style={styles.sponsored}>
               Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{item.acf.sponsored_by}</Text>
             </Text>

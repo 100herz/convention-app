@@ -6,7 +6,7 @@ import ArticleList from '@components/Articles/ArticleList'
 import LoadingSpinner from '@components/UI/LoadingSpinner'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
-import { API_URL_WP } from 'constants/api'
+import { fetchPosts } from '@utils/api'
 import { Article } from '@models/article'
 import { DefaultStyles, defaultStyles } from '@styles/theme'
 
@@ -19,8 +19,7 @@ const ArticlesOverviewScreen: React.FC = () => {
   useEffect(() => {
     const getCategoriesAsync = async () => {
       try {
-        // TODO: Lazyload all posts instead of hardcoded 25 like now
-        const response = await fetch(`${API_URL_WP}posts?_embed&per_page=25&categories=${route.params.categoryId}`)
+        const response = await fetchPosts(route.params.categoryId)
         setData(await response.json())
       } catch (error) {
         console.error(error)

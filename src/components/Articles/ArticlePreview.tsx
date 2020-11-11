@@ -27,8 +27,8 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
     <View style={styles.articleContainer}>
       {hasImage && (
         <View style={styles.imageColumn}>
-          {article._embedded['wp:featuredmedia'] ? (
-            <Image style={styles.image} source={{ uri: article._embedded['wp:featuredmedia'][0].source_url }} />
+          {article.featured_media ? (
+            <Image style={styles.image} source={{ uri: article.featured_image_thumb }} />
           ) : (
             <View style={styles.noImage} testID="no-image">
               <Text style={styles.noImageText}>NO</Text>
@@ -57,7 +57,7 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
   const sponsoredArticle = (
     <View style={styles.sponsoredArticleContainer}>
       <ImageBackground
-        source={{ uri: article._embedded['wp:featuredmedia'] && article._embedded['wp:featuredmedia'][0].source_url }}
+        source={{ uri: article.featured_image_thumb }}
         style={styles.backgroundImage}
         imageStyle={{ borderRadius: 15 }}
       >

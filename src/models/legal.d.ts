@@ -1,7 +1,9 @@
 export declare interface Legal {
   id: number
-  name?: string
-  content?: {
+  title: {
+    rendered: string
+  }
+  content: {
     rendered: string
   }
 }

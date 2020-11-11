@@ -23,7 +23,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
     <Image
       source={
         Object {
-          "uri": undefined,
+          "uri": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-300x300.jpg",
         }
       }
       style={
@@ -75,7 +75,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
             }
           }
         >
-          100Herz
+          XYZ
         </Text>
       </Text>
     </View>
@@ -100,7 +100,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
           }
         }
       >
-        Neue degefest-TrendAnalyse: Restart aus der Corona-Krise
+        „New Normal“ bei Leonardo Hotels &#8211; mit neuen MICE-Formaten und Konzepten
       </Text>
     </View>
   </View>
