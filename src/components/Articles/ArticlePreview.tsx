@@ -39,7 +39,7 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
         </View>
       )}
       <View style={styles.textColumn}>
-        <HTML baseFontStyle={styles.title} html={`${article.title.rendered}`} />
+        <HTML baseFontStyle={styles.title} html={article.title.rendered} />
         <View style={styles.dateContainer}>
           <Ionicons name="ios-clock" size={12} color={colors.accentColor} />
           <Text style={styles.date}>{getLocaleLongDate(new Date(article.date_gmt))}</Text>
@@ -68,7 +68,7 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
             </Text>
           </View>
           <View style={styles.sponsoredTitleContainer}>
-            <Text style={styles.sponsoredTitle}>{article.title.rendered}</Text>
+            <HTML baseFontStyle={styles.sponsoredTitle} html={article.title.rendered} />
           </View>
         </ImageBackground>
       </View>
@@ -153,7 +153,8 @@ const styles = StyleSheet.create<Styles>({
     borderBottomRightRadius: 15,
   },
   sponsoredTitle: {
-    fontSize: 18,
+    fontSize: 16,
+    fontFamily: fonts.sans,
   },
 })
 

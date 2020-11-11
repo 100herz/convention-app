@@ -39,16 +39,32 @@ exports[`<LegalList /> renders correctly 1`] = `
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#333333",
-            "fontFamily": "sans",
-          }
-        }
+      <View
+        style={Object {}}
       >
-        Impressum
-      </Text>
+        <Text
+          allowFontScaling={true}
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={true}
+            style={
+              Object {
+                "color": "#333333",
+                "fontFamily": "sans",
+              }
+            }
+          >
+            Impressum
+          </Text>
+        </Text>
+      </View>
       <Text />
     </View>
   </View>
@@ -81,16 +97,32 @@ exports[`<LegalList /> renders correctly 1`] = `
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#333333",
-            "fontFamily": "sans",
-          }
-        }
+      <View
+        style={Object {}}
       >
-        Datenschutz
-      </Text>
+        <Text
+          allowFontScaling={true}
+          selectable={false}
+          style={
+            Array [
+              Object {},
+              Object {},
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={true}
+            style={
+              Object {
+                "color": "#333333",
+                "fontFamily": "sans",
+              }
+            }
+          >
+            Datenschutz
+          </Text>
+        </Text>
+      </View>
       <Text />
     </View>
   </View>

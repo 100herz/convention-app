@@ -288,17 +288,32 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#333333",
-                        "fontFamily": "sans",
-                        "fontSize": 18,
-                      }
-                    }
+                  <View
+                    style={Object {}}
                   >
-                    „New Normal“ bei Leonardo Hotels &#8211; mit neuen MICE-Formaten und Konzepten
-                  </Text>
+                    <Text
+                      allowFontScaling={true}
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "fontFamily": "sans",
+                            "fontSize": 16,
+                          }
+                        }
+                      >
+                        „New Normal“ bei Leonardo Hotels – mit neuen MICE-Formaten und Konzepten
+                      </Text>
+                    </Text>
+                  </View>
                 </View>
               </View>
             </View>
@@ -404,17 +419,32 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
                     }
                   }
                 >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#333333",
-                        "fontFamily": "sans",
-                        "fontSize": 18,
-                      }
-                    }
+                  <View
+                    style={Object {}}
                   >
-                    Events and Hospitality Industries Urged to Harness the Power of Digital Transformation to Thrive in 2021 and Beyond
-                  </Text>
+                    <Text
+                      allowFontScaling={true}
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {},
+                          Object {},
+                        ]
+                      }
+                    >
+                      <Text
+                        allowFontScaling={true}
+                        style={
+                          Object {
+                            "fontFamily": "sans",
+                            "fontSize": 16,
+                          }
+                        }
+                      >
+                        Events and Hospitality Industries Urged to Harness the Power of Digital Transformation to Thrive in 2021 and Beyond
+                      </Text>
+                    </Text>
+                  </View>
                 </View>
               </View>
             </View>

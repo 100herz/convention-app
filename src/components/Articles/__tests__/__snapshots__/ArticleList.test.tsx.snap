@@ -174,17 +174,32 @@ exports[`<ArticleList /> renders correctly 1`] = `
                 }
               }
             >
-              <Text
-                style={
-                  Object {
-                    "color": "#333333",
-                    "fontFamily": "sans",
-                    "fontSize": 18,
-                  }
-                }
+              <View
+                style={Object {}}
               >
-                „New Normal“ bei Leonardo Hotels &#8211; mit neuen MICE-Formaten und Konzepten
-              </Text>
+                <Text
+                  allowFontScaling={true}
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {},
+                      Object {},
+                    ]
+                  }
+                >
+                  <Text
+                    allowFontScaling={true}
+                    style={
+                      Object {
+                        "fontFamily": "sans",
+                        "fontSize": 16,
+                      }
+                    }
+                  >
+                    „New Normal“ bei Leonardo Hotels – mit neuen MICE-Formaten und Konzepten
+                  </Text>
+                </Text>
+              </View>
             </View>
           </View>
         </View>

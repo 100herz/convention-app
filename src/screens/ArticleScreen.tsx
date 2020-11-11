@@ -38,31 +38,33 @@ const ArticleScreen: React.FC = () => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <ScrollView style={styles.container}>
-          <View style={styles.categoriesContainer}>
-            {article?.categories_names.map(category => (
-              <Text key={category} style={styles.category}>
-                {category}
-              </Text>
-            ))}
-          </View>
-          <View style={styles.titleContainer}>
-            <HTML baseFontStyle={styles.title} html={`${article?.title.rendered}`} />
-          </View>
-          <View style={styles.dateContainer}>
-            <Ionicons name="ios-clock" size={12} color={colors.accentColor} />
-            <Text style={styles.date}>{getLocaleLongDate(new Date(article?.date_gmt || Date.now.toString()))}</Text>
-          </View>
-          <HTML baseFontStyle={styles.teaser} html={`${article?.excerpt.rendered}`} />
-          <HTML
-            baseFontStyle={styles.text}
-            tagsStyles={htmlBodyTagStyles}
-            html={`${article?.content.rendered}`}
-            ignoredStyles={['height', 'width']}
-            imagesMaxWidth={Dimensions.get('window').width - 30}
-            onLinkPress={(_, href) => Linking.openURL(href)}
-          />
-        </ScrollView>
+        article && (
+          <ScrollView style={styles.container}>
+            <View style={styles.categoriesContainer}>
+              {article.categories_names.map(category => (
+                <Text key={category} style={styles.category}>
+                  {category}
+                </Text>
+              ))}
+            </View>
+            <View style={styles.titleContainer}>
+              <HTML baseFontStyle={styles.title} html={article.title.rendered} />
+            </View>
+            <View style={styles.dateContainer}>
+              <Ionicons name="ios-clock" size={12} color={colors.accentColor} />
+              <Text style={styles.date}>{getLocaleLongDate(new Date(article.date_gmt || Date.now.toString()))}</Text>
+            </View>
+            <HTML baseFontStyle={styles.teaser} html={article.excerpt.rendered} />
+            <HTML
+              baseFontStyle={styles.text}
+              tagsStyles={htmlBodyTagStyles}
+              html={article.content.rendered}
+              ignoredStyles={['height', 'width']}
+              imagesMaxWidth={Dimensions.get('window').width - 30}
+              onLinkPress={(_, href) => Linking.openURL(href)}
+            />
+          </ScrollView>
+        )
       )}
     </React.Fragment>
   )

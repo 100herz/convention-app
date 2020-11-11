@@ -2,6 +2,7 @@ import React from 'react'
 import { Dimensions, ImageBackground, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
+import HTML from 'react-native-render-html'
 import Carousel from 'react-native-snap-carousel'
 
 import Touchable from '@components/UI/Touchable'
@@ -41,7 +42,7 @@ const FeaturedCarousel: React.FC<Props> = ({ articles }) => {
               </Text>
             )}
             <View style={styles.titleContainer}>
-              <Text style={styles.title}>{item.title.rendered}</Text>
+              <HTML baseFontStyle={styles.title} html={item.title.rendered} />
             </View>
           </View>
         </ImageBackground>
@@ -90,7 +91,8 @@ const styles = StyleSheet.create<Styles>({
     paddingVertical: 10,
   },
   title: {
-    fontSize: 18,
+    fontSize: 16,
+    fontFamily: fonts.sans,
   },
 })
 
