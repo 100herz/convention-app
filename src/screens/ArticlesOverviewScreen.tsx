@@ -19,7 +19,7 @@ const ArticlesOverviewScreen: React.FC = () => {
   useEffect(() => {
     const getCategoriesAsync = async () => {
       try {
-        const response = await fetchPostsAsync(route.params.categoryId)
+        const response = await fetchPostsAsync({ categoryId: route.params.categoryId })
         setData(await response.json())
       } catch (error) {
         console.error(error)

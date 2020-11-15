@@ -25,6 +25,7 @@
           "@constants": ["./src/constants"],
           "@components": ["./src/components"],
           "@data": ["./src/data"],
+          "@hooks": ["./src/hooks"],
           "@models": ["./src/models"],
           "@navigations": ["./src/navigations"],
           "@screens": ["./src/screens"],
