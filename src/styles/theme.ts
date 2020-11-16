@@ -22,6 +22,12 @@ export const htmlBodyTagStyles: HTML.StylesDictionary = {
   img: {
     borderRadius: 15,
   },
+  figure: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    textAlign: 'center',
+    fontStyle: 'italic',
+  },
 }
 
 export interface DefaultStyles {

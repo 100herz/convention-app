@@ -16,6 +16,7 @@
       "@components/*": ["./components/*"],
       "@models/*": ["./models/*"],
       "@data/*": ["./data/*"],
+      "@hooks/*": ["./hooks/*"],
       "@navigations/*": ["./navigations/*"],
       "@screens/*": ["./screens/*"],
       "@stores/*": ["./stores/*"],

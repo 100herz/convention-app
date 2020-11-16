@@ -8,51 +8,56 @@ enum API_WP_TYPE {
   POSTS = 'posts/',
 }
 
-const API_WP_PAGES = '?_fields=id,title,content'
-
-const API_WP_POSTS =
-  '?_fields=id,date_gmt,title,content,excerpt,featured_media,categories,acf,featured_image_thumb,featured_image_medium,categories_names'
-
-const API_WP_CATEGORIES = '?_fields=id,description,name'
+enum API_WP_FIELDS {
+  CATEGORIES = '?_fields=id,description,name',
+  PAGES = '?_fields=id,title,content',
+  POSTS = '?_fields=id,date_gmt,title,content,excerpt,featured_media,categories,acf,featured_image_thumb,featured_image_medium,categories_names',
+}
 
 /**
- * Fetches the page from the WordPress API with the given id.
+ * Fetches the page from the WordPress REST API with the given id.
  *
  * @param pageId The id of the pages, which should fetched.
  */
 export const fetchPageAsync = async (pageId: number): Promise<Response> => {
-  return await fetch(API_URL_WP + API_WP_TYPE.PAGES + pageId + API_WP_PAGES)
+  return await fetch(API_URL_WP + API_WP_TYPE.PAGES + pageId + API_WP_FIELDS.PAGES)
 }
 
 /**
- * Fetches the post from the WordPress API with the given id.
+ * Fetches the post from the WordPress REST API with the given id.
  *
  * @param postId The id of the posts, which should fetched.
  */
 export const fetchPostAsync = async (postId: number): Promise<Response> => {
-  return await fetch(API_URL_WP + API_WP_TYPE.POSTS + postId + API_WP_POSTS)
+  return await fetch(API_URL_WP + API_WP_TYPE.POSTS + postId + API_WP_FIELDS.POSTS)
 }
 
 /**
  * Fetches the posts from the WordPress API.
  *
- * @param categoryId optional - Only the posts with this category id.
- * @param perPage default `15` - The number of the loaded posts.
+ * @param parameter The parameter for the WordPress REST API query.
  */
-export const fetchPostsAsync = async (categoryId?: number, perPage = 15): Promise<Response> => {
-  const categoryQuery = categoryId ? '&categories=' + categoryId : ''
-  const perPageQuery = '&per_page=' + perPage
-  return await fetch(API_URL_WP + API_WP_TYPE.POSTS + API_WP_POSTS + categoryQuery + perPageQuery)
+export const fetchPostsAsync = async (parameter?: {
+  categoryId?: number | string
+  page?: number | string
+  perPage?: number | string
+}): Promise<Response> => {
+  const categoryQuery = parameter?.categoryId ? '&categories=' + parameter.categoryId : ''
+  const perPageQuery = '&per_page=' + (parameter?.perPage ? parameter.perPage : '20')
+  const pageQuery = parameter?.page ? '&page=' + parameter.page : ''
+  return await fetch(API_URL_WP + API_WP_TYPE.POSTS + API_WP_FIELDS.POSTS + categoryQuery + perPageQuery + pageQuery)
 }
 
 /**
  * Fetches the categories from the WordPress API.
  *
- * @param perPage default `99` - The number of the loaded categories.
- * @param orderBy default: `description` - The order of the categories.
+ * @param parameter The parameter for the WordPress REST API query.
  */
-export const fetchCategoriesAsync = async (perPage = 99, orderBy = 'description'): Promise<Response> => {
-  const perPageQuery = '&per_page=' + perPage
-  const orderByQuery = '&orderby=' + orderBy
-  return await fetch(API_URL_WP + API_WP_TYPE.CATEGORIES + API_WP_CATEGORIES + perPageQuery + orderByQuery)
+export const fetchCategoriesAsync = async (parameter?: {
+  perPage?: number | string
+  orderBy?: string
+}): Promise<Response> => {
+  const perPageQuery = '&per_page=' + (parameter?.perPage ? parameter.perPage : '99')
+  const orderByQuery = '&orderby=' + (parameter?.orderBy ? parameter.orderBy : 'description')
+  return await fetch(API_URL_WP + API_WP_TYPE.CATEGORIES + API_WP_FIELDS.CATEGORIES + perPageQuery + orderByQuery)
 }

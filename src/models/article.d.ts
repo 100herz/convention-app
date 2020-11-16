@@ -14,7 +14,7 @@ export declare interface Article {
   }
   featured_media: number | null
   categories: number[]
-  acf: {
+  acf?: {
     sponsored_by?: string | null
     should_push?: boolean | null
     pinned?: boolean | null

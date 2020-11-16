@@ -39,7 +39,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
       <Image
         source={
           Object {
-            "uri": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-300x300.jpg",
+            "uri": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-600x400.jpg",
           }
         }
         style={
@@ -79,6 +79,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
               "color": "#333333",
               "fontFamily": "sans",
               "fontSize": 14,
+              "textAlign": "right",
             }
           }
         >

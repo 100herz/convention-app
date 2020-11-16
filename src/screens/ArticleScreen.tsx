@@ -56,6 +56,7 @@ const ArticleScreen: React.FC = () => {
             </View>
             <HTML baseFontStyle={styles.teaser} html={article.excerpt.rendered} />
             <HTML
+              containerStyle={styles.htmlContainer}
               baseFontStyle={styles.text}
               tagsStyles={htmlBodyTagStyles}
               html={article.content.rendered}
@@ -75,6 +76,7 @@ interface Styles extends DefaultStyles {
   category: TextStyle
   titleContainer: ViewStyle
   teaser: TextStyle
+  htmlContainer: ViewStyle
 }
 
 const styles = StyleSheet.create<Styles>({
@@ -104,6 +106,9 @@ const styles = StyleSheet.create<Styles>({
   teaser: {
     color: colors.accentColor,
     fontSize: 18,
+  },
+  htmlContainer: {
+    paddingBottom: 15,
   },
 })
 
