@@ -43,7 +43,7 @@ export const fetchPostsAsync = async (parameter?: {
   perPage?: number | string
 }): Promise<Response> => {
   const categoryQuery = parameter?.categoryId ? '&categories=' + parameter.categoryId : ''
-  const perPageQuery = '&per_page=' + (parameter?.perPage ? parameter.perPage : '15')
+  const perPageQuery = '&per_page=' + (parameter?.perPage ? parameter.perPage : '20')
   const pageQuery = parameter?.page ? '&page=' + parameter.page : ''
   return await fetch(API_URL_WP + API_WP_TYPE.POSTS + API_WP_FIELDS.POSTS + categoryQuery + perPageQuery + pageQuery)
 }

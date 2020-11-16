@@ -7,58 +7,55 @@ import ArticleList from '@components/Articles/ArticleList'
 import ArticlePreview from '@components/Articles/ArticlePreview'
 import LoadingSpinner from '@components/UI/LoadingSpinner'
 import Text from '@components/UI/Text'
-import { fetchPostsAsync } from '@utils/api'
+import { useInfinityFetchHook } from '@hooks/use-infinity-fetch-hook'
 import { Article } from '@models/article'
 import { DefaultStyles, defaultStyles } from '@styles/theme'
 
 const HomeScreen: React.FC = () => {
-  const [isLoading, setLoading] = useState(true)
+  const [initialLoading, setInitialLoading] = useState(true)
   const [newsArticles, setNewsArticles] = useState<Article[]>([])
   const [featuredSliderArticles, setFeaturedSliderArticles] = useState<Article[]>([])
   const [newsSliderArticles, setNewsSliderArticles] = useState<Article[]>([])
-  const [lastSponsoredArticle, setLastSponsoredArticle] = useState<Article>()
+  const [pinnedArticle, setPinnedArticle] = useState<Article>()
+
+  const { articles, fetchMore, isLoading } = useInfinityFetchHook()
 
   useEffect(() => {
-    const getArticlesAsync = async () => {
-      try {
-        const response = await fetchPostsAsync()
-        const articles: Article[] = await response.json()
+    const filteredNewsArticle = articles.filter(article => article.categories.includes(1))
 
-        const filteredNewsArticle = articles.filter(article => article.categories.includes(1))
-        if (
-          filteredNewsArticle[0].acf.sponsored_by !== undefined &&
-          filteredNewsArticle[0].acf.sponsored_by !== null &&
-          filteredNewsArticle[0].acf.sponsored_by.length > 0
-        ) {
-          filteredNewsArticle.shift()
-        }
-        setNewsArticles(filteredNewsArticle)
-        setFeaturedSliderArticles(articles.filter(article => article.acf.featured_slider).slice(0, 5))
-        setNewsSliderArticles(articles.filter(article => article.acf.news_slider).slice(0, 10))
-        setLastSponsoredArticle(
-          articles.find(article => typeof article.acf.sponsored_by === 'string' && article.acf.sponsored_by.length > 0)
-        )
-      } catch (error) {
-        console.error(error)
-      } finally {
-        setLoading(false)
-      }
+    if (filteredNewsArticle.length === 0) return
+
+    if (
+      filteredNewsArticle[0].acf?.sponsored_by !== undefined &&
+      filteredNewsArticle[0].acf.sponsored_by !== null &&
+      filteredNewsArticle[0].acf.sponsored_by.length > 0
+    ) {
+      filteredNewsArticle.shift()
     }
-    getArticlesAsync()
-  }, [])
+    setNewsArticles(filteredNewsArticle)
+
+    if (featuredSliderArticles.length > 0 || newsSliderArticles.length > 0) return
+
+    setFeaturedSliderArticles(articles.filter(article => article.acf?.featured_slider).slice(0, 5))
+    setNewsSliderArticles(articles.filter(article => article.acf?.news_slider).slice(0, 10))
+    setPinnedArticle(
+      articles.find(article => typeof article.acf?.sponsored_by === 'string' && article.acf.sponsored_by.length > 0)
+    )
+    setInitialLoading(false)
+  }, [articles])
 
   const SectionHeader = () => (
     <View style={styles.sectionHeaderContainer}>
       <FeaturedCarousel articles={featuredSliderArticles} />
       <Text style={styles.title}>News</Text>
       <NewsCarousel articles={newsSliderArticles} />
-      {lastSponsoredArticle && <ArticlePreview article={lastSponsoredArticle} />}
+      {pinnedArticle && <ArticlePreview article={pinnedArticle} />}
     </View>
   )
 
   return (
     <View style={styles.container}>
-      {isLoading ? (
+      {isLoading || initialLoading ? (
         <LoadingSpinner />
       ) : (
         <SectionList
@@ -67,6 +64,9 @@ const HomeScreen: React.FC = () => {
           sections={[{ data: newsArticles }]}
           renderItem={({ item }: { item: Article }) => <ArticlePreview article={item} />}
           renderSectionHeader={() => <SectionHeader />}
+          initialNumToRender={10}
+          onEndReachedThreshold={2}
+          onEndReached={fetchMore}
         >
           <ArticleList data={newsArticles} />
         </SectionList>
