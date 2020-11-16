@@ -30,9 +30,9 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
       {hasImage && (
         <View style={styles.imageColumn}>
           {article.featured_media ? (
-            <Image style={styles.image} source={{ uri: article.featured_image_thumb }} />
+            <Image style={styles.image as ImageStyle} source={{ uri: article.featured_image_thumb }} />
           ) : (
-            <View style={styles.noImage} testID="no-image">
+            <View style={styles.image as ViewStyle} testID="no-image">
               <LogoRound />
             </View>
           )}
@@ -58,13 +58,13 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
     <Touchable onPress={() => navigation.navigate('ArticleScreen', { postId: article.id })}>
       <View style={styles.sponsoredArticleContainer}>
         <ImageBackground
-          source={{ uri: article.featured_image_thumb }}
+          source={{ uri: article.featured_image_medium }}
           style={styles.backgroundImage}
           imageStyle={{ borderRadius: 15 }}
         >
           <View style={styles.sponsoredTextContainer}>
             <Text style={styles.sponsoredText}>
-              Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf.sponsored_by}</Text>
+              Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf?.sponsored_by}</Text>
             </Text>
           </View>
           <View style={styles.sponsoredTitleContainer}>
@@ -75,7 +75,7 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
     </Touchable>
   )
 
-  return ignoreSponsored || !article.acf.sponsored_by || article.acf.sponsored_by === ''
+  return ignoreSponsored || !article.acf?.sponsored_by || article.acf?.sponsored_by === ''
     ? defaultArticle
     : sponsoredArticle
 }
@@ -83,8 +83,7 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
 interface Styles extends DefaultStyles {
   articleContainer: ViewStyle
   imageColumn: ViewStyle
-  image: ImageStyle
-  noImage: ViewStyle
+  image: ImageStyle | ViewStyle
   textColumn: ViewStyle
   sponsoredArticleContainer: ViewStyle
   sponsoredTextContainer: ViewStyle
@@ -114,10 +113,6 @@ const styles = StyleSheet.create<Styles>({
     flex: 1,
     borderRadius: 15,
   },
-  noImage: {
-    flex: 1,
-    borderRadius: 15,
-  },
   textColumn: {
     width: Dimensions.get('screen').width - 130,
     paddingHorizontal: 15,
@@ -143,6 +138,7 @@ const styles = StyleSheet.create<Styles>({
   },
   sponsoredText: {
     fontSize: 14,
+    textAlign: 'right',
   },
   sponsoredTitleContainer: {
     justifyContent: 'flex-end',
