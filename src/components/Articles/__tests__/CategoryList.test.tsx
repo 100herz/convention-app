@@ -16,7 +16,7 @@ jest.mock('@react-navigation/native', () => {
   }
 })
 
-describe('<LinkList />', () => {
+describe('<CategoryList />', () => {
   it('renders correctly', () => {
     const { toJSON } = render(<CategoryList data={[category]} />)
     expect(toJSON()).toMatchSnapshot()

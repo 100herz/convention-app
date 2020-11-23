@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@testing-library/react-native'
 
 import FeaturedCarousel from '../FeaturedCarousel'
 import { article, articleWithoutFeatured } from '@__mocks__/article'
@@ -24,5 +24,15 @@ describe('<FeaturedCarousel />', () => {
   it('renders correctly', () => {
     const { toJSON } = render(<FeaturedCarousel articles={[article, articleWithoutFeatured]} />)
     expect(toJSON()).toMatchSnapshot()
+  })
+
+  it('should call the navigate function once', () => {
+    const { getByTestId } = render(<FeaturedCarousel articles={[article]} />)
+
+    act(() => {
+      fireEvent.press(getByTestId('featuredCarouselItem'))
+    })
+
+    expect(mockedNavigate).toHaveBeenCalledTimes(1)
   })
 })

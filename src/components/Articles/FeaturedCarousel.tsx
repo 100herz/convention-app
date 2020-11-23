@@ -22,32 +22,41 @@ const FeaturedCarousel: React.FC<Props> = ({ articles }) => {
   const screenWidth = Dimensions.get('screen').width
 
   const slideItem = ({ item }: { item: Article }) => (
-    <Touchable onPress={() => navigation.navigate('ArticleScreen', { postId: item.id })}>
-      <View style={styles.container}>
-        <ImageBackground source={{ uri: item.featured_image_thumb }} style={styles.backgroundImage}>
-          <View
-            style={{
-              ...styles.slideContainer,
-              justifyContent:
-                item.acf.sponsored_by !== undefined &&
-                item.acf.sponsored_by !== null &&
-                item.acf.sponsored_by.length > 0
-                  ? 'space-between'
-                  : 'flex-end',
-            }}
-          >
-            {item.acf.sponsored_by !== undefined && item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0 && (
-              <Text style={styles.sponsored}>
-                Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{item.acf.sponsored_by}</Text>
-              </Text>
-            )}
-            <View style={styles.titleContainer}>
-              <HTML baseFontStyle={styles.title} html={item.title.rendered} />
-            </View>
+    <React.Fragment>
+      {item.acf && (
+        <Touchable
+          onPress={() => navigation.navigate('ArticleScreen', { postId: item.id })}
+          testID="featuredCarouselItem"
+        >
+          <View style={styles.container}>
+            <ImageBackground source={{ uri: item.featured_image_thumb }} style={styles.backgroundImage}>
+              <View
+                style={{
+                  ...styles.slideContainer,
+                  justifyContent:
+                    item.acf.sponsored_by !== undefined &&
+                    item.acf.sponsored_by !== null &&
+                    item.acf.sponsored_by.length > 0
+                      ? 'space-between'
+                      : 'flex-end',
+                }}
+              >
+                {item.acf.sponsored_by !== undefined &&
+                  item.acf.sponsored_by !== null &&
+                  item.acf.sponsored_by.length > 0 && (
+                    <Text style={styles.sponsored}>
+                      Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{item.acf.sponsored_by}</Text>
+                    </Text>
+                  )}
+                <View style={styles.titleContainer}>
+                  <HTML baseFontStyle={styles.title} html={item.title.rendered} />
+                </View>
+              </View>
+            </ImageBackground>
           </View>
-        </ImageBackground>
-      </View>
-    </Touchable>
+        </Touchable>
+      )}
+    </React.Fragment>
   )
   return (
     <Carousel
