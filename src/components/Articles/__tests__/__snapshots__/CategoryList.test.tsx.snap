@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LinkList /> renders correctly 1`] = `
+exports[`<CategoryList /> renders correctly 1`] = `
 <RCTScrollView
   data={
     Array [

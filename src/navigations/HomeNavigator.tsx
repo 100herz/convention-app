@@ -42,7 +42,7 @@ const MainNavigation: React.FC = () => {
         component={ArticlesOverviewScreen}
         options={({ route }) => ({ title: route.params.categoryName })}
       />
-      <HomeStack.Screen name="ArticleScreen" component={ArticleScreen} options={{ headerTitle: HeaderLogo }} />
+      <HomeStack.Screen name="ArticleScreen" component={ArticleScreen} options={{ headerTitle: '' }} />
     </HomeStack.Navigator>
   )
 }

@@ -1,11 +1,9 @@
 import React from 'react'
-import { View } from 'react-native'
 import { StackNavigationOptions, createStackNavigator } from '@react-navigation/stack'
 
 import CategoriesOverviewScreen from '@screens/CategoriesOverviewScreen'
 import ArticlesOverviewScreen from '@screens/ArticlesOverviewScreen'
 import ArticleScreen from '@screens/ArticleScreen'
-import Logo from '@components/UI/Logo'
 import { colors } from '@styles/theme'
 
 export type CategoriesStackParamList = {
@@ -21,12 +19,6 @@ const defaultNavigatorOptions: StackNavigationOptions = {
 }
 
 const CategoriesNavigator: React.FC = () => {
-  const HeaderLogo = () => (
-    <View style={{ alignItems: 'center' }}>
-      <Logo height={30} />
-    </View>
-  )
-
   return (
     <CategoriesStack.Navigator initialRouteName="CategoriesOverviewScreen" screenOptions={defaultNavigatorOptions}>
       <CategoriesStack.Screen
@@ -39,7 +31,7 @@ const CategoriesNavigator: React.FC = () => {
         component={ArticlesOverviewScreen}
         options={({ route }) => ({ title: route.params.categoryName })}
       />
-      <CategoriesStack.Screen name="ArticleScreen" component={ArticleScreen} options={{ headerTitle: HeaderLogo }} />
+      <CategoriesStack.Screen name="ArticleScreen" component={ArticleScreen} options={{ headerTitle: '' }} />
     </CategoriesStack.Navigator>
   )
 }
