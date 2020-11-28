@@ -37,27 +37,27 @@ export const fetchPostAsync = async (postId: number): Promise<Response> => {
  *
  * @param parameter The parameter for the WordPress REST API query.
  */
-export const fetchPostsAsync = async (parameter?: {
-  categoryId?: number | string
-  page?: number | string
-  perPage?: number | string
-}): Promise<Response> => {
-  const categoryQuery = parameter?.categoryId ? '&categories=' + parameter.categoryId : ''
-  const perPageQuery = '&per_page=' + (parameter?.perPage ? parameter.perPage : '20')
-  const pageQuery = parameter?.page ? '&page=' + parameter.page : ''
+export const fetchPostsAsync = async ({
+  categoryId,
+  page,
+  perPage,
+}: { categoryId?: number | string; page?: number | string; perPage?: number | string } = {}): Promise<Response> => {
+  const categoryQuery = categoryId ? '&categories=' + categoryId : ''
+  const perPageQuery = '&per_page=' + (perPage ? perPage : '20')
+  const pageQuery = page ? '&page=' + page : ''
   return await fetch(API_URL_WP + API_WP_TYPE.POSTS + API_WP_FIELDS.POSTS + categoryQuery + perPageQuery + pageQuery)
 }
 
 /**
  * Fetches the categories from the WordPress API.
  *
- * @param parameter The parameter for the WordPress REST API query.
+ * @param The parameter for the WordPress REST API query.
  */
-export const fetchCategoriesAsync = async (parameter?: {
-  perPage?: number | string
-  orderBy?: string
-}): Promise<Response> => {
-  const perPageQuery = '&per_page=' + (parameter?.perPage ? parameter.perPage : '99')
-  const orderByQuery = '&orderby=' + (parameter?.orderBy ? parameter.orderBy : 'description')
+export const fetchCategoriesAsync = async ({
+  perPage,
+  orderBy,
+}: { perPage?: number | string; orderBy?: string } = {}): Promise<Response> => {
+  const perPageQuery = '&per_page=' + (perPage ? perPage : '99')
+  const orderByQuery = '&orderby=' + (orderBy ? orderBy : 'description')
   return await fetch(API_URL_WP + API_WP_TYPE.CATEGORIES + API_WP_FIELDS.CATEGORIES + perPageQuery + orderByQuery)
 }
