@@ -7,7 +7,8 @@
 # expo
 node_modules/**/*
 .expo/
-npm-debug.*
+.expo-creds/
+pc-api-*.json
 *.jks
 *.p8
 *.p12
@@ -15,6 +16,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+npm-debug.*
 
 # testing
 coverage
