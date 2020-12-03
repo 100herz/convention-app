@@ -2,10 +2,8 @@ name: Release CI
 
 on:
   push:
-    branches-ignore:
-      - '**'
-    # branches:
-    #   - main
+    branches:
+      - main
 
 jobs:
   release:
