@@ -3,6 +3,8 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "android": "expo start --android",
+    "build:android": "expo build:android -t app-bundle",
+    "build:ios": "expo build:ios",
     "commit": "git-cz",
     "dev": "expo start",
     "eject": "expo eject",
@@ -13,6 +15,8 @@
     "test": "jest --detectOpenHandles --forceExit",
     "test:cov": "jest --coverage --detectOpenHandles --forceExit",
     "test:watch": "jest -u --watch --detectOpenHandles --forceExit",
+    "upload:android": "expo upload:android --latest",
+    "upload:ios": "expo upload:ios --latest --language German",
     "web": "expo start --web"
   },
   "husky": {
@@ -98,6 +102,6 @@
     "access": "restricted"
   },
   "release": {
-    "extends": "./config/release.config.js"
+    "extends": "./config/.releaserc.json"
   }
 }

@@ -1,25 +1,34 @@
 {
   "expo": {
     "entryPoint": "./src/App.tsx",
-    "name": "convention-app",
-    "slug": "convention-app",
+    "name": "Convention International",
+    "slug": "convention-international",
+    "description": "Trends, developments and current news from the MICE industry. Everything around meetings, incentives, congresses and events.",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#111111"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logo-transparent.png",
+        "backgroundColor": "#111111"
+      },
+      "permissions": [],
+      "package": "de.convention_net",
+      "versionCode": 3
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "de.convention-net",
+      "buildNumber": "1.0.0"
     }
   }
 }

@@ -81,6 +81,7 @@ interface Style extends DefaultStyles {
 
 const styles = StyleSheet.create<Style>({
   ...defaultStyles,
+  // TODO: Can this get removed?
   sectionHeaderContainer: {},
   title: {
     ...defaultStyles.title,
