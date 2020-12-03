@@ -1,8 +1,13 @@
 {
+  "name": "convention-app",
+  "version": "0.0.0-development",
   "private": true,
+  "description": "Trends, developments and current news from the MICE industry. Everything around meetings, incentives, congresses and events.",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "android": "expo start --android",
+    "build:android": "expo build:android -t app-bundle",
+    "build:ios": "expo build:ios",
     "commit": "git-cz",
     "dev": "expo start",
     "eject": "expo eject",
@@ -13,6 +18,8 @@
     "test": "jest --detectOpenHandles --forceExit",
     "test:cov": "jest --coverage --detectOpenHandles --forceExit",
     "test:watch": "jest -u --watch --detectOpenHandles --forceExit",
+    "upload:android": "expo upload:android --latest",
+    "upload:ios": "expo upload:ios --latest --language German",
     "web": "expo start --web"
   },
   "husky": {
@@ -68,6 +75,8 @@
     "@babel/core": "~7.12.3",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@testing-library/jest-native": "^3.4.3",
     "@testing-library/react-native": "^7.1.0",
     "@types/jest": "^26.0.15",
@@ -92,12 +101,13 @@
     "lint-staged": "^10.5.1",
     "prettier": "^2.2.0",
     "react-test-renderer": "^17.0.1",
+    "semantic-release": "^17.3.0",
     "typescript": "~3.9.2"
   },
   "publishConfig": {
     "access": "restricted"
   },
   "release": {
-    "extends": "./config/release.config.js"
+    "extends": "./config/.releaserc.json"
   }
 }
