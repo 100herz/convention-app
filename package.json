@@ -1,5 +1,8 @@
 {
+  "name": "convention-app",
+  "version": "0.0.0-development",
   "private": true,
+  "description": "Trends, developments and current news from the MICE industry. Everything around meetings, incentives, congresses and events.",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "android": "expo start --android",
