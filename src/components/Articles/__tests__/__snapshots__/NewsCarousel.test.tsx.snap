@@ -199,116 +199,90 @@ exports[`<NewsCarousel /> renders correctly 1`] = `
         }
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-              "padding": 15,
+              "opacity": 1,
             }
           }
         >
           <View
             style={
               Object {
-                "alignItems": "flex-start",
-                "paddingHorizontal": 15,
-                "width": 620,
+                "flexDirection": "row",
+                "padding": 15,
               }
             }
+            testID="default-article"
           >
             <View
-              style={Object {}}
-            >
-              <Text
-                allowFontScaling={true}
-                selectable={false}
-                style={
-                  Array [
-                    Object {},
-                    Object {},
-                  ]
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "paddingHorizontal": 15,
+                  "width": 620,
                 }
+              }
+            >
+              <View
+                style={Object {}}
               >
                 <Text
                   allowFontScaling={true}
+                  selectable={false}
                   style={
-                    Object {
-                      "color": "#333333",
-                      "fontFamily": "sans",
-                      "fontSize": 13,
-                      "lineHeight": 16.25,
-                    }
+                    Array [
+                      Object {},
+                      Object {},
+                    ]
                   }
                 >
-                  „New Normal“ bei Leonardo Hotels – mit neuen MICE-Formaten und Konzepten
+                  <Text
+                    allowFontScaling={true}
+                    style={
+                      Object {
+                        "color": "#333333",
+                        "fontFamily": "sans",
+                        "fontSize": 13,
+                        "lineHeight": 16.25,
+                      }
+                    }
+                  >
+                    „New Normal“ bei Leonardo Hotels – mit neuen MICE-Formaten und Konzepten
+                  </Text>
                 </Text>
-              </Text>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "paddingBottom": 10,
-                  "paddingTop": 5,
-                }
-              }
-            >
-              <Text />
-              <Text
-                style={
-                  Object {
-                    "color": "#872232",
-                    "fontFamily": "sans",
-                    "fontSize": 10,
-                    "lineHeight": 22.5,
-                    "marginLeft": 5,
-                  }
-                }
-              >
-                11. November 2020
-              </Text>
-            </View>
-            <View
-              accessible={true}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-              testID="button"
-            >
+              </View>
               <View
                 style={
                   Object {
-                    "backgroundColor": "#872232",
-                    "borderRadius": 4,
-                    "paddingHorizontal": 15,
-                    "paddingVertical": 2,
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "paddingBottom": 10,
+                    "paddingTop": 5,
                   }
                 }
               >
+                <Text />
                 <Text
                   style={
                     Object {
-                      "color": "white",
-                      "fontFamily": "sans-bold",
-                      "fontSize": 12,
+                      "color": "#872232",
+                      "fontFamily": "sans",
+                      "fontSize": 10,
                       "lineHeight": 22.5,
-                      "textTransform": "uppercase",
+                      "marginLeft": 5,
                     }
                   }
-                  testID="text-output"
                 >
-                  Details
+                  11. November 2020
                 </Text>
               </View>
             </View>
@@ -343,116 +317,90 @@ exports[`<NewsCarousel /> renders correctly 1`] = `
         }
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-              "padding": 15,
+              "opacity": 1,
             }
           }
         >
           <View
             style={
               Object {
-                "alignItems": "flex-start",
-                "paddingHorizontal": 15,
-                "width": 620,
+                "flexDirection": "row",
+                "padding": 15,
               }
             }
+            testID="default-article"
           >
             <View
-              style={Object {}}
-            >
-              <Text
-                allowFontScaling={true}
-                selectable={false}
-                style={
-                  Array [
-                    Object {},
-                    Object {},
-                  ]
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "paddingHorizontal": 15,
+                  "width": 620,
                 }
+              }
+            >
+              <View
+                style={Object {}}
               >
                 <Text
                   allowFontScaling={true}
+                  selectable={false}
                   style={
-                    Object {
-                      "color": "#333333",
-                      "fontFamily": "sans",
-                      "fontSize": 13,
-                      "lineHeight": 16.25,
-                    }
+                    Array [
+                      Object {},
+                      Object {},
+                    ]
                   }
                 >
-                  Events and Hospitality Industries Urged to Harness the Power of Digital Transformation to Thrive in 2021 and Beyond
+                  <Text
+                    allowFontScaling={true}
+                    style={
+                      Object {
+                        "color": "#333333",
+                        "fontFamily": "sans",
+                        "fontSize": 13,
+                        "lineHeight": 16.25,
+                      }
+                    }
+                  >
+                    Events and Hospitality Industries Urged to Harness the Power of Digital Transformation to Thrive in 2021 and Beyond
+                  </Text>
                 </Text>
-              </Text>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "paddingBottom": 10,
-                  "paddingTop": 5,
-                }
-              }
-            >
-              <Text />
-              <Text
-                style={
-                  Object {
-                    "color": "#872232",
-                    "fontFamily": "sans",
-                    "fontSize": 10,
-                    "lineHeight": 22.5,
-                    "marginLeft": 5,
-                  }
-                }
-              >
-                10. November 2020
-              </Text>
-            </View>
-            <View
-              accessible={true}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-              testID="button"
-            >
+              </View>
               <View
                 style={
                   Object {
-                    "backgroundColor": "#872232",
-                    "borderRadius": 4,
-                    "paddingHorizontal": 15,
-                    "paddingVertical": 2,
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "paddingBottom": 10,
+                    "paddingTop": 5,
                   }
                 }
               >
+                <Text />
                 <Text
                   style={
                     Object {
-                      "color": "white",
-                      "fontFamily": "sans-bold",
-                      "fontSize": 12,
+                      "color": "#872232",
+                      "fontFamily": "sans",
+                      "fontSize": 10,
                       "lineHeight": 22.5,
-                      "textTransform": "uppercase",
+                      "marginLeft": 5,
                     }
                   }
-                  testID="text-output"
                 >
-                  Details
+                  10. November 2020
                 </Text>
               </View>
             </View>

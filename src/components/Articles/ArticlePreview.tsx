@@ -7,7 +7,6 @@ import { Ionicons } from '@expo/vector-icons'
 
 import LogoRound from '@components/UI/LogoRound'
 import Text from '@components/UI/Text'
-import Button from '@components/UI/Button'
 import Touchable from '@components/UI/Touchable'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
@@ -28,32 +27,28 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
   const isPinned = () => !!(article.acf?.pinned && !ignoreSponsored)
 
   const defaultArticle = (
-    <View style={styles.articleContainer}>
-      {hasImage && (
-        <View style={styles.imageColumn}>
-          {article.featured_media ? (
-            <Image style={styles.image as ImageStyle} source={{ uri: article.featured_image_thumb }} />
-          ) : (
-            <View style={styles.image as ViewStyle} testID="no-image">
-              <LogoRound />
-            </View>
-          )}
+    <Touchable onPress={() => navigation.navigate('ArticleScreen', { postId: article.id })}>
+      <View style={styles.articleContainer} testID="default-article">
+        {hasImage && (
+          <View style={styles.imageColumn}>
+            {article.featured_media ? (
+              <Image style={styles.image as ImageStyle} source={{ uri: article.featured_image_thumb }} />
+            ) : (
+              <View style={styles.image as ViewStyle} testID="no-image">
+                <LogoRound />
+              </View>
+            )}
+          </View>
+        )}
+        <View style={styles.textColumn}>
+          <HTML baseFontStyle={styles.title} html={article.title.rendered} />
+          <View style={styles.dateContainer}>
+            <Ionicons name="ios-clock" size={12} color={colors.accentColor} />
+            <Text style={styles.date}>{getLocaleLongDate(new Date(article.date_gmt))}</Text>
+          </View>
         </View>
-      )}
-      <View style={styles.textColumn}>
-        <HTML baseFontStyle={styles.title} html={article.title.rendered} />
-        <View style={styles.dateContainer}>
-          <Ionicons name="ios-clock" size={12} color={colors.accentColor} />
-          <Text style={styles.date}>{getLocaleLongDate(new Date(article.date_gmt))}</Text>
-        </View>
-        <Button
-          textStyle={{ fontSize: 12 }}
-          title="Details"
-          onPress={() => navigation.navigate('ArticleScreen', { postId: article.id })}
-          testID="button"
-        />
       </View>
-    </View>
+    </Touchable>
   )
 
   const sponsoredArticle = (
@@ -106,7 +101,6 @@ const styles = StyleSheet.create<Styles>({
     justifyContent: 'flex-end',
   },
   articleContainer: {
-    alignItems: 'center',
     flexDirection: 'row',
     padding: 15,
   },
