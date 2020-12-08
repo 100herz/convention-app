@@ -20,27 +20,23 @@ const HomeScreen: React.FC = () => {
 
   const { articles, fetchMore, isLoading } = useInfinityFetchHook()
 
+  const isSponsored = (sponsoredProperty: string | null | undefined) =>
+    sponsoredProperty !== undefined && sponsoredProperty !== null && sponsoredProperty.length > 0
+
   useEffect(() => {
     const filteredNewsArticle = articles.filter(article => article.categories.includes(1))
 
     if (filteredNewsArticle.length === 0) return
 
-    if (
-      filteredNewsArticle[0].acf?.sponsored_by !== undefined &&
-      filteredNewsArticle[0].acf.sponsored_by !== null &&
-      filteredNewsArticle[0].acf.sponsored_by.length > 0
-    ) {
-      filteredNewsArticle.shift()
-    }
+    if (isSponsored(filteredNewsArticle[0].acf?.sponsored_by)) filteredNewsArticle.shift()
+
     setNewsArticles(filteredNewsArticle)
 
-    if (featuredSliderArticles.length > 0 || newsSliderArticles.length > 0) return
+    if (featuredSliderArticles.length > 0 || newsSliderArticles.length > 0 || pinnedArticle) return
 
     setFeaturedSliderArticles(articles.filter(article => article.acf?.featured_slider).slice(0, 5))
     setNewsSliderArticles(articles.filter(article => article.acf?.news_slider).slice(0, 10))
-    setPinnedArticle(
-      articles.find(article => typeof article.acf?.sponsored_by === 'string' && article.acf.sponsored_by.length > 0)
-    )
+    setPinnedArticle(articles.find(article => article.acf?.pinned))
     setInitialLoading(false)
   }, [articles])
 

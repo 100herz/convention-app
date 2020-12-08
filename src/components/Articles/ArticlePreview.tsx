@@ -24,6 +24,8 @@ interface Props {
 
 const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSponsored = false }) => {
   const navigation = useNavigation<StackNavigationProp<HomeStackParamList | CategoriesStackParamList>>()
+  const isSponsored = () => !!(article.acf?.sponsored_by && article.acf?.sponsored_by.length > 0 && !ignoreSponsored)
+  const isPinned = () => !!(article.acf?.pinned && !ignoreSponsored)
 
   const defaultArticle = (
     <View style={styles.articleContainer}>
@@ -56,17 +58,19 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
 
   const sponsoredArticle = (
     <Touchable onPress={() => navigation.navigate('ArticleScreen', { postId: article.id })}>
-      <View style={styles.sponsoredArticleContainer}>
+      <View style={styles.sponsoredArticleContainer} testID="sponsored-article">
         <ImageBackground
           source={{ uri: article.featured_image_medium }}
-          style={styles.backgroundImage}
+          style={isSponsored() ? styles.backgroundImage : styles.backgroundImagePinned}
           imageStyle={{ borderRadius: 15 }}
         >
-          <View style={styles.sponsoredTextContainer}>
-            <Text style={styles.sponsoredText}>
-              Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf?.sponsored_by}</Text>
-            </Text>
-          </View>
+          {isSponsored() && (
+            <View style={styles.sponsoredTextContainer} testID="sponsored-text-container">
+              <Text style={styles.sponsoredText}>
+                Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf?.sponsored_by}</Text>
+              </Text>
+            </View>
+          )}
           <View style={styles.sponsoredTitleContainer}>
             <HTML baseFontStyle={styles.sponsoredTitle} html={article.title.rendered} />
           </View>
@@ -75,12 +79,11 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
     </Touchable>
   )
 
-  return ignoreSponsored || !article.acf?.sponsored_by || article.acf?.sponsored_by === ''
-    ? defaultArticle
-    : sponsoredArticle
+  return isSponsored() || isPinned() ? sponsoredArticle : defaultArticle
 }
 
 interface Styles extends DefaultStyles {
+  backgroundImagePinned: ViewStyle
   articleContainer: ViewStyle
   imageColumn: ViewStyle
   image: ImageStyle | ViewStyle
@@ -97,6 +100,10 @@ const styles = StyleSheet.create<Styles>({
   backgroundImage: {
     ...defaultStyles.backgroundImage,
     justifyContent: 'space-between',
+  },
+  backgroundImagePinned: {
+    ...defaultStyles.backgroundImage,
+    justifyContent: 'flex-end',
   },
   articleContainer: {
     alignItems: 'center',
