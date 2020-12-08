@@ -6,7 +6,7 @@ import { ScrollView, StyleSheet, View } from 'react-native'
 import LegalList from '@components/Settings/LegalList'
 import SocialList from '@components/Settings/SocialList'
 import { socialMediaChannels } from '@data/social'
-import { legalScreens, settingArray } from '@data/settings'
+import { legalScreens /*, settingArray*/ } from '@data/settings'
 import { defaultStyles, DefaultStyles } from '@styles/theme'
 
 const SettingsScreen: React.FC = () => {
