@@ -236,6 +236,7 @@ exports[`<NewsCarousel /> renders correctly 1`] = `
                       "color": "#333333",
                       "fontFamily": "sans",
                       "fontSize": 13,
+                      "lineHeight": 16.25,
                     }
                   }
                 >
@@ -260,6 +261,7 @@ exports[`<NewsCarousel /> renders correctly 1`] = `
                     "color": "#872232",
                     "fontFamily": "sans",
                     "fontSize": 10,
+                    "lineHeight": 22.5,
                     "marginLeft": 5,
                   }
                 }
@@ -300,6 +302,7 @@ exports[`<NewsCarousel /> renders correctly 1`] = `
                       "color": "white",
                       "fontFamily": "sans-bold",
                       "fontSize": 12,
+                      "lineHeight": 22.5,
                       "textTransform": "uppercase",
                     }
                   }
@@ -377,6 +380,7 @@ exports[`<NewsCarousel /> renders correctly 1`] = `
                       "color": "#333333",
                       "fontFamily": "sans",
                       "fontSize": 13,
+                      "lineHeight": 16.25,
                     }
                   }
                 >
@@ -401,6 +405,7 @@ exports[`<NewsCarousel /> renders correctly 1`] = `
                     "color": "#872232",
                     "fontFamily": "sans",
                     "fontSize": 10,
+                    "lineHeight": 22.5,
                     "marginLeft": 5,
                   }
                 }
@@ -441,6 +446,7 @@ exports[`<NewsCarousel /> renders correctly 1`] = `
                       "color": "white",
                       "fontFamily": "sans-bold",
                       "fontSize": 12,
+                      "lineHeight": 22.5,
                       "textTransform": "uppercase",
                     }
                   }

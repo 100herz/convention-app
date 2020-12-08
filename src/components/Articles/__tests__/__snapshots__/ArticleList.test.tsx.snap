@@ -148,6 +148,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
                     "color": "#333333",
                     "fontFamily": "sans",
                     "fontSize": 14,
+                    "lineHeight": 17.5,
                     "textAlign": "right",
                   }
                 }
@@ -158,6 +159,8 @@ exports[`<ArticleList /> renders correctly 1`] = `
                     Object {
                       "color": "#333333",
                       "fontFamily": "sans-bold",
+                      "fontSize": 15,
+                      "lineHeight": 22.5,
                     }
                   }
                 >
@@ -195,7 +198,8 @@ exports[`<ArticleList /> renders correctly 1`] = `
                     style={
                       Object {
                         "fontFamily": "sans",
-                        "fontSize": 16,
+                        "fontSize": 14,
+                        "lineHeight": 17.5,
                       }
                     }
                   >

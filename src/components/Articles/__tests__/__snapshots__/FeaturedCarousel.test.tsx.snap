@@ -260,6 +260,7 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
                       "color": "#333333",
                       "fontFamily": "sans",
                       "fontSize": 14,
+                      "lineHeight": 17.5,
                       "paddingHorizontal": 30,
                       "paddingVertical": 10,
                       "textAlign": "right",
@@ -273,6 +274,8 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
                       Object {
                         "color": "#333333",
                         "fontFamily": "sans-bold",
+                        "fontSize": 15,
+                        "lineHeight": 22.5,
                       }
                     }
                   >
@@ -307,7 +310,8 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
                         style={
                           Object {
                             "fontFamily": "sans",
-                            "fontSize": 16,
+                            "fontSize": 14,
+                            "lineHeight": 17.5,
                           }
                         }
                       >
@@ -439,7 +443,8 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
                         style={
                           Object {
                             "fontFamily": "sans",
-                            "fontSize": 16,
+                            "fontSize": 14,
+                            "lineHeight": 17.5,
                           }
                         }
                       >

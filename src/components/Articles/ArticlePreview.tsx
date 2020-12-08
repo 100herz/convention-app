@@ -128,6 +128,7 @@ const styles = StyleSheet.create<Styles>({
   title: {
     fontFamily: fonts.sans,
     fontSize: 13,
+    lineHeight: 13 * 1.25,
     color: colors.primaryColor,
   },
   sponsoredArticleContainer: {
@@ -145,6 +146,7 @@ const styles = StyleSheet.create<Styles>({
   },
   sponsoredText: {
     fontSize: 14,
+    lineHeight: 14 * 1.25,
     textAlign: 'right',
   },
   sponsoredTitleContainer: {
@@ -156,7 +158,8 @@ const styles = StyleSheet.create<Styles>({
     borderBottomRightRadius: 15,
   },
   sponsoredTitle: {
-    fontSize: 16,
+    fontSize: 14,
+    lineHeight: 14 * 1.25,
     fontFamily: fonts.sans,
   },
 })

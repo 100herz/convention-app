@@ -1,16 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {
-  Dimensions,
-  // TODO: Maybe add an additional image above the content (there are more parts belong to this)
-  // Image,
-  // ImageStyle,
-  Linking,
-  ScrollView,
-  StyleSheet,
-  TextStyle,
-  View,
-  ViewStyle,
-} from 'react-native'
+import { Dimensions, Linking, ScrollView, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
 import { RouteProp, useRoute } from '@react-navigation/native'
 import HTML from 'react-native-render-html'
 import { Ionicons } from '@expo/vector-icons'
@@ -66,9 +55,6 @@ const ArticleScreen: React.FC = () => {
               <Text style={styles.date}>{getLocaleLongDate(new Date(article.date_gmt || Date.now.toString()))}</Text>
             </View>
             <HTML baseFontStyle={styles.teaser} html={article.excerpt.rendered} />
-            {/* <View style={styles.imageContainer}>
-              <Image style={styles.image} source={{ uri: article.featured_image_medium }} />
-            </View> */}
             <HTML
               containerStyle={styles.htmlContainer}
               baseFontStyle={styles.text}
@@ -90,8 +76,6 @@ interface Styles extends DefaultStyles {
   category: TextStyle
   titleContainer: ViewStyle
   teaser: TextStyle
-  // imageContainer: ViewStyle
-  // image: ImageStyle
   htmlContainer: ViewStyle
 }
 
@@ -122,15 +106,8 @@ const styles = StyleSheet.create<Styles>({
   teaser: {
     color: colors.accentColor,
     fontSize: 18,
+    lineHeight: 18 * 1.5,
   },
-  // imageContainer: {
-  //   height: Dimensions.get('screen').width,
-  //   borderRadius: 10,
-  // },
-  // image: {
-  //   flex: 1,
-  //   borderRadius: 15,
-  // },
   htmlContainer: {
     paddingBottom: 15,
   },

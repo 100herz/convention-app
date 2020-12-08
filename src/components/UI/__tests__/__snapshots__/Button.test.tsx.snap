@@ -32,6 +32,8 @@ exports[`<Button /> renders correctly 1`] = `
         Object {
           "color": "white",
           "fontFamily": "sans-bold",
+          "fontSize": 15,
+          "lineHeight": 22.5,
           "textTransform": "uppercase",
         }
       }

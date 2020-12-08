@@ -58,6 +58,8 @@ exports[`<LegalList /> renders correctly 1`] = `
               Object {
                 "color": "#333333",
                 "fontFamily": "sans",
+                "fontSize": 15,
+                "lineHeight": 22.5,
               }
             }
           >
@@ -116,6 +118,8 @@ exports[`<LegalList /> renders correctly 1`] = `
               Object {
                 "color": "#333333",
                 "fontFamily": "sans",
+                "fontSize": 15,
+                "lineHeight": 22.5,
               }
             }
           >
@@ -160,6 +164,8 @@ exports[`<LegalList /> renders correctly 1`] = `
           Object {
             "color": "#333333",
             "fontFamily": "sans",
+            "fontSize": 15,
+            "lineHeight": 22.5,
           }
         }
       >

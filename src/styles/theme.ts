@@ -54,6 +54,8 @@ export const defaultStyles = StyleSheet.create<DefaultStyles>({
   },
   text: {
     fontFamily: fonts.sans,
+    fontSize: 15,
+    lineHeight: 15 * 1.5,
     color: colors.primaryColor,
   },
   dateContainer: {
