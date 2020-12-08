@@ -25,6 +25,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
         "padding": 10,
       }
     }
+    testID="sponsored-article"
   >
     <View
       accessibilityIgnoresInvertColors={true}
@@ -72,6 +73,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
             "paddingVertical": 10,
           }
         }
+        testID="sponsored-text-container"
       >
         <Text
           style={
