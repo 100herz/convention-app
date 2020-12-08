@@ -11,7 +11,7 @@ import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
 import { fetchPostAsync } from '@utils/api'
 import { getLocaleLongDate } from '@utils/date-time'
 import { Article } from '@models/article'
-import { colors, DefaultStyles, defaultStyles, fonts, htmlBodyTagStyles } from '@styles/theme'
+import { colors, DefaultStyles, defaultStyles, fonts, htmlBodyClassesStyles, htmlBodyTagStyles } from '@styles/theme'
 
 const ArticleScreen: React.FC = () => {
   const route = useRoute<RouteProp<HomeStackParamList | CategoriesStackParamList, 'ArticleScreen'>>()
@@ -59,6 +59,7 @@ const ArticleScreen: React.FC = () => {
               containerStyle={styles.htmlContainer}
               baseFontStyle={styles.text}
               tagsStyles={htmlBodyTagStyles}
+              classesStyles={htmlBodyClassesStyles}
               html={article.content.rendered}
               ignoredStyles={['height', 'width']}
               imagesMaxWidth={Dimensions.get('window').width - 30}

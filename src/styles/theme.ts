@@ -14,6 +14,11 @@ export const fonts = {
   serifBold: 'serif-bold',
 }
 
+export const htmlBodyClassesStyles: HTML.StylesDictionary = {
+  'post-tslideshow-nav-outer': { display: 'none' },
+  'post-tslideshow-nav-outer-bottom': { display: 'none' },
+}
+
 export const htmlBodyTagStyles: HTML.StylesDictionary = {
   a: {
     color: colors.accentColor,
