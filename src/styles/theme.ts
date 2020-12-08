@@ -14,6 +14,11 @@ export const fonts = {
   serifBold: 'serif-bold',
 }
 
+export const htmlBodyClassesStyles: HTML.StylesDictionary = {
+  'post-tslideshow-nav-outer': { display: 'none' },
+  'post-tslideshow-nav-outer-bottom': { display: 'none' },
+}
+
 export const htmlBodyTagStyles: HTML.StylesDictionary = {
   a: {
     color: colors.accentColor,
@@ -54,6 +59,8 @@ export const defaultStyles = StyleSheet.create<DefaultStyles>({
   },
   text: {
     fontFamily: fonts.sans,
+    fontSize: 15,
+    lineHeight: 15 * 1.5,
     color: colors.primaryColor,
   },
   dateContainer: {

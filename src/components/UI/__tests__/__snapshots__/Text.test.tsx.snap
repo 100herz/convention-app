@@ -6,6 +6,8 @@ exports[`<Text /> renders correctly 1`] = `
     Object {
       "color": "#333333",
       "fontFamily": "sans",
+      "fontSize": 15,
+      "lineHeight": 22.5,
     }
   }
 />

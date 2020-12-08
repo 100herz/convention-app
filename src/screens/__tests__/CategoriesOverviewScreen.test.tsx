@@ -15,7 +15,7 @@ jest.mock('@react-navigation/native', () => {
   }
 })
 
-describe('<Button />', () => {
+describe('<CategoriesOverviewScreen />', () => {
   it('renders correctly', () => {
     // const { toJSON } = render(<CategoriesOverviewScreen />)
     // expect(toJSON()).toMatchSnapshot()

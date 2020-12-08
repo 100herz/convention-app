@@ -1,5 +1,5 @@
 import React from 'react'
-import { act, fireEvent, render } from '@testing-library/react-native'
+import { render } from '@testing-library/react-native'
 
 import ArticlePreview from '../ArticlePreview'
 import { article, articlePinned, articleWithoutFeatured, articleWithoutSponsored } from '@__mocks__/article'
@@ -34,11 +34,6 @@ describe('<ArticleList />', () => {
 
   it('should call the navigate function once', () => {
     const { getByTestId } = render(<ArticlePreview article={articleWithoutSponsored} />)
-
-    act(() => {
-      fireEvent.press(getByTestId('button'))
-    })
-
-    expect(mockedNavigate).toHaveBeenCalledTimes(1)
+    expect(getByTestId('default-article').children).toHaveLength(2)
   })
 })

@@ -91,6 +91,7 @@ const styles = StyleSheet.create<Styles>({
     paddingHorizontal: 30,
     paddingVertical: 10,
     fontSize: 14,
+    lineHeight: 14 * 1.25,
     textAlign: 'right',
   },
   titleContainer: {
@@ -100,7 +101,8 @@ const styles = StyleSheet.create<Styles>({
     paddingVertical: 10,
   },
   title: {
-    fontSize: 16,
+    fontSize: 14,
+    lineHeight: 14 * 1.25,
     fontFamily: fonts.sans,
   },
 })
