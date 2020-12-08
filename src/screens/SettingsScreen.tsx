@@ -6,22 +6,17 @@ import { ScrollView, StyleSheet, View } from 'react-native'
 import LegalList from '@components/Settings/LegalList'
 import SocialList from '@components/Settings/SocialList'
 import { socialMediaChannels } from '@data/social'
-import { Setting } from '@models/setting'
-import { Legal } from '@models/legal'
+import { legalScreens, settingArray } from '@data/settings'
 import { defaultStyles, DefaultStyles } from '@styles/theme'
-
-export const settingArray: Setting[] = [{ id: 1, name: 'Push Mitteilungen' }]
-
-const legalScreens: Legal[] = [
-  { id: 79, title: { rendered: 'Impressum' }, content: { rendered: '' } },
-  { id: 1105, title: { rendered: 'Datenschutz' }, content: { rendered: '' } },
-]
 
 const SettingsScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <ScrollView>
-        {/* <SettingsList data={settingArray} /> */}
+        {/*
+        // TODO: Reactivate this setting after adding the push notifications
+        <SettingsList data={settingArray} />
+        */}
         <LegalList data={legalScreens} />
         <SocialList data={socialMediaChannels} />
       </ScrollView>
