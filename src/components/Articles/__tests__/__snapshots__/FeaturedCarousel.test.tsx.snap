@@ -1,452 +1,446 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FeaturedCarousel /> renders correctly 1`] = `
-<RCTScrollView
-  activeAnimationOptions={null}
-  activeAnimationType="timing"
-  activeSlideAlignment="center"
-  activeSlideOffset={20}
-  apparitionDelay={0}
-  automaticallyAdjustContentInsets={false}
-  autoplay={false}
-  autoplayDelay={1000}
-  autoplayInterval={3000}
-  callbackOffsetMargin={5}
-  containerCustomStyle={Object {}}
-  contentContainerCustomStyle={Object {}}
-  contentContainerStyle={
-    Array [
-      Object {
-        "paddingLeft": 0,
-        "paddingRight": 0,
-      },
-      Object {},
-    ]
-  }
-  data={
-    Array [
-      Object {
-        "acf": Object {
-          "featured_slider": false,
-          "news_slider": true,
-          "pinned": false,
-          "should_push": false,
-          "sponsored_by": "XYZ",
+<View>
+  <RCTScrollView
+    activeAnimationOptions={null}
+    activeAnimationType="timing"
+    activeSlideAlignment="center"
+    activeSlideOffset={20}
+    apparitionDelay={0}
+    automaticallyAdjustContentInsets={false}
+    autoplay={false}
+    autoplayDelay={1000}
+    autoplayInterval={3000}
+    callbackOffsetMargin={5}
+    containerCustomStyle={Object {}}
+    contentContainerCustomStyle={Object {}}
+    contentContainerStyle={
+      Array [
+        Object {
+          "paddingLeft": 0,
+          "paddingRight": 0,
         },
-        "categories": Array [
-          6,
-          1,
-        ],
-        "categories_names": Array [
-          "Hotels",
-          "News",
-        ],
-        "content": Object {
-          "protected": false,
-          "rendered": "<p>Durch smarte Raumanpassungen, große Flexibilität bei Buchungen und Stornierungen sowie die Etablierung eines extern zertifizierten und weit über den Standard hinaus gehenden Sicherheits- und Hygienekonzeptes hat sich Leonardo Hotels umfassend auf das „New Normal“ und die geänderten Anforderungen ihrer MICE-Kunden an zukunftsfähigen Veranstaltungsformaten eingestellt. Neue Pausenkonzepte, digitalen Helfer, verlässliche Partner sowie virtuelle und hybride Veranstaltungsformate umfassen die Angebotsvielfalt der Leonardo Hotels.  Diese sind überzeugt, dass persönliche Meetings mit Sicherheit wieder Zukunft haben.</p>
-",
-        },
-        "date_gmt": "2020-11-11T08:25:41",
-        "excerpt": Object {
-          "protected": false,
-          "rendered": "<p>Durch neue Sicherheits- und Hygienekonzeptes hat sich Leonardo Hotels umfassend auf das „New Normal“ und die geänderten Anforderungen an zukunftsfähigen Veranstaltungsformaten eingestellt.</p>
-",
-        },
-        "featured_image_medium": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-600x400.jpg",
-        "featured_image_thumb": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-300x300.jpg",
-        "featured_media": 18571,
-        "id": 18569,
-        "title": Object {
-          "rendered": "„New Normal“ bei Leonardo Hotels &#8211; mit neuen MICE-Formaten und Konzepten",
-        },
-      },
-      Object {
-        "acf": Object {
-          "featured_slider": false,
-          "news_slider": true,
-          "pinned": false,
-          "should_push": false,
-          "sponsored_by": "",
-        },
-        "categories": Array [
-          358,
-          217,
-          1,
-        ],
-        "categories_names": Array [
-          "Branche",
-          "Events",
-          "News",
-        ],
-        "content": Object {
-          "protected": false,
-          "rendered": "<p><a href=\\"https://bit.ly/3iPkUhB\\">Cvent</a> CEO and Founder, Reggie Aggarwal, delivered an inspiring keynote to more than 7,000 event, marketing, and hospitality professionals at <a href=\\"https://bit.ly/30Unj4A\\">Cvent CONNECT Europe</a> today. In his opening presentation, Aggarwal urged attendees of the virtual event to seize the digital transformation opportunity in front of them to drive the industry’s recovery in 2021 and beyond.</p>
-",
-        },
-        "date_gmt": "2020-11-10T11:00:19",
-        "excerpt": Object {
-          "protected": false,
-          "rendered": "<p>Cvent CEO Reggie Aggarwal predicts “Golden Age of Events” during his keynote to more than 7,000 virtual attendees at Cvent CONNECT Europe </p>
-",
-        },
-        "featured_image_medium": "",
-        "featured_image_thumb": "",
-        "featured_media": null,
-        "id": 18592,
-        "title": Object {
-          "rendered": "Events and Hospitality Industries Urged to Harness the Power of Digital Transformation to Thrive in 2021 and Beyond",
-        },
-      },
-    ]
-  }
-  decelerationRate="fast"
-  directionalLockEnabled={true}
-  disableVirtualization={false}
-  enableMomentum={false}
-  enableSnap={true}
-  firstItem={0}
-  forwardedRef={[Function]}
-  getItem={[Function]}
-  getItemCount={[Function]}
-  hasParallaxImages={false}
-  horizontal={true}
-  inactiveSlideOpacity={0.5}
-  inactiveSlideScale={0.8}
-  inactiveSlideShift={0}
-  initialNumToRender={6}
-  invertStickyHeaders={false}
-  inverted={false}
-  itemWidth={750}
-  keyExtractor={[Function]}
-  layout="default"
-  lockScrollTimeoutDuration={1000}
-  lockScrollWhileSnapping={false}
-  loop={false}
-  loopClonesPerSide={3}
-  maxToRenderPerBatch={13}
-  onContentSizeChange={[Function]}
-  onEndReachedThreshold={2}
-  onLayout={[Function]}
-  onMomentumScrollEnd={[Function]}
-  onResponderRelease={[Function]}
-  onScroll={[Function]}
-  onScrollBeginDrag={[Function]}
-  onScrollEndDrag={[Function]}
-  onStartShouldSetResponderCapture={[Function]}
-  onTouchEnd={[Function]}
-  onTouchStart={[Function]}
-  overScrollMode="never"
-  pinchGestureEnabled={false}
-  removeClippedSubviews={true}
-  renderItem={[Function]}
-  scrollEnabled={true}
-  scrollEventThrottle={1}
-  scrollsToTop={false}
-  shouldOptimizeUpdates={true}
-  showsHorizontalScrollIndicator={false}
-  showsVerticalScrollIndicator={false}
-  slideStyle={Object {}}
-  sliderWidth={750}
-  stickyHeaderIndices={Array []}
-  style={
-    Object {
-      "flexDirection": "row",
-      "opacity": 0,
-      "width": 750,
+        Object {},
+      ]
     }
-  }
-  swipeThreshold={20}
-  updateCellsBatchingPeriod={50}
-  useScrollView={false}
-  vertical={false}
-  viewabilityConfigCallbackPairs={Array []}
-  windowSize={13}
->
-  <View>
-    <View
-      onLayout={[Function]}
-      style={
-        Array [
-          Object {
-            "flexDirection": "row",
+    data={
+      Array [
+        Object {
+          "acf": Object {
+            "featured_slider": false,
+            "news_slider": true,
+            "pinned": false,
+            "should_push": false,
+            "sponsored_by": "XYZ",
           },
-          null,
-        ]
+          "categories": Array [
+            6,
+            1,
+          ],
+          "categories_names": Array [
+            "Hotels",
+            "News",
+          ],
+          "content": Object {
+            "protected": false,
+            "rendered": "<p>Durch smarte Raumanpassungen, große Flexibilität bei Buchungen und Stornierungen sowie die Etablierung eines extern zertifizierten und weit über den Standard hinaus gehenden Sicherheits- und Hygienekonzeptes hat sich Leonardo Hotels umfassend auf das „New Normal“ und die geänderten Anforderungen ihrer MICE-Kunden an zukunftsfähigen Veranstaltungsformaten eingestellt. Neue Pausenkonzepte, digitalen Helfer, verlässliche Partner sowie virtuelle und hybride Veranstaltungsformate umfassen die Angebotsvielfalt der Leonardo Hotels.  Diese sind überzeugt, dass persönliche Meetings mit Sicherheit wieder Zukunft haben.</p>
+",
+          },
+          "date_gmt": "2020-11-11T08:25:41",
+          "excerpt": Object {
+            "protected": false,
+            "rendered": "<p>Durch neue Sicherheits- und Hygienekonzeptes hat sich Leonardo Hotels umfassend auf das „New Normal“ und die geänderten Anforderungen an zukunftsfähigen Veranstaltungsformaten eingestellt.</p>
+",
+          },
+          "featured_image_medium": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-600x400.jpg",
+          "featured_image_thumb": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-300x300.jpg",
+          "featured_media": 18571,
+          "id": 18569,
+          "title": Object {
+            "rendered": "„New Normal“ bei Leonardo Hotels &#8211; mit neuen MICE-Formaten und Konzepten",
+          },
+        },
+        Object {
+          "acf": Object {
+            "featured_slider": false,
+            "news_slider": true,
+            "pinned": false,
+            "should_push": false,
+            "sponsored_by": "",
+          },
+          "categories": Array [
+            358,
+            217,
+            1,
+          ],
+          "categories_names": Array [
+            "Branche",
+            "Events",
+            "News",
+          ],
+          "content": Object {
+            "protected": false,
+            "rendered": "<p><a href=\\"https://bit.ly/3iPkUhB\\">Cvent</a> CEO and Founder, Reggie Aggarwal, delivered an inspiring keynote to more than 7,000 event, marketing, and hospitality professionals at <a href=\\"https://bit.ly/30Unj4A\\">Cvent CONNECT Europe</a> today. In his opening presentation, Aggarwal urged attendees of the virtual event to seize the digital transformation opportunity in front of them to drive the industry’s recovery in 2021 and beyond.</p>
+",
+          },
+          "date_gmt": "2020-11-10T11:00:19",
+          "excerpt": Object {
+            "protected": false,
+            "rendered": "<p>Cvent CEO Reggie Aggarwal predicts “Golden Age of Events” during his keynote to more than 7,000 virtual attendees at Cvent CONNECT Europe </p>
+",
+          },
+          "featured_image_medium": "",
+          "featured_image_thumb": "",
+          "featured_media": null,
+          "id": 18592,
+          "title": Object {
+            "rendered": "Events and Hospitality Industries Urged to Harness the Power of Digital Transformation to Thrive in 2021 and Beyond",
+          },
+        },
+      ]
+    }
+    decelerationRate="fast"
+    directionalLockEnabled={true}
+    disableVirtualization={false}
+    enableMomentum={false}
+    enableSnap={true}
+    firstItem={0}
+    forwardedRef={[Function]}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    hasParallaxImages={false}
+    horizontal={true}
+    inactiveSlideOpacity={0.5}
+    inactiveSlideScale={0.8}
+    inactiveSlideShift={0}
+    initialNumToRender={6}
+    invertStickyHeaders={false}
+    inverted={false}
+    itemWidth={750}
+    keyExtractor={[Function]}
+    layout="default"
+    lockScrollTimeoutDuration={1000}
+    lockScrollWhileSnapping={false}
+    loop={false}
+    loopClonesPerSide={3}
+    maxToRenderPerBatch={13}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onResponderRelease={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    onSnapToItem={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
+    overScrollMode="never"
+    pinchGestureEnabled={false}
+    removeClippedSubviews={true}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={1}
+    scrollsToTop={false}
+    shouldOptimizeUpdates={true}
+    showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
+    slideStyle={Object {}}
+    sliderWidth={750}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "flexDirection": "row",
+        "opacity": 0,
+        "width": 750,
       }
-    >
+    }
+    swipeThreshold={20}
+    updateCellsBatchingPeriod={50}
+    useScrollView={false}
+    vertical={false}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={13}
+  >
+    <View>
       <View
-        pointerEvents="box-none"
+        onLayout={[Function]}
         style={
-          Object {
-            "opacity": 1,
-            "transform": Array [
-              Object {
-                "scale": 1,
-              },
-            ],
-            "width": 750,
-          }
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
         }
       >
         <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+          pointerEvents="box-none"
           style={
             Object {
               "opacity": 1,
+              "transform": Array [
+                Object {
+                  "scale": 1,
+                },
+              ],
+              "width": 750,
             }
           }
-          testID="featuredCarouselItem"
         >
           <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "height": 400.2,
+                "opacity": 1,
               }
             }
+            testID="featuredCarouselItem"
           >
             <View
-              accessibilityIgnoresInvertColors={true}
               style={
                 Object {
-                  "flex": 1,
-                  "resizeMode": "cover",
+                  "height": 750,
                 }
               }
             >
-              <Image
-                source={
-                  Object {
-                    "uri": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-300x300.jpg",
-                  }
-                }
-                style={
-                  Array [
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    },
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    },
-                    undefined,
-                  ]
-                }
-              />
               <View
+                accessibilityIgnoresInvertColors={true}
                 style={
                   Object {
                     "flex": 1,
-                    "justifyContent": "space-between",
+                    "justifyContent": "flex-end",
+                    "resizeMode": "cover",
                   }
                 }
               >
-                <Text
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://www.convention-net.de/wp-content/uploads/2020/11/iStock-1250329916-Personen_mit_Masken-w1500-h1300-300x300.jpg",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": undefined,
+                        "width": undefined,
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+                <View
                   style={
                     Object {
-                      "alignItems": "flex-end",
-                      "backgroundColor": "rgba(223, 227, 232, 0.7)",
-                      "color": "#333333",
-                      "fontFamily": "sans",
-                      "fontSize": 14,
-                      "paddingHorizontal": 30,
+                      "alignSelf": "flex-start",
+                      "backgroundColor": "#333333",
+                      "marginLeft": 0,
+                      "marginTop": 50,
+                      "maxWidth": "100%",
+                      "paddingHorizontal": 10,
                       "paddingVertical": 10,
-                      "textAlign": "right",
-                      "width": "auto",
                     }
                   }
                 >
-                  Sponsored by 
                   <Text
                     style={
                       Object {
-                        "color": "#333333",
+                        "color": "#dfe3e8",
+                        "fontFamily": "sans",
+                        "fontSize": 12,
+                        "lineHeight": 15,
+                      }
+                    }
+                  >
+                    Sponsored by:
+                  </Text>
+                  <Text
+                    style={
+                      Object {
+                        "color": "#dfe3e8",
                         "fontFamily": "sans-bold",
+                        "fontSize": 12,
+                        "lineHeight": 15,
                       }
                     }
                   >
                     XYZ
                   </Text>
-                </Text>
-                <View
-                  style={
-                    Object {
-                      "backgroundColor": "rgba(223, 227, 232, 0.7)",
-                      "justifyContent": "flex-end",
-                      "paddingHorizontal": 30,
-                      "paddingVertical": 10,
-                    }
-                  }
-                >
-                  <View
-                    style={Object {}}
-                  >
-                    <Text
-                      allowFontScaling={true}
-                      selectable={false}
-                      style={
-                        Array [
-                          Object {},
-                          Object {},
-                        ]
-                      }
-                    >
-                      <Text
-                        allowFontScaling={true}
-                        style={
-                          Object {
-                            "fontFamily": "sans",
-                            "fontSize": 16,
-                          }
-                        }
-                      >
-                        „New Normal“ bei Leonardo Hotels – mit neuen MICE-Formaten und Konzepten
-                      </Text>
-                    </Text>
-                  </View>
                 </View>
               </View>
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      onLayout={[Function]}
-      style={
-        Array [
-          Object {
-            "flexDirection": "row",
-          },
-          null,
-        ]
-      }
-    >
-      <View
-        pointerEvents="box-none"
-        style={
-          Object {
-            "opacity": 0.5,
-            "transform": Array [
-              Object {
-                "scale": 0.8,
-              },
-            ],
-            "width": 750,
-          }
-        }
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-            }
-          }
-          testID="featuredCarouselItem"
-        >
-          <View
-            style={
-              Object {
-                "height": 400.2,
-              }
-            }
-          >
-            <View
-              accessibilityIgnoresInvertColors={true}
-              style={
-                Object {
-                  "flex": 1,
-                  "resizeMode": "cover",
-                }
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "uri": "",
-                  }
-                }
-                style={
-                  Array [
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    },
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    },
-                    undefined,
-                  ]
-                }
-              />
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "justifyContent": "flex-end",
+                    "padding": 15,
                   }
                 }
               >
                 <View
-                  style={
-                    Object {
-                      "backgroundColor": "rgba(223, 227, 232, 0.7)",
-                      "justifyContent": "flex-end",
-                      "paddingHorizontal": 30,
-                      "paddingVertical": 10,
-                    }
-                  }
+                  style={Object {}}
                 >
-                  <View
-                    style={Object {}}
+                  <Text
+                    allowFontScaling={true}
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
                   >
                     <Text
                       allowFontScaling={true}
-                      selectable={false}
                       style={
-                        Array [
-                          Object {},
-                          Object {},
-                        ]
+                        Object {
+                          "fontFamily": "sans",
+                          "fontSize": 18,
+                          "lineHeight": 27,
+                        }
                       }
                     >
-                      <Text
-                        allowFontScaling={true}
-                        style={
-                          Object {
-                            "fontFamily": "sans",
-                            "fontSize": 16,
-                          }
-                        }
-                      >
-                        Events and Hospitality Industries Urged to Harness the Power of Digital Transformation to Thrive in 2021 and Beyond
-                      </Text>
+                      „New Normal“ bei Leonardo Hotels – mit neuen MICE-Formaten und Konzepten
                     </Text>
-                  </View>
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          pointerEvents="box-none"
+          style={
+            Object {
+              "opacity": 0.5,
+              "transform": Array [
+                Object {
+                  "scale": 0.8,
+                },
+              ],
+              "width": 750,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID="featuredCarouselItem"
+          >
+            <View
+              style={
+                Object {
+                  "height": 750,
+                }
+              }
+            >
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Object {
+                    "flex": 1,
+                    "justifyContent": "flex-end",
+                    "resizeMode": "cover",
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": undefined,
+                        "width": undefined,
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "padding": 15,
+                  }
+                }
+              >
+                <View
+                  style={Object {}}
+                >
+                  <Text
+                    allowFontScaling={true}
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {},
+                        Object {},
+                      ]
+                    }
+                  >
+                    <Text
+                      allowFontScaling={true}
+                      style={
+                        Object {
+                          "fontFamily": "sans",
+                          "fontSize": 18,
+                          "lineHeight": 27,
+                        }
+                      }
+                    >
+                      Events and Hospitality Industries Urged to Harness the Power of Digital Transformation to Thrive in 2021 and Beyond
+                    </Text>
+                  </Text>
                 </View>
               </View>
             </View>
@@ -454,6 +448,99 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
         </View>
       </View>
     </View>
+  </RCTScrollView>
+  <View
+    accessible={false}
+    pointerEvents="box-none"
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "paddingVertical": 30,
+        },
+        Object {
+          "flexDirection": "row",
+        },
+        Object {
+          "paddingVertical": 0,
+        },
+      ]
+    }
+  >
+    <View
+      accessible={false}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginHorizontal": 8,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#872232",
+            "borderRadius": 4,
+            "height": 8,
+            "opacity": 1,
+            "transform": Array [
+              Object {
+                "scale": 0.5,
+              },
+            ],
+            "width": 8,
+          }
+        }
+      />
+    </View>
+    <View
+      accessible={false}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginHorizontal": 8,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#838e9d",
+            "borderRadius": 4,
+            "height": 8,
+            "opacity": 1,
+            "transform": Array [
+              Object {
+                "scale": 0.5,
+              },
+            ],
+            "width": 8,
+          }
+        }
+      />
+    </View>
   </View>
-</RCTScrollView>
+</View>
 `;

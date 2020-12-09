@@ -4,13 +4,13 @@
     "name": "Convention International",
     "slug": "convention-international",
     "description": "Trends, developments and current news from the MICE industry. Everything around meetings, incentives, congresses and events.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/logo.png",
     "splash": {
-      "image": "./assets/logo.png",
+      "image": "./assets/splash-screen.png",
       "resizeMode": "contain",
-      "backgroundColor": "#111111"
+      "backgroundColor": "#333333"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -18,17 +18,17 @@
     "assetBundlePatterns": ["**/*"],
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/logo-transparent.png",
-        "backgroundColor": "#111111"
+        "foregroundImage": "./assets/logo-adaptiv.png",
+        "backgroundColor": "#ffffff"
       },
       "permissions": [],
       "package": "de.convention_net",
-      "versionCode": 3
+      "versionCode": 4
     },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "de.convention-net",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.1.0"
     }
   }
 }

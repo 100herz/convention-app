@@ -86,6 +86,38 @@ export const articleWithoutSponsored: Article = {
     should_push: false,
     featured_slider: true,
     news_slider: true,
+    pinned: false,
+  },
+  featured_image_thumb:
+    'https://www.convention-net.de/wp-content/uploads/2020/11/shutterstock_335001080-w1500-h1300-300x300.jpg',
+  featured_image_medium:
+    'https://www.convention-net.de/wp-content/uploads/2020/11/shutterstock_335001080-w1500-h1300-600x400.jpg',
+  categories_names: ['Destinationen', 'News', 'Reportagen', 'Sponsored content'],
+}
+
+export const articlePinned: Article = {
+  id: 18543,
+  date_gmt: '2020-11-09T09:46:40',
+  title: {
+    rendered: 'Sicheres Business und Inspiration für morgen: Koreas neue, einzigartige Veranstaltungsorte',
+  },
+  content: {
+    rendered:
+      '<figure id="attachment_18559" aria-describedby="caption-attachment-18559" style="width: 618px" class="wp-caption aligncenter"><img class="wp-image-18559 size-large" src="https://www.convention-net.de/wp-content/uploads/2020/11/shutterstock_335001080-w1500-h1300-1200x801.jpg" alt="" width="618" height="413" srcset="https://www.convention-net.de/wp-content/uploads/2020/11/shutterstock_335001080-w1500-h1300-1200x801.jpg 1200w, https://www.convention-net.de/wp-content/uploads/2020/11/shutterstock_335001080-w1500-h1300-600x400.jpg 600w, https://www.convention-net.de/wp-content/uploads/2020/11/shutterstock_335001080-w1500-h1300-768x513.jpg 768w, https://www.convention-net.de/wp-content/uploads/2020/11/shutterstock_335001080-w1500-h1300-110x75.jpg 110w, https://www.convention-net.de/wp-content/uploads/2020/11/shutterstock_335001080-w1500-h1300.jpg 1500w" sizes="(max-width: 618px) 100vw, 618px" /><figcaption id="caption-attachment-18559" class="wp-caption-text">Foto: Pairat Pinijkul / shutterstock.com</figcaption></figure>\n<p>Aufgrund eines exzellenten IKT-Umfelds und seiner kulturellen Attraktivität hat sich Korea als effizientes, innovatives Land für Unternehmen und Kongresse in der MICE-Branche etabliert. Hinsichtlich der Anzahl internationaler Veranstaltungen im Land belegte Korea in den letzten Jahren unter den Mitgliedern der Union der Internationalen Verbände (UIA) den ersten und zweiten Platz. Seit dem Ausbruch von Covid-19 hat die schnelle und gut organisierte Reaktion es dem Land ermöglicht, für die Sicherheit vieler Unternehmen und Konventionen zu sorgen. Mit zahlreichen Support-Programmen unterstützt Korea Verbände und Organisationen bei der Planung und Ausrichtung von Events und baut nach wie vor das Angebot an vielfältigen Eventlocations im Land aus.</p>\n',
+    protected: false,
+  },
+  excerpt: {
+    rendered:
+      '<p>Aufgrund eines exzellenten IKT-Umfelds und seiner kulturellen Attraktivität hat sich Korea als effizientes, innovatives Land für Unternehmen und Kongresse in der MICE-Branche etabliert.</p>\n',
+    protected: false,
+  },
+  featured_media: 18559,
+  categories: [5, 1, 72, 170],
+  acf: {
+    // sponsored_by: '100HERZ',
+    should_push: false,
+    featured_slider: true,
+    news_slider: true,
     pinned: true,
   },
   featured_image_thumb:

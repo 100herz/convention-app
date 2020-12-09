@@ -1,4 +1,4 @@
-import { Setting } from '@models/setting'
+import { Setting } from '@models/settings'
 
 export const settingItem: Setting = { id: 1, name: 'Push Mitteilungen' }
 

@@ -14,7 +14,7 @@ jest.mock('@react-navigation/native', () => {
   }
 })
 
-describe('<Button />', () => {
+describe('<ArticleScreen />', () => {
   // TODO: Add the tests
   it('renders correctly', () => {
     //   const { toJSON } = render(<ArticleScreen />)
