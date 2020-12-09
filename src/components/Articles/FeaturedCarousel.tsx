@@ -22,6 +22,9 @@ const FeaturedCarousel: React.FC<Props> = ({ articles }) => {
 
   const screenWidth = Dimensions.get('screen').width
 
+  /* istanbul ignore next */
+  const handleOnSnap = (index: number) => setActiveSlide(index)
+
   const slideItem = ({ item }: { item: Article }) => {
     const isSponsored = () =>
       !!(item.acf?.sponsored_by !== undefined && item.acf.sponsored_by !== null && item.acf.sponsored_by.length > 0)
@@ -53,7 +56,7 @@ const FeaturedCarousel: React.FC<Props> = ({ articles }) => {
       <Carousel
         data={articles}
         renderItem={slideItem}
-        onSnapToItem={index => setActiveSlide(index)}
+        onSnapToItem={handleOnSnap}
         sliderWidth={screenWidth}
         itemWidth={screenWidth}
         inactiveSlideOpacity={0.5}
