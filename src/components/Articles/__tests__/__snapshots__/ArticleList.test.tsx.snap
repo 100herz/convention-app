@@ -88,8 +88,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
           style={
             Object {
               "borderRadius": 10,
-              "height": 740,
-              "padding": 10,
+              "padding": 15,
             }
           }
           testID="sponsored-article"
@@ -99,7 +98,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
             style={
               Object {
                 "flex": 1,
-                "justifyContent": "space-between",
+                "height": 650,
                 "resizeMode": "cover",
               }
             }
@@ -120,7 +119,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
                     "top": 0,
                   },
                   Object {
-                    "height": undefined,
+                    "height": 650,
                     "width": undefined,
                   },
                   Object {
@@ -132,11 +131,11 @@ exports[`<ArticleList /> renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "flex-end",
-                  "backgroundColor": "rgba(223, 227, 232, 0.7)",
-                  "borderTopLeftRadius": 15,
-                  "borderTopRightRadius": 15,
-                  "paddingHorizontal": 30,
+                  "backgroundColor": "#333333",
+                  "marginLeft": -15,
+                  "marginTop": 50,
+                  "maxWidth": "70%",
+                  "paddingHorizontal": 10,
                   "paddingVertical": 10,
                 }
               }
@@ -145,19 +144,19 @@ exports[`<ArticleList /> renders correctly 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#333333",
+                    "color": "#dfe3e8",
                     "fontFamily": "sans",
                     "fontSize": 14,
                     "lineHeight": 17.5,
-                    "textAlign": "right",
                   }
                 }
               >
-                Sponsored by 
+                Sponsored by
+                 
                 <Text
                   style={
                     Object {
-                      "color": "#333333",
+                      "color": "#dfe3e8",
                       "fontFamily": "sans-bold",
                       "fontSize": 15,
                       "lineHeight": 22.5,
@@ -168,45 +167,40 @@ exports[`<ArticleList /> renders correctly 1`] = `
                 </Text>
               </Text>
             </View>
-            <View
-              style={
-                Object {
-                  "backgroundColor": "rgba(223, 227, 232, 0.7)",
-                  "borderBottomLeftRadius": 15,
-                  "borderBottomRightRadius": 15,
-                  "justifyContent": "flex-end",
-                  "paddingHorizontal": 30,
-                  "paddingVertical": 10,
-                }
+          </View>
+          <View
+            style={
+              Object {
+                "padding": 15,
               }
+            }
+          >
+            <View
+              style={Object {}}
             >
-              <View
-                style={Object {}}
+              <Text
+                allowFontScaling={true}
+                selectable={false}
+                style={
+                  Array [
+                    Object {},
+                    Object {},
+                  ]
+                }
               >
                 <Text
                   allowFontScaling={true}
-                  selectable={false}
                   style={
-                    Array [
-                      Object {},
-                      Object {},
-                    ]
+                    Object {
+                      "fontFamily": "serif-bold",
+                      "fontSize": 20,
+                      "lineHeight": 25,
+                    }
                   }
                 >
-                  <Text
-                    allowFontScaling={true}
-                    style={
-                      Object {
-                        "fontFamily": "sans",
-                        "fontSize": 14,
-                        "lineHeight": 17.5,
-                      }
-                    }
-                  >
-                    „New Normal“ bei Leonardo Hotels – mit neuen MICE-Formaten und Konzepten
-                  </Text>
+                  „New Normal“ bei Leonardo Hotels – mit neuen MICE-Formaten und Konzepten
                 </Text>
-              </View>
+              </Text>
             </View>
           </View>
         </View>

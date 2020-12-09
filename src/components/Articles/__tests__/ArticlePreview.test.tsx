@@ -24,7 +24,7 @@ describe('<ArticleList />', () => {
 
   it('renders a sponsored preview as a pinned article', () => {
     const { getByTestId } = render(<ArticlePreview article={articlePinned} />)
-    expect(getByTestId('sponsored-article').children).toHaveLength(1)
+    expect(getByTestId('sponsored-article').children).toHaveLength(2)
   })
 
   it('has no image and renders a View with three texts instead', () => {

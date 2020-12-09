@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { SectionList, StyleSheet, View, ViewStyle } from 'react-native'
+import { SectionList, StyleSheet, View } from 'react-native'
 
 import FeaturedCarousel from '@components/Articles/FeaturedCarousel'
 import NewsCarousel from '@components/Articles/NewsCarousel'
@@ -41,7 +41,7 @@ const HomeScreen: React.FC = () => {
   }, [articles])
 
   const SectionHeader = () => (
-    <View style={styles.sectionHeaderContainer}>
+    <View>
       <FeaturedCarousel articles={featuredSliderArticles} />
       <Text style={styles.title}>News</Text>
       <NewsCarousel articles={newsSliderArticles} />
@@ -71,14 +71,8 @@ const HomeScreen: React.FC = () => {
   )
 }
 
-interface Style extends DefaultStyles {
-  sectionHeaderContainer: ViewStyle
-}
-
-const styles = StyleSheet.create<Style>({
+const styles = StyleSheet.create<DefaultStyles>({
   ...defaultStyles,
-  // TODO: Can this get removed?
-  sectionHeaderContainer: {},
   title: {
     ...defaultStyles.title,
     paddingHorizontal: 15,

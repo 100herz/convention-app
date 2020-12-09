@@ -11,7 +11,6 @@ import Touchable from '@components/UI/Touchable'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
 import { getLocaleLongDate } from '@utils/date-time'
-import { hexToRgb } from '@utils/styling'
 import { Article } from '@models/article'
 import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 
@@ -56,20 +55,28 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
       <View style={styles.sponsoredArticleContainer} testID="sponsored-article">
         <ImageBackground
           source={{ uri: article.featured_image_medium }}
-          style={isSponsored() ? styles.backgroundImage : styles.backgroundImagePinned}
+          style={styles.backgroundImage}
           imageStyle={{ borderRadius: 15 }}
         >
           {isSponsored() && (
             <View style={styles.sponsoredTextContainer} testID="sponsored-text-container">
               <Text style={styles.sponsoredText}>
-                Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf?.sponsored_by}</Text>
+                Sponsored by{' '}
+                <Text
+                  style={{
+                    color: colors.grayLight,
+                    fontFamily: fonts.sansBold,
+                  }}
+                >
+                  {article.acf?.sponsored_by}
+                </Text>
               </Text>
             </View>
           )}
-          <View style={styles.sponsoredTitleContainer}>
-            <HTML baseFontStyle={styles.sponsoredTitle} html={article.title.rendered} />
-          </View>
         </ImageBackground>
+        <View style={styles.sponsoredTitleContainer}>
+          <HTML baseFontStyle={styles.sponsoredTitle} html={article.title.rendered} />
+        </View>
       </View>
     </Touchable>
   )
@@ -78,7 +85,6 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
 }
 
 interface Styles extends DefaultStyles {
-  backgroundImagePinned: ViewStyle
   articleContainer: ViewStyle
   imageColumn: ViewStyle
   image: ImageStyle | ViewStyle
@@ -94,11 +100,7 @@ const styles = StyleSheet.create<Styles>({
   ...defaultStyles,
   backgroundImage: {
     ...defaultStyles.backgroundImage,
-    justifyContent: 'space-between',
-  },
-  backgroundImagePinned: {
-    ...defaultStyles.backgroundImage,
-    justifyContent: 'flex-end',
+    height: Dimensions.get('screen').width - 100,
   },
   articleContainer: {
     flexDirection: 'row',
@@ -126,35 +128,29 @@ const styles = StyleSheet.create<Styles>({
     color: colors.primaryColor,
   },
   sponsoredArticleContainer: {
-    padding: 10,
-    height: Dimensions.get('screen').width - 10,
+    padding: 15,
     borderRadius: 10,
   },
   sponsoredTextContainer: {
-    alignItems: 'flex-end',
-    backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.7)`,
-    paddingHorizontal: 30,
+    backgroundColor: colors.primaryColor,
+    marginTop: 50,
+    marginLeft: -15,
+    paddingHorizontal: 10,
     paddingVertical: 10,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
+    maxWidth: '70%',
   },
   sponsoredText: {
+    color: colors.grayLight,
     fontSize: 14,
     lineHeight: 14 * 1.25,
-    textAlign: 'right',
   },
   sponsoredTitleContainer: {
-    justifyContent: 'flex-end',
-    backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.7)`,
-    paddingHorizontal: 30,
-    paddingVertical: 10,
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
+    padding: 15,
   },
   sponsoredTitle: {
-    fontSize: 14,
-    lineHeight: 14 * 1.25,
-    fontFamily: fonts.sans,
+    fontSize: 20,
+    lineHeight: 20 * 1.25,
+    fontFamily: fonts.serifBold,
   },
 })
 
