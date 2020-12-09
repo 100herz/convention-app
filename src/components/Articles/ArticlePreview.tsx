@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dimensions, Image, ImageBackground, ImageStyle, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
+import { Dimensions, Image, ImageBackground, ImageStyle, StyleSheet, View, ViewStyle } from 'react-native'
 import HTML from 'react-native-render-html'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
@@ -11,7 +11,6 @@ import Touchable from '@components/UI/Touchable'
 import { HomeStackParamList } from '@navigations/HomeNavigator'
 import { CategoriesStackParamList } from '@navigations/CategoriesNavigator'
 import { getLocaleLongDate } from '@utils/date-time'
-import { hexToRgb } from '@utils/styling'
 import { Article } from '@models/article'
 import { colors, defaultStyles, DefaultStyles, fonts } from '@styles/theme'
 
@@ -56,20 +55,21 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
       <View style={styles.sponsoredArticleContainer} testID="sponsored-article">
         <ImageBackground
           source={{ uri: article.featured_image_medium }}
-          style={isSponsored() ? styles.backgroundImage : styles.backgroundImagePinned}
+          style={styles.backgroundImage}
           imageStyle={{ borderRadius: 15 }}
         >
           {isSponsored() && (
             <View style={styles.sponsoredTextContainer} testID="sponsored-text-container">
               <Text style={styles.sponsoredText}>
-                Sponsored by <Text style={{ fontFamily: fonts.sansBold }}>{article.acf?.sponsored_by}</Text>
+                Sponsored by:{' '}
+                <Text style={{ ...styles.sponsoredText, fontFamily: fonts.sansBold }}>{article.acf?.sponsored_by}</Text>
               </Text>
             </View>
           )}
-          <View style={styles.sponsoredTitleContainer}>
-            <HTML baseFontStyle={styles.sponsoredTitle} html={article.title.rendered} />
-          </View>
         </ImageBackground>
+        <View style={styles.sponsoredTitleContainer}>
+          <HTML baseFontStyle={styles.sponsoredTitle} html={article.title.rendered} />
+        </View>
       </View>
     </Touchable>
   )
@@ -78,27 +78,17 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
 }
 
 interface Styles extends DefaultStyles {
-  backgroundImagePinned: ViewStyle
   articleContainer: ViewStyle
   imageColumn: ViewStyle
   image: ImageStyle | ViewStyle
   textColumn: ViewStyle
-  sponsoredArticleContainer: ViewStyle
-  sponsoredTextContainer: ViewStyle
-  sponsoredText: TextStyle
-  sponsoredTitleContainer: ViewStyle
-  sponsoredTitle: TextStyle
 }
 
 const styles = StyleSheet.create<Styles>({
   ...defaultStyles,
   backgroundImage: {
     ...defaultStyles.backgroundImage,
-    justifyContent: 'space-between',
-  },
-  backgroundImagePinned: {
-    ...defaultStyles.backgroundImage,
-    justifyContent: 'flex-end',
+    height: Dimensions.get('screen').width - 100,
   },
   articleContainer: {
     flexDirection: 'row',
@@ -124,37 +114,6 @@ const styles = StyleSheet.create<Styles>({
     fontSize: 13,
     lineHeight: 13 * 1.25,
     color: colors.primaryColor,
-  },
-  sponsoredArticleContainer: {
-    padding: 10,
-    height: Dimensions.get('screen').width - 10,
-    borderRadius: 10,
-  },
-  sponsoredTextContainer: {
-    alignItems: 'flex-end',
-    backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.7)`,
-    paddingHorizontal: 30,
-    paddingVertical: 10,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-  },
-  sponsoredText: {
-    fontSize: 14,
-    lineHeight: 14 * 1.25,
-    textAlign: 'right',
-  },
-  sponsoredTitleContainer: {
-    justifyContent: 'flex-end',
-    backgroundColor: `rgba(${hexToRgb(colors.grayLight)}, 0.7)`,
-    paddingHorizontal: 30,
-    paddingVertical: 10,
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
-  },
-  sponsoredTitle: {
-    fontSize: 14,
-    lineHeight: 14 * 1.25,
-    fontFamily: fonts.sans,
   },
 })
 

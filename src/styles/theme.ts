@@ -43,6 +43,11 @@ export interface DefaultStyles {
   date: TextStyle
   listContainer: ViewStyle
   listItemContainer: ViewStyle
+  sponsoredArticleContainer: ViewStyle
+  sponsoredTextContainer: ViewStyle
+  sponsoredText: TextStyle
+  sponsoredTitleContainer: ViewStyle
+  sponsoredTitle: TextStyle
   switch: ViewStyle
   backgroundImage: ViewStyle
 }
@@ -86,6 +91,32 @@ export const defaultStyles = StyleSheet.create<DefaultStyles>({
     borderBottomColor: colors.grayLight,
     paddingHorizontal: 15,
     paddingVertical: 10,
+  },
+  sponsoredArticleContainer: {
+    padding: 15,
+    borderRadius: 10,
+  },
+  sponsoredTextContainer: {
+    alignSelf: 'flex-start',
+    maxWidth: '70%',
+    marginTop: 50,
+    marginLeft: -15,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    backgroundColor: colors.primaryColor,
+  },
+  sponsoredText: {
+    color: colors.grayLight,
+    fontSize: 14,
+    lineHeight: 14 * 1.25,
+  },
+  sponsoredTitleContainer: {
+    padding: 15,
+  },
+  sponsoredTitle: {
+    fontSize: 20,
+    lineHeight: 20 * 1.25,
+    fontFamily: fonts.serifBold,
   },
   switch: {
     transform: Platform.OS === 'ios' ? [{ scaleX: 0.7 }, { scaleY: 0.7 }] : [],
