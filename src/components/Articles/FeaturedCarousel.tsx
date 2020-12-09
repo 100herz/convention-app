@@ -72,7 +72,7 @@ const FeaturedCarousel: React.FC<Props> = ({ articles }) => {
         }}
         inactiveDotStyle={{ backgroundColor: colors.gray }}
         inactiveDotOpacity={1}
-        inactiveDotScale={0.6}
+        inactiveDotScale={0.67}
       />
     </View>
   )
