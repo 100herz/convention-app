@@ -131,6 +131,7 @@ exports[`<ArticleList /> renders correctly 1`] = `
             <View
               style={
                 Object {
+                  "alignSelf": "flex-start",
                   "backgroundColor": "#333333",
                   "marginLeft": -15,
                   "marginTop": 50,
@@ -151,15 +152,15 @@ exports[`<ArticleList /> renders correctly 1`] = `
                   }
                 }
               >
-                Sponsored by
+                Sponsored by:
                  
                 <Text
                   style={
                     Object {
                       "color": "#dfe3e8",
                       "fontFamily": "sans-bold",
-                      "fontSize": 15,
-                      "lineHeight": 22.5,
+                      "fontSize": 14,
+                      "lineHeight": 17.5,
                     }
                   }
                 >

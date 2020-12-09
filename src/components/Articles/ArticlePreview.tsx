@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dimensions, Image, ImageBackground, ImageStyle, StyleSheet, TextStyle, View, ViewStyle } from 'react-native'
+import { Dimensions, Image, ImageBackground, ImageStyle, StyleSheet, View, ViewStyle } from 'react-native'
 import HTML from 'react-native-render-html'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
@@ -61,15 +61,8 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
           {isSponsored() && (
             <View style={styles.sponsoredTextContainer} testID="sponsored-text-container">
               <Text style={styles.sponsoredText}>
-                Sponsored by{' '}
-                <Text
-                  style={{
-                    color: colors.grayLight,
-                    fontFamily: fonts.sansBold,
-                  }}
-                >
-                  {article.acf?.sponsored_by}
-                </Text>
+                Sponsored by:{' '}
+                <Text style={{ ...styles.sponsoredText, fontFamily: fonts.sansBold }}>{article.acf?.sponsored_by}</Text>
               </Text>
             </View>
           )}
@@ -89,11 +82,6 @@ interface Styles extends DefaultStyles {
   imageColumn: ViewStyle
   image: ImageStyle | ViewStyle
   textColumn: ViewStyle
-  sponsoredArticleContainer: ViewStyle
-  sponsoredTextContainer: ViewStyle
-  sponsoredText: TextStyle
-  sponsoredTitleContainer: ViewStyle
-  sponsoredTitle: TextStyle
 }
 
 const styles = StyleSheet.create<Styles>({
@@ -126,31 +114,6 @@ const styles = StyleSheet.create<Styles>({
     fontSize: 13,
     lineHeight: 13 * 1.25,
     color: colors.primaryColor,
-  },
-  sponsoredArticleContainer: {
-    padding: 15,
-    borderRadius: 10,
-  },
-  sponsoredTextContainer: {
-    backgroundColor: colors.primaryColor,
-    marginTop: 50,
-    marginLeft: -15,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    maxWidth: '70%',
-  },
-  sponsoredText: {
-    color: colors.grayLight,
-    fontSize: 14,
-    lineHeight: 14 * 1.25,
-  },
-  sponsoredTitleContainer: {
-    padding: 15,
-  },
-  sponsoredTitle: {
-    fontSize: 20,
-    lineHeight: 20 * 1.25,
-    fontFamily: fonts.serifBold,
   },
 })
 
