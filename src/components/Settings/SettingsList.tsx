@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native'
 
 import Text from '@components/UI/Text'
 import Switch from '@components/UI/Switch'
-import { Setting } from '@models/setting'
+import { Setting } from '@models/settings'
 import { DefaultStyles, defaultStyles } from '@styles/theme'
 
 interface Props {

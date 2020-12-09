@@ -1,7 +1,9 @@
 import React from 'react'
+import { Linking } from 'react-native'
 import { act, fireEvent, render } from '@testing-library/react-native'
 
 import LegalList from '../LegalList'
+import { legalAddition } from '@data/settings'
 import { legalArray } from '@__mocks__/legal'
 
 export const mockedNavigate = jest.fn()
@@ -30,5 +32,18 @@ describe('<LegalList />', () => {
     })
 
     expect(mockedNavigate).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call the mailto link', () => {
+    const spy = jest.spyOn(Linking, 'openURL')
+    const { getByTestId } = render(<LegalList data={legalArray} />)
+
+    act(() => {
+      fireEvent.press(getByTestId('link-mail'))
+    })
+
+    expect(spy).toBeCalledWith(legalAddition.href)
+    spy.mockReset()
+    spy.mockRestore()
   })
 })
