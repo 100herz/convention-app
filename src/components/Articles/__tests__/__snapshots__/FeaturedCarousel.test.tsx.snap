@@ -497,7 +497,7 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
             "opacity": 1,
             "transform": Array [
               Object {
-                "scale": 0.67,
+                "scale": 0.5,
               },
             ],
             "width": 8,
@@ -533,7 +533,7 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
             "opacity": 1,
             "transform": Array [
               Object {
-                "scale": 0.67,
+                "scale": 0.5,
               },
             ],
             "width": 8,
