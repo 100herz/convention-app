@@ -18,12 +18,19 @@ const ArticleScreen: React.FC = () => {
 
   const [isLoading, setLoading] = useState(true)
   const [article, setArticle] = useState<Article | undefined>(undefined)
+  const [isSponsored, setIsSponsored] = useState(false)
 
   useEffect(() => {
     const getArticlesAsync = async () => {
       try {
         const articleResponse = await fetchPostAsync(route.params.postId)
-        setArticle(await articleResponse.json())
+        const respondedArticle = await articleResponse.json()
+        setArticle(respondedArticle)
+        setIsSponsored(
+          respondedArticle.acf?.sponsored_by !== undefined &&
+            respondedArticle.acf.sponsored_by !== null &&
+            respondedArticle.acf.sponsored_by.length > 0
+        )
       } catch (error) {
         console.error(error)
       } finally {
@@ -41,11 +48,13 @@ const ArticleScreen: React.FC = () => {
         article && (
           <ScrollView style={styles.container}>
             <View style={styles.categoriesContainer}>
-              {article.categories_names.map(category => (
-                <Text key={category} style={styles.category}>
-                  {category}
-                </Text>
-              ))}
+              {article.categories_names
+                .map<React.ReactNode>(category => (
+                  <Text key={category} style={styles.category}>
+                    {category}
+                  </Text>
+                ))
+                .reduce((prev, curr) => [prev, <Text style={{ fontSize: 10 }}> | </Text>, curr])}
             </View>
             <View style={styles.titleContainer}>
               <HTML baseFontStyle={styles.title} html={article.title.rendered} />
@@ -55,6 +64,14 @@ const ArticleScreen: React.FC = () => {
               <Text style={styles.date}>{getLocaleLongDate(new Date(article.date_gmt || Date.now.toString()))}</Text>
             </View>
             <HTML baseFontStyle={styles.teaser} html={article.excerpt.rendered} />
+            {isSponsored && (
+              <View style={styles.sponsoredTextContainer}>
+                <Text style={styles.sponsoredText}>Dieser Artikel wird präsentiert von:</Text>
+                <Text style={{ ...styles.sponsoredText, fontFamily: fonts.sansBold, paddingTop: 8 }}>
+                  {article.acf?.sponsored_by}
+                </Text>
+              </View>
+            )}
             <HTML
               containerStyle={styles.htmlContainer}
               baseFontStyle={styles.text}
@@ -88,12 +105,12 @@ const styles = StyleSheet.create<Styles>({
   },
   categoriesContainer: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 5,
   },
   category: {
     ...defaultStyles.title,
     fontSize: 10,
-    marginTop: 5,
-    paddingRight: 5,
   },
   titleContainer: {
     paddingTop: 10,
@@ -108,6 +125,14 @@ const styles = StyleSheet.create<Styles>({
     color: colors.accentColor,
     fontSize: 18,
     lineHeight: 18 * 1.5,
+  },
+  sponsoredTextContainer: {
+    ...defaultStyles.sponsoredTextContainer,
+    alignSelf: 'auto',
+    marginLeft: 0,
+    marginTop: 0,
+    maxWidth: '100%',
+    borderRadius: 10,
   },
   htmlContainer: {
     paddingBottom: 15,
