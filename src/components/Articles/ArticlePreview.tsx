@@ -42,7 +42,7 @@ const ArticlePreview: React.FC<Props> = ({ article, hasImage = true, ignoreSpons
         <View style={styles.textColumn}>
           <HTML baseFontStyle={styles.title} html={article.title.rendered} />
           <View style={styles.dateContainer}>
-            <Ionicons name="ios-clock" size={12} color={colors.accentColor} />
+            <Ionicons name="time" size={12} color={colors.accentColor} />
             <Text style={styles.date}>{getLocaleLongDate(new Date(article.date_gmt))}</Text>
           </View>
         </View>

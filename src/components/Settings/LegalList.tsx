@@ -19,7 +19,7 @@ interface Props {
 const LegalList: React.FC<Props> = ({ data }) => {
   const navigation = useNavigation<StackNavigationProp<SettingsStackParamList>>()
 
-  const linkIcon = () => <Ionicons name="ios-arrow-round-forward" size={20} color={colors.primaryColor} />
+  const linkIcon = () => <Ionicons name="arrow-forward" size={20} color={colors.gray} />
 
   return (
     <View style={styles.listContainer}>

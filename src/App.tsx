@@ -1,23 +1,20 @@
-import React, { useState } from 'react'
-import * as Font from 'expo-font'
-import { AppLoading, registerRootComponent } from 'expo'
+import React from 'react'
+import { registerRootComponent } from 'expo'
+import AppLoading from 'expo-app-loading'
+import { useFonts } from 'expo-font'
+import { OpenSans_400Regular, OpenSans_700Bold } from '@expo-google-fonts/open-sans'
+import { Vollkorn_700Bold } from '@expo-google-fonts/vollkorn'
 
 import RootNavigator from '@navigations/RootNavigator'
 
-const fetchFontsAsync = () => {
-  return Font.loadAsync({
-    sans: require('@assets/fonts/OpenSans-Regular.ttf'),
-    'sans-bold': require('@assets/fonts/OpenSans-Bold.ttf'),
-    'serif-bold': require('@assets/fonts/Vollkorn-Bold.ttf'),
-  })
-}
-
 const App: React.FC = () => {
-  const [fontLoaded, setFontLoaded] = useState(false)
+  const [fontsLoaded] = useFonts({
+    sans: OpenSans_400Regular,
+    'sans-bold': OpenSans_700Bold,
+    'serif-bold': Vollkorn_700Bold,
+  })
 
-  if (!fontLoaded) {
-    return <AppLoading startAsync={fetchFontsAsync} onFinish={() => setFontLoaded(true)} />
-  }
+  if (!fontsLoaded) return <AppLoading />
 
   return <RootNavigator />
 }

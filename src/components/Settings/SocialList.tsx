@@ -6,14 +6,14 @@ import Touchable from '@components/UI/Touchable'
 import { Social } from '@models/social'
 import { colors } from '@styles/theme'
 
-interface Props {
-  data: Social[]
+interface SocialListProps {
+  channels: Social[]
 }
 
-const SocialList: React.FC<Props> = ({ data }) => {
+const SocialList: React.FC<SocialListProps> = ({ channels }) => {
   return (
     <View style={styles.container} testID="social-list-container">
-      {data.map(item => (
+      {channels.map(item => (
         <Touchable key={item.id} onPress={() => Linking.openURL(item.url)}>
           <View style={styles.iconContainer}>
             <Ionicons name={item.icon} size={35} color={colors.gray} />
