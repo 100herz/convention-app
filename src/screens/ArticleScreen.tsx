@@ -51,7 +51,7 @@ const ArticleScreen: React.FC = () => {
               <HTML baseFontStyle={styles.title} html={article.title.rendered} />
             </View>
             <View style={styles.dateContainer}>
-              <Ionicons name="ios-clock" size={12} color={colors.accentColor} />
+              <Ionicons name="time" size={12} color={colors.accentColor} />
               <Text style={styles.date}>{getLocaleLongDate(new Date(article.date_gmt || Date.now.toString()))}</Text>
             </View>
             <HTML baseFontStyle={styles.teaser} html={article.excerpt.rendered} />

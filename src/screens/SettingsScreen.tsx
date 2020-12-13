@@ -18,7 +18,7 @@ const SettingsScreen: React.FC = () => {
         <SettingsList data={settingArray} />
         */}
         <LegalList data={legalScreens} />
-        <SocialList data={socialMediaChannels} />
+        <SocialList channels={socialMediaChannels} />
       </ScrollView>
     </View>
   )
