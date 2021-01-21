@@ -25,7 +25,7 @@ const CategoryList: React.FC<Props> = ({ data }) => {
     >
       <View style={styles.listItemContainer}>
         <Text>{item.name}</Text>
-        <Ionicons name="ios-arrow-round-forward" size={20} color={colors.primaryColor} />
+        <Ionicons name="arrow-forward" size={20} color={colors.gray} />
       </View>
     </Touchable>
   )

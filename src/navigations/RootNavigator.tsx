@@ -27,10 +27,6 @@ const defaultTabBarOptions: BottomTabBarOptions = {
 }
 
 const RootNavigator: React.FC = () => {
-  const icon = (name: string, size?: number, color?: string) => {
-    return <Ionicons name={`${Platform.OS === 'ios' ? 'ios' : 'md'}-${name}`} size={size} color={color} />
-  }
-
   return (
     <NavigationContainer>
       <RootTab.Navigator initialRouteName="HomeNavigator" tabBarOptions={defaultTabBarOptions}>
@@ -39,21 +35,31 @@ const RootNavigator: React.FC = () => {
           component={HomeNavigator}
           options={{
             tabBarLabel: undefined,
-            tabBarIcon: ({ size, color }) => icon('home', size, color),
+            tabBarIcon: ({ size, color }) => (
+              <Ionicons name={Platform.OS === 'ios' ? 'home' : 'home-sharp'} size={size} color={color} />
+            ),
           }}
         />
         <RootTab.Screen
           name="CategoriesNavigator"
           component={CategoriesNavigator}
           options={{
-            tabBarIcon: ({ size, color }) => icon('images', size, color),
+            tabBarIcon: ({ size, color }) => (
+              <Ionicons name={Platform.OS === 'ios' ? 'images' : 'images-sharp'} size={size} color={color} />
+            ),
           }}
         />
         <RootTab.Screen
           name="SettingsNavigator"
           component={SettingsNavigator}
           options={{
-            tabBarIcon: ({ size, color }) => icon('more', size, color),
+            tabBarIcon: ({ size, color }) => (
+              <Ionicons
+                name={Platform.OS === 'ios' ? 'ellipsis-horizontal' : 'ellipsis-vertical'}
+                size={size}
+                color={color}
+              />
+            ),
           }}
         />
       </RootTab.Navigator>

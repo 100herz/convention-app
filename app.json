@@ -4,7 +4,7 @@
     "name": "Convention International",
     "slug": "convention-international",
     "description": "Trends, developments and current news from the MICE industry. Everything around meetings, incentives, congresses and events.",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./assets/logo.png",
     "splash": {
@@ -23,12 +23,12 @@
       },
       "permissions": [],
       "package": "de.convention_net",
-      "versionCode": 4
+      "versionCode": 5
     },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "de.convention-net",
-      "buildNumber": "1.1.0"
+      "buildNumber": "1.2.0"
     }
   }
 }

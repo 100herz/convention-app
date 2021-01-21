@@ -44,7 +44,7 @@ const FeaturedCarousel: React.FC<Props> = ({ articles }) => {
             )}
           </ImageBackground>
           <View style={styles.titleContainer}>
-            <HTML baseFontStyle={styles.title} html={item.title.rendered} />
+            <HTML baseFontStyle={isSponsored() ? styles.sponsoredTitle : styles.title} html={item.title.rendered} />
           </View>
         </View>
       </Touchable>

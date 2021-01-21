@@ -310,9 +310,9 @@ exports[`<FeaturedCarousel /> renders correctly 1`] = `
                       allowFontScaling={true}
                       style={
                         Object {
-                          "fontFamily": "sans",
-                          "fontSize": 18,
-                          "lineHeight": 27,
+                          "fontFamily": "serif-bold",
+                          "fontSize": 20,
+                          "lineHeight": 25,
                         }
                       }
                     >

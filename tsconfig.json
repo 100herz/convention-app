@@ -11,7 +11,6 @@
     "baseUrl": "src",
     "paths": {
       "@__mocks__/*": ["./__mocks__/*"],
-      "@assets/*": ["./assets/*"],
       "@constants/*": ["./constants/*"],
       "@components/*": ["./components/*"],
       "@models/*": ["./models/*"],
