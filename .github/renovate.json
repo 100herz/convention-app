@@ -1,0 +1,7 @@
+{
+  "extends": ["config:base"],
+  "baseBranches": ["release/v1"],
+  "assignees": ["mheob"],
+  "reviewers": ["mheob"],
+  "labels": ["dependencies"]
+}
