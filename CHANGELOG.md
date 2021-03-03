@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/100herz/convention-app/compare/v1.2.0...v1.2.1) (2021-03-03)
+
+
+### Bug Fixes
+
+* upgrade react-native-web from 0.13.18 to 0.14.13 ([#73](https://github.com/100herz/convention-app/issues/73)) ([84da353](https://github.com/100herz/convention-app/commit/84da353f0e32eb31c905bb8194fa9bb44309ecec))
+
 # [1.2.0](https://github.com/100herz/convention-app/compare/v1.1.0...v1.2.0) (2021-01-21)
 
 
