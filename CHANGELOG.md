@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/100herz/convention-app/compare/v1.2.1...v1.2.2) (2021-03-03)
+
+
+### Bug Fixes
+
+* upgrade react-native-screens from 2.15.0 to 2.17.1 ([#74](https://github.com/100herz/convention-app/issues/74)) ([74d50e0](https://github.com/100herz/convention-app/commit/74d50e0489ea3a489793e9c3b4c791879bec45fa))
+
 ## [1.2.1](https://github.com/100herz/convention-app/compare/v1.2.0...v1.2.1) (2021-03-03)
 
 
