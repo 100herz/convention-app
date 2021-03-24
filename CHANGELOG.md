@@ -4,6 +4,7 @@
 ### Features
 
 * **article:** improve the sponsored content ([#71](https://github.com/100herz/convention-app/issues/71)) ([51bfe1c](https://github.com/100herz/convention-app/commit/51bfe1c61ec7983da88df01c1f7be897030654ca)), closes [#65](https://github.com/100herz/convention-app/issues/65) [#67](https://github.com/100herz/convention-app/issues/67) [#69](https://github.com/100herz/convention-app/issues/69) [#70](https://github.com/100herz/convention-app/issues/70)
+* **home:** display pinned articles only once on the top ([#79](https://github.com/100herz/convention-app/issues/79)) ([b4a3594](https://github.com/100herz/convention-app/commit/b4a3594bcab1f939eb629b9dc37f632a64d66507))
 
 # [1.1.0](https://github.com/100herz/convention-app/compare/v1.0.0...v1.1.0) (2020-12-09)
 
