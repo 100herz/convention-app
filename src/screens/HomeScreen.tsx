@@ -24,7 +24,7 @@ const HomeScreen: React.FC = () => {
     sponsoredProperty !== undefined && sponsoredProperty !== null && sponsoredProperty.length > 0
 
   useEffect(() => {
-    const filteredNewsArticle = articles.filter(article => article.categories.includes(1))
+    const filteredNewsArticle = articles.filter(article => article.categories.includes(1) && !article.acf?.pinned)
 
     if (filteredNewsArticle.length === 0) return
 
